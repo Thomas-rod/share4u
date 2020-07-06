@@ -1,7 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
-  has_many :magnets, dependent: :destroy
+  # has_many :magnet_profil, dependent: :destroy
 
   validates :first_name, :last_name, presence: true
 

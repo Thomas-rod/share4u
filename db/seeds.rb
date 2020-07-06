@@ -8,7 +8,7 @@
 
 
 puts "Hello human, i will do something today. Do you want to know what ? "
-puts "Hehehehe I'm gonna $**$$#$*$$*# seeding boy."
+puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##

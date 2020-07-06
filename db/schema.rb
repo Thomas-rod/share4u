@@ -10,18 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_125855) do
+ActiveRecord::Schema.define(version: 2020_07_06_133303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "magnet_profiles", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "magnet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["magnet_id"], name: "index_magnet_profiles_on_magnet_id"
+    t.index ["profile_id"], name: "index_magnet_profiles_on_profile_id"
+  end
+
   create_table "magnets", force: :cascade do |t|
     t.string "token"
     t.string "url"
-    t.bigint "profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["profile_id"], name: "index_magnets_on_profile_id"
   end
 
   create_table "networks", force: :cascade do |t|
@@ -63,7 +70,8 @@ ActiveRecord::Schema.define(version: 2020_07_06_125855) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "magnets", "profiles"
+  add_foreign_key "magnet_profiles", "magnets"
+  add_foreign_key "magnet_profiles", "profiles"
   add_foreign_key "networks", "profiles"
   add_foreign_key "networks", "socials"
   add_foreign_key "profiles", "users"
