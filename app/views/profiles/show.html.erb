@@ -1,2 +1,15 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div id="show-profil">
+  <div id="show-profil--informations">
+    <div id="show-profil--informations--image">
+      <%= cl_image_tag @profile.profile_picture.key, class:"image-profile" %>
+      <p class="label-name-capitalize"><%= @profile.name_capitalize %></p>
+    </div>
+    <div id="show-profil--informations--networks">
+      <div class="networks-container">
+        <% @socials.each do |s| %>
+          <p><%= image_tag "logo_#{s.name}" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

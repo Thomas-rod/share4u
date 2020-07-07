@@ -1,0 +1,33 @@
+#show-profil {
+  margin-top: $height-navbar;
+  padding: 0 $padding-side;
+}
+
+    #show-profil--informations {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+
+        #show-profil--informations--image {
+          min-width:45%;
+          max-width:45%;
+          img {
+            display:block;
+            margin: 1rem auto;
+          }
+        }
+
+        #show-profil--informations--networks {
+          min-width:45%;
+          max-width:45%;
+        }
+
+
+          .networks-container {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+          }

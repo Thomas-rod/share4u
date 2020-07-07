@@ -1,0 +1,24 @@
+.button {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border:1px solid;
+  box-shadow: 0px 20px 50px 0px rgba(0,0,0,0.2);
+}
+
+.main-button {
+  background-color: $second-color;
+  border-color: $second-color;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: translate(0,-1px);
+  }
+}
+
+.second-button {
+  color: $second-color;
+  border-color: $second-color;
+  &:hover {
+    color:$second-color;
+    transform: translate(0,-10px);
+  }
+}
