@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profil_params)
     @profile.user = current_user
     if @profile.save
-      redirect_to new_profile_network_path(@profile), notice: "Super ! Maintenant on va créer ton espace "
+      redirect_to profile_path(@profile), notice: "Super ! Maintenant on va créer ton espace "
     else
       render :new, notice: "Eh fait gaffe, tu as oublié de renseigner un champ"
     end
@@ -43,10 +43,12 @@ class ProfilesController < ApplicationController
   end
 
   def socials_not_activated
-    social_activated = Network.all.map do |n|
+    network_created = Network.all.select{ |n| n.profile == current_user.profile}
+    social_activated = network_created.map do |n|
       n.social
     end
     all_social = Social.all
-    return all_social - social_activated
+    split = all_social - social_activated
+    return (all_social - social_activated)
   end
 end
