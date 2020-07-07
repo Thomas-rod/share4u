@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :profiles, only: [:show, :new, :create, :update] do
-    resources :networks, only: [:index, :new, :create, :update]
-  end
+  resources :profiles, only: [:show, :new, :create, :update]
+  resources :networks, only: [:index, :create, :update]
   resources :magnets, only: [:show, :create, :update] do
     resources :magnet_profiles, only: [:create]
   end

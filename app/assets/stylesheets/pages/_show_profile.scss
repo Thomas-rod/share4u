@@ -27,7 +27,12 @@
 
           .networks-container {
             display:flex;
-            justify-content:space-between;
+            justify-content:flex-start;
             align-items:center;
             flex-wrap:wrap;
+            p {
+              color:white;
+              text-align:center;
+            }
+            a {margin: 1rem 1.5rem;}
           }

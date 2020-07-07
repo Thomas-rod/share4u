@@ -6,8 +6,64 @@
     </div>
     <div id="show-profil--informations--networks">
       <div class="networks-container">
+        <% unless @networks.empty? %>
+          <% @networks.each do |n| %>
+          <%= link_to '#', id:"modal-#{n.social.name}", data: {toggle: 'modal', target:"##{n.social.name}ModalCenter" } do %>
+            <%= image_tag "logo_#{n.social.name}", class:"avatar-social"%>
+            <p><%= n.social.name.capitalize %></p>
+          <% end %>
+          <div class="modal fade" id="<%= n.social.name %>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="<%= n.social.name %>ModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="<%= n.social.name %>ModalLongTitle">Modifie ton <%= n.social.name.capitalize %></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <%= simple_form_for n, url: network_path(n), method: :patch do |f| %>
+                  <div class="modal-body">
+                    <%= f.input :username, label:"Ton username sur #{n.social.name}" %>
+                  </div>
+                  <div class="modal-footer">
+                    <%= f.button :submit, "Modifier", class:"button main-button" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
         <% @socials.each do |s| %>
-          <p><%= image_tag "logo_#{s.name}" %></p>
+          <%= link_to '#', id:"modal-#{s.name}", data: {toggle: 'modal', target:"##{s.name}ModalCenter" } do %>
+            <% if !@networks&.select{ |n| n.social == s}.nil? && !@networks.select{ |n| n.social == s}.empty? %>
+              <%= image_tag "logo_#{s.name}", class:"avatar-social"%>
+              <p><%= s.name.capitalize %></p>
+            <% else %>
+              <%= image_tag "logo_#{s.name}", class:"avatar-social inactive"%>
+              <p class="inactive"><%= s.name.capitalize %></p>
+            <% end %>
+          <% end %>
+          <div class="modal fade" id="<%= s.name %>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="<%= s.name %>ModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="<%= s.name %>ModalLongTitle">Ajoute ton <%= s.name.capitalize %></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <%= simple_form_for @network, url: networks_path(profile: @profile, social: s), method: :post do |f| %>
+                  <div class="modal-body">
+                    <%= f.input :username, label:"Ton username sur #{s.name}" %>
+                  </div>
+                  <div class="modal-footer">
+                    <%= f.button :submit, "Ajouter", class:"button main-button" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>

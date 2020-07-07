@@ -6,8 +6,9 @@ class ProfilesController < ApplicationController
 
   def show
     authorize @profile
-    @socials = Social.all
-    @netowrks = Network.select{ |n| n.profile.user == current_user}
+    @socials = socials_not_activated
+    @networks = Network.select{ |n| n.profile.user == current_user}
+    @network = Network.new()
   end
 
   def new
@@ -39,5 +40,13 @@ class ProfilesController < ApplicationController
 
   def set_profil
     @profile = Profile.find(params[:id])
+  end
+
+  def socials_not_activated
+    social_activated = Network.all.map do |n|
+      n.social
+    end
+    all_social = Social.all
+    return all_social - social_activated
   end
 end

@@ -6,5 +6,5 @@ class Network < ApplicationRecord
   belongs_to :profile
 
   validates :social, :profile, :username, presence: true
-  validates_uniqueness_of :profile_id, :scope => [:social_id]
+  # validates_uniqueness_of :profile_id, :scope => [:social_id]
 end
