@@ -15,10 +15,8 @@
 }
 
 .second-button {
-  color: $second-color;
-  border-color: $second-color;
+  border-color: $black;
   &:hover {
-    color:$second-color;
     transform: translate(0,-10px);
   }
 }
