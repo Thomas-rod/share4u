@@ -5,7 +5,7 @@
         <% if @profile.profile_picture.attached?  %>
           <%= cl_image_tag @profile.profile_picture.key, class:"image-resize" %>
         <% else %>
-          <%= image_tag 'logo.png', class:"image-resize" %>
+          <%= image_tag 'logo.svg', class:"image-resize" %>
         <% end %>
       </div>
       <p class="label-name-capitalize"><%= @profile.name_capitalize %></p>
@@ -15,7 +15,7 @@
         <% unless @networks.empty? %>
           <% @networks.each do |n| %>
           <%= link_to '#', id:"modal-#{n.social.name}", data: {toggle: 'modal', target:"##{n.social.name}ModalCenter" } do %>
-            <%= image_tag "logo_#{n.social.name}", class:"avatar-social"%>
+            <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social"%>
             <p><%= n.social.name.capitalize %></p>
           <% end %>
           <div class="modal fade" id="<%= n.social.name %>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="<%= n.social.name %>ModalCenterTitle" aria-hidden="true">
@@ -44,7 +44,7 @@
         <% @socials.each do |s| %>
           <%= link_to '#', id:"modal-#{s.name}", data: {toggle: 'modal', target:"##{s.name}ModalCenter" } do %>
             <% if !@networks&.select{ |n| n.social == s}.nil? && !@networks.select{ |n| n.social == s}.empty? %>
-              <%= image_tag "logo_#{s.name}", class:"avatar-social"%>
+              <%= image_tag "logo_#{s.name}.svg", class:"avatar-social"%>
               <p><%= s.name.capitalize %></p>
             <% else %>
               <%= image_tag "logo_#{s.name}", class:"avatar-social inactive"%>

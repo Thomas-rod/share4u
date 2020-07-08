@@ -7,12 +7,12 @@
   <div id="navbar-links">
     <% if current_user && !current_user.profile.nil? %>
       <%= link_to "Mon profil", profile_path(current_user.profile), class:"button main-button" %>
-      <%= link_to "Me déconnecter", destroy_user_session_path, class:"button second-button" %>
+      <%= link_to "Me déconnecter", destroy_user_session_path %>
     <% elsif current_user %>
       <%= link_to "Me déconnecter", destroy_user_session_path, class:"button second-button" %>
     <% else %>
+      <%= link_to "Se connecter", new_user_session_path%>
       <%= link_to "Créer un compte", new_user_registration_path, class:"button main-button" %>
-      <%= link_to "Se connecter", new_user_session_path, class:"button second-button" %>
     <% end %>
   </div>
 </div>
