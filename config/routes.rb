@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/purchase', to: 'pages#purchase'
 
   resources :profiles, only: [:show, :new, :create, :update]
   resources :networks, only: [:index, :create, :update, :destroy]

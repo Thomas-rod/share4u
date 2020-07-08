@@ -17,10 +17,10 @@ p {
 }
 
 a {
-  color: $black;
+  color: $main-color;
   text-decoration:none;
   &:hover {
-    color: $black;
+    color: $main-color;
     text-decoration:none;
   }
 }

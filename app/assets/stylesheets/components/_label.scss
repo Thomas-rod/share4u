@@ -9,3 +9,43 @@
   border-radius:5px;
   background-color: $black;
 }
+
+.font-typed-js {
+  font-size:4rem;
+  display:inline-block;
+  background-size: auto;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.tiktok-font {
+  background-color: rgb(235,51,85);
+  background-image: linear-gradient(120deg, rgba(235,51,85,1) 25%, rgba(0,0,0,0.8393732492997199) 50%, rgba(109,238,235,1) 75%);
+}
+
+.instagram-font {
+  background-color: rgb(101,103,174);
+  background-image: linear-gradient(158deg, rgba(101,103,174,1) 25%, rgba(200,53,124,1) 50%, rgba(250,196,105,1) 75%);
+}
+
+.snapchat-font {
+  background-color: rgb(0,0,0);
+  background-image: linear-gradient(158deg, rgba(0,0,0,0.5900735294117647) 0%, rgba(255,241,0,1) 1%);
+}
+
+.twitter-font {
+  background-color: rgb(255,255,255);
+  background-image: linear-gradient(158deg, rgba(255,255,255,1) 0%, rgba(85,172,238,1) 1%);
+}
+
+.youtube-font {
+  background-color: rgb(255,255,255);;
+  background-image: linear-gradient(158deg, rgba(255,255,255,1) 0%, rgba(215,65,39,1) 0%);
+}
+
+.other-font {
+  background-color: rgb(235,51,85);
+  background-image: linear-gradient(120deg, rgba(235,51,85,1) 25%, rgba(0,0,0,0.8393732492997199) 50%, rgba(109,238,235,1) 75%);
+}

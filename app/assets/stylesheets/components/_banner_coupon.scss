@@ -1,0 +1,27 @@
+#banner-coupon {
+  width:100%;
+  height:($height-banner-coupon - 2vh);
+  background-color:$fifth-color;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  // transition: visibility s ease;
+}
+
+#banner-coupon .message-coupon {
+  color: white;
+  margin-right: 3rem;
+}
+
+#banner-coupon a {
+  font-weight:bold;
+  text-decoration: underline;
+}
+
+.close-icon-coupon {
+  position:absolute;
+  right:1rem;
+  top:1rem;
+  color:white;
+  cursor:pointer;
+}

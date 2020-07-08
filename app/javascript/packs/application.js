@@ -30,6 +30,9 @@ import "bootstrap";
 import { modalSocials } from '../components/modalsocials';
 import { closeIconModal } from '../components/closeiconmodal';
 import { checkUrlValid } from '../components/checkurl';
+import { loadDynamicBannerText } from '../components/typedjs';
+import { landbotLoad } from '../components/landbot';
+import { closeCouponIcon } from '../components/closecoupon';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -37,4 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   // modalSocials();
   // closeIconModal();
   // checkUrlValid();
+  loadDynamicBannerText();
+  landbotLoad();
+  closeCouponIcon();
 });

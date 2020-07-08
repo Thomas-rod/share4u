@@ -2,19 +2,20 @@
 //--------------------------//
 //       POSITIONNING       //
 //--------------------------//
-#navbar,
-#banner {
+
+.banner {
   padding: 0 $padding-side;
-
 }
-
-#navbar {
+#navbar-container {
   position:absolute;
   height:15vh;
   top: 0;
   right:0;
   left:0;
   width:100%;
+
+}
+#navbar {
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -23,14 +24,55 @@
   }
 }
 
-    #navbar-links a {
-      margin: 0 1rem;
+
+    #navbar-logo {
+      padding-left: $padding-side;
+      a:first-child {
+        height:100%;
+        width:100%;
+      }
+    }
+
+    #navbar-links{
+      padding-right: $padding-side;
+      a {
+        margin: 0 1rem;
+        display:inline-block;
+      }
     }
 
 
-#banner {
-  margin-top: $height-navbar;
+
+.banner {
+  margin-top: $height-navbar + $height-banner-coupon;
+  padding: 5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  height: 70vh;
+  position:relative;
 }
+
+.banner h1 {
+  font-size:4rem;
+}
+
+    .banner--right,
+    .banner--left {
+      max-width: 50%;
+      height:100%;
+    }
+
+    .banner a {
+      font-size:2rem;
+      text-align:center;
+      position:absolute;
+      bottom:1rem;
+      left:36%;
+    }
+
+
 
 //--------------------------//
 //--------------------------//

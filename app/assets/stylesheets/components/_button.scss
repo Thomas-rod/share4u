@@ -3,24 +3,37 @@
   border-radius: 5px;
   border:1px solid;
   box-shadow: 0px 20px 50px 0px rgba(0,0,0,0.2);
-}
-
-.main-button {
-  background-color: $second-color;
-  border-color: $second-color;
   transition: transform 0.2s ease;
   &:hover {
     transform: translate(0,-1px);
   }
 }
 
+.main-button {
+  color:$main-color;
+  background-color: $fifth-color;
+  border-color: $fifth-color;
+}
+
 .second-button {
+  color:$main-color;
+  background-color: $third-color;
+  border-color: $third-color;
+}
+
+.third-button {
   border-color: $black;
-  &:hover {
-    transform: translate(0,-1px);
-  }
 }
 
 .nav-link {
-
+  color:$black;
+  transition:
+      transform 0.2s ease,
+      color 0.2s ease
+  ;
+  &:hover {
+    transform:stranslate(0,-1px);
+    color:$black;
+    border-color: $black;
+  }
 }
