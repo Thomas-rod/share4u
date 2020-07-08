@@ -13,6 +13,9 @@
   color:$main-color;
   background-color: $fifth-color;
   border-color: $fifth-color;
+  &:hover {
+    color:$main-color;
+  }
 }
 
 .second-button {
