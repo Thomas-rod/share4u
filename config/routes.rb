@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :profiles, only: [:show, :new, :create, :update]
-  resources :networks, only: [:index, :create, :update]
+  resources :networks, only: [:index, :create, :update, :destroy]
   resources :magnets, only: [:show, :create, :update] do
     resources :magnet_profiles, only: [:create]
   end
-
+  resources :magnet_profiles, only: [:show]
   ## ONLY USE AS ADMIN
   resources :social, only: [:index]
   resources :magnets, only: [:index]

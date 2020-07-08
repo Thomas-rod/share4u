@@ -29,11 +29,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { modalSocials } from '../components/modalsocials';
 import { closeIconModal } from '../components/closeiconmodal';
-
+import { checkUrlValid } from '../components/checkurl';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // modalSocials();
   // closeIconModal();
+  // checkUrlValid();
 });

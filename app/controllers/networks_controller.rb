@@ -1,5 +1,5 @@
 class NetworksController < ApplicationController
-  before_action :set_network, only: [:update]
+  before_action :set_network, only: [:update, :destroy]
 
   def index
   end
@@ -28,7 +28,11 @@ class NetworksController < ApplicationController
     else
       redirect_to profile_path(@network.profile), notice: "Aïe quelque chose s'est mal passé."
     end
+  end
 
+  def destroy
+    @network.destroy
+    redirect_to profile_path(@network.profile), notice: "Ton #{@network.social.name.capitalize} a bien été supprimé"
   end
 
   private

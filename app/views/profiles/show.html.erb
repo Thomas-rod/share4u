@@ -1,7 +1,13 @@
 <div id="show-profil">
   <div id="show-profil--informations">
     <div id="show-profil--informations--image">
-      <%= cl_image_tag @profile.profile_picture.key, class:"image-profile" %>
+      <div class="image-container">
+        <% if @profile.profile_picture.attached?  %>
+          <%= cl_image_tag @profile.profile_picture.key, class:"image-resize" %>
+        <% else %>
+          <%= image_tag 'logo.png', class:"image-resize" %>
+        <% end %>
+      </div>
       <p class="label-name-capitalize"><%= @profile.name_capitalize %></p>
     </div>
     <div id="show-profil--informations--networks">
@@ -23,9 +29,10 @@
                 </div>
                 <%= simple_form_for n, url: network_path(n), method: :patch do |f| %>
                   <div class="modal-body">
-                    <%= f.input :username, label:"Ton username sur #{n.social.name}" %>
+                    <%= f.input :username, label:"Ton username sur #{n.social.name.capitalize}" %>
                   </div>
                   <div class="modal-footer">
+                    <%= link_to "Supprimer", network_path(n), method: :delete, class:"button second-button" %>
                     <%= f.button :submit, "Modifier", class:"button main-button" %>
                   </div>
                 <% end %>
@@ -55,7 +62,7 @@
                 </div>
                 <%= simple_form_for @network, url: networks_path(profile: @profile, social: s), method: :post do |f| %>
                   <div class="modal-body">
-                    <%= f.input :username, label:"Ton username sur #{s.name}" %>
+                    <%= f.input :username, label:"Ton #{s.kind} #{s.name.capitalize}" %>
                   </div>
                   <div class="modal-footer">
                     <%= f.button :submit, "Ajouter", class:"button main-button" %>

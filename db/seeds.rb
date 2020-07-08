@@ -58,21 +58,21 @@ puts "Well done human, #{Network.count} networks have been created."
 
 
 puts "Socials on creation."
-instagram = Social.create!(name: "instagram", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-facebook = Social.create!(name: "facebook", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-snapchat = Social.create!(name: "snapchat", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-tiktok = Social.create!(name: "tiktok", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-twitter = Social.create!(name: "twitter", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-linkedin = Social.create!(name: "linkedin", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-website = Social.create!(name: "website", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-text = Social.create!(name: "text", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-email = Social.create!(name: "email", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-youtube = Social.create!(name: "youtube", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-spotify = Social.create!(name: "spotify", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-twitch = Social.create!(name: "twitch", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-whatsapp = Social.create!(name: "whatsapp", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
-custom = Social.create!(name: "custom", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two")
+instagram = Social.create!(name: "instagram", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+facebook = Social.create!(name: "facebook", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+snapchat = Social.create!(name: "snapchat", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+tiktok = Social.create!(name: "tiktok", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+twitter = Social.create!(name: "twitter", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+linkedin = Social.create!(name: "linkedin", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+website = Social.create!(name: "site", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "url")
+text = Social.create!(name: "text", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "numéro")
+email = Social.create!(name: "email", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "email")
+youtube = Social.create!(name: "youtube", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+spotify = Social.create!(name: "spotify", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+twitch = Social.create!(name: "twitch", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "username")
+whatsapp = Social.create!(name: "whatsapp", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "numéro")
+lien = Social.create!(name: "lien", url_desktop_begin:"placeholder", url_mobile_begin: "placeholder_two", kind: "lien")
 
 puts "Well done human, #{Social.count} socials have been created."
 
