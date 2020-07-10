@@ -11,8 +11,8 @@
 
 .main-button {
   color:$main-color;
-  background-color: $fifth-color;
-  border-color: $fifth-color;
+  background-color: $fourth-color;
+  border-color: $fourth-color;
   &:hover {
     color:$main-color;
   }
@@ -30,6 +30,8 @@
 
 .nav-link {
   color:$black;
+  border:unset;
+  box-shadow:unset;
   transition:
       transform 0.2s ease,
       color 0.2s ease

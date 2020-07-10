@@ -26,7 +26,7 @@
 
 
     #navbar-logo {
-      padding-left: $padding-side;
+      padding: 1rem 0 0 $padding-side;
       a:first-child {
         height:100%;
         width:100%;
@@ -35,10 +35,7 @@
 
     #navbar-links{
       padding-right: $padding-side;
-      a {
-        margin: 0 1rem;
-        display:inline-block;
-      }
+      a {display:inline-block;}
     }
 
 
@@ -56,6 +53,7 @@
 
 .banner h1 {
   font-size:4rem;
+  color:black;
 }
 
     .banner--right,
