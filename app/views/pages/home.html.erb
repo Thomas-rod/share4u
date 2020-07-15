@@ -1,11 +1,12 @@
-<!-- <div class="skewed"></div> -->
+<%= render 'shared/navbar' %>
+<%= image_tag 'shape-homebg.svg', class:"home-bg shape" %>
 <div class="banner typed">
   <div class="banner--left">
     <h1>Partage tes réseaux avec style</h1>
     <div id="banner-typed-text"></div>
   </div>
   <div class="banner--right">
+    <%= image_tag 'bubbles.svg' %>
   </div>
   <%= link_to "Acheter maintenant", purchase_path, class:"button main-button" %>
 </div>
-<%#= render partial: 'shared/landbot' %>

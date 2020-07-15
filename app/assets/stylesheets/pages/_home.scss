@@ -6,8 +6,15 @@
 .banner {
   padding: 0 $padding-side;
 }
+
+#home-main {
+  width:100%;
+  background-image: image-url('bg_home.svg');
+  background-size:contain;
+  background-repeat: no-repeat;
+
+}
 #navbar-container {
-  position:absolute;
   height:15vh;
   top: 0;
   right:0;
@@ -42,7 +49,7 @@
 
 .banner {
   margin-top: $height-navbar ;
-  padding: 5rem;
+  padding: 0 5rem;
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
@@ -69,6 +76,10 @@
       bottom:1rem;
       left:36%;
     }
+//--------------------------//
+//         SHAPE BG         //
+//--------------------------//
+
 
 
 

@@ -2,7 +2,7 @@ class Token < ApplicationRecord
 
   require 'securerandom'
 
-  has_one :magnet
+  # has_one :magnet
   after_create :token_generation
 
   ##------------------##

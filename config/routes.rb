@@ -5,10 +5,8 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:show, :new, :create, :update]
   resources :networks, only: [:index, :create, :update, :destroy]
-  resources :magnets, only: [:show, :create, :update] do
-    resources :magnet_profiles, only: [:create]
-  end
-  resources :magnet_profiles, only: [:show]
+  resources :magnets, only: [:show, :create, :update]
+  resources :magnet_profiles, only: [:show, :create]
   ## ONLY USE AS ADMIN
   resources :social, only: [:index]
   resources :magnets, only: [:index]

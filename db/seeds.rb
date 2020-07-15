@@ -42,8 +42,8 @@ puts "Well done human, #{User.count} users have been created."
 
 
 puts "Profils on creation."
-Profile.create!(first_name: "Thomas", last_name: "Eude", user: te)
-Profile.create!(first_name: "Thomas", last_name: "Rodier", user: tr)
+one_profile = Profile.create!(first_name: "Thomas", last_name: "Eude", user: te)
+two_profile = Profile.create!(first_name: "Thomas", last_name: "Rodier", user: tr)
 puts "Well done human, #{Profile.count} profile have been created."
 
 
@@ -79,5 +79,17 @@ puts "Well done human, #{Social.count} socials have been created."
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
+
+
+puts "Magnets on creation."
+one_magnet = Magnet.create!(url: "localhost:3000/7")
+two_magnet = Magnet.create!(url: "localhost:3000/8")
+third_magnet = Magnet.create!(url: "localhost:3000/9")
+puts "Well done human, #{Magnet.count} magnets have been created."
+
+puts "Magnet profiles on creation."
+one_magnet = MagnetProfile.create!(magnet: one_magnet, profile: one_profile)
+two_magnet = MagnetProfile.create!(magnet: two_magnet, profile: two_profile)
+puts "Well done human, #{MagnetProfile.count} magnet profiles have been created."
 
 puts "Human, my work here is done. It's have been a pleasure .. son of ... So ciao !"
