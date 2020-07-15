@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
     @socials = socials_not_activated
     @networks = Network.select{ |n| n.profile.user == current_user}
     @network = Network.new()
+    @magnet_info = true
   end
 
   def new
@@ -35,7 +36,7 @@ class ProfilesController < ApplicationController
   private
 
   def profil_params
-    params.require(:profile).permit(:first_name, :last_name, :user, :profile_picture)
+    params.require(:profile).permit(:first_name, :last_name, :user, :profile_picture, :magnet_bought)
   end
 
   def set_profil

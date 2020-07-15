@@ -1,3 +1,9 @@
 <%= render 'shared/navbar' %>
 <h1>Hellow magnet_profile</h1>
+<% if @magnet_profile.profile.nil? %>
+  <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
+    <%= f.input :profile, as: :hidden %>
+    <%= f.button :submit, "Activer", class:"main-button button" %>
+  <% end %>
+<% end %>
 
