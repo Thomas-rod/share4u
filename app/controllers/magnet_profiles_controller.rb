@@ -2,6 +2,9 @@ class MagnetProfilesController < ApplicationController
 
   def show
     @magnet_profile = MagnetProfile.find(params[:id])
+    if @magnet_profile.profile.nil?
+      redirect_to new_user_session_path
+    end
   end
 
   def create

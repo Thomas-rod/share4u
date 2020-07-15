@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_15_133305) do
+ActiveRecord::Schema.define(version: 2020_07_15_141455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2020_07_15_133305) do
   end
 
   create_table "magnet_profiles", force: :cascade do |t|
-    t.bigint "profile_id", null: false
     t.bigint "magnet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "profile_id"
     t.index ["magnet_id"], name: "index_magnet_profiles_on_magnet_id"
     t.index ["profile_id"], name: "index_magnet_profiles_on_profile_id"
   end
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_133305) do
     t.bigint "profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "ative", default: true
+    t.boolean "active", default: true
     t.boolean "priority", default: false
     t.index ["profile_id"], name: "index_networks_on_profile_id"
     t.index ["social_id"], name: "index_networks_on_social_id"
