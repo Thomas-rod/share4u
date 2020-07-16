@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     if current_user.profile.nil?
       new_profile_path
     else
-      profile_path(current_user.profile)
+      stored_location_for(resource_or_scope) || profile_path(current_user.profile)
     end
   end
 
@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
     if current_user.profile.nil?
       new_profile_path
     else
-      profile_path(current_user.profile)
+      stored_location_for(resource_or_scope) || profile_path(current_user.profile)
     end
   end
 
