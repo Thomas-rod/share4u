@@ -14,11 +14,10 @@ class MagnetProfilesController < ApplicationController
   def update
     @magnet_profile = MagnetProfile.find(params[:id])
     if check_profile_attachment?(@magnet_profile)
-      # @magnet_profile.profile = current_user.profile
       @magnet_profile.update(profile: current_user.profile)
       redirect_to profile_path(@magnet_profile.profile), notice: "Félicitation ! Ton magnet a été activé. Tu peux maintenant partager avec style."
     else
-      redirect_to request.referrer, notice: "Tu as déjà un magnet d'activé ! Tu ne peux pas en avoir plusieurs."
+      redirect_to profile_path(current_user.profile), notice: "Tu as déjà un magnet d'activé ! Tu ne peux pas en avoir plusieurs."
     end
 
   end
