@@ -7,7 +7,7 @@ class Profile < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
 
-  after_save :zapier_profile
+  after_create :zapier_profile
 
   ##------------------##
   ##     CALLBACKS    ##
