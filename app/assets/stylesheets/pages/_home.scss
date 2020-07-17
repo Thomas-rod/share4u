@@ -1,9 +1,9 @@
-// Specific CSS for your home-page
 //--------------------------//
 //       POSITIONNING       //
 //--------------------------//
 
-.banner {
+.banner,
+#first-section {
   padding: 0 $padding-side;
 }
 
@@ -48,19 +48,41 @@
 //--------------------------//
 //        BG BANNER         //
 //--------------------------//
-    #banner-bg {
+    .banner-bg {
       position:absolute;
       top:0;
-      right:0;
-      left:0;
       bottom:0;
-      width:70%;
       height:90vh;
-      border-radius: 0 0 15px 0;
       z-index:-100;
-      background-color:#D8ECF6;
     }
 
+    #banner-bg--right {
+      left:0;
+      width:60%;
+      border-radius: 0 0 30% 0;
+      background-color:$blue-second-color;
+    }
+
+    #banner-bg--left {
+      right:0;
+      width:40%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      img.image-magnet-home {
+        display:block;
+        box-shadow: 0px 30px 30px 5px rgba(0,0,0,0.3);
+        border-radius: 60%;
+        width:40%;
+        margin: auto;
+      }
+    }
+
+
+
+//--------------------------//
+//       BANNER INSIDE      //
+//--------------------------//
 
 .banner {
   margin-top: $height-navbar ;
@@ -76,13 +98,17 @@
   h1 {
     font-size:4rem;
     font-weight:bold;
-    color:$third-color;
+    color:$blue-main-color;
   }
   h2 {
    font-weight:bold;
   }
 }
 
+    #banner-typed-text {
+      // THIS HEIGHT IS RELATED TO THE FONT-SIZE OF typed.js (label components)
+      height: 4.5rem;
+    }
 
 
     .banner--right,
@@ -96,8 +122,21 @@
       text-align:center;
     }
 //--------------------------//
-//         SHAPE BG         //
+//      FIRST-SECTION       //
 //--------------------------//
+
+
+#first-section {
+
+}
+
+    #first-section--header {
+
+    }
+
+    #first-section--body {
+
+    }
 
 
 

@@ -1,5 +1,8 @@
 <%= render 'shared/navbar' %>
-<div id="banner-bg"></div>
+<div class="banner-bg" id="banner-bg--right"></div>
+<div class="banner-bg" id="banner-bg--left">
+  <%= image_tag 'magnet_black.png', class:"image-magnet-home" %>
+</div>
 <div class="banner typed">
   <div class="banner--left">
     <h1>Partage tes réseaux avec style</h1>
@@ -8,4 +11,12 @@
   <div class="banner--right">
   </div>
   <%= link_to "Acheter maintenant", purchase_path, class:"button main-button" %>
+</div>
+<div id="first-section">
+  <div id="first-section--header">
+    <h2 class="title">On a qu'une seule première impression</h2>
+    <h3 class="subtitle">Ne la gâche pas.</h3>
+  </div>
+  <div id="first-section--body">
+  </div>
 </div>

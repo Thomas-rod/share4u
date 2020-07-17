@@ -1,9 +1,30 @@
-<%= render 'shared/navbar' %>
-<h1>Hellow magnet_profile</h1>
 <% if @magnet_profile.profile.nil? %>
   <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
     <%= f.input :profile, as: :hidden %>
     <%= f.button :submit, "Activer", class:"main-button button" %>
   <% end %>
+<% else %>
+  <div id="profile-magnet">
+    <div id="profile-magnet--bg"></div>
+    <div class="image-container--magnet-profile">
+      <% if current_user.profile.profile_picture.attached? %>
+        <%= cl_image_tag current_user.photo.key, class:"avatar-large" %>
+      <% else %>
+        <%= image_tag 'logo.svg', class:"image-resize" %>
+      <% end %>
+    </div>
+    <h1><%= @magnet_profile.profile.name_capitalize %></h1>
+  </div>
+  <div id="magnet-networks--card-container">
+    <% @networks.each do |n| %>
+    <div class="card-network">
+      <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+      <p><%= n.social.name.capitalize %></p>
+    </div>
+    <% end %>
+  </div>
+  <div id="magnet-footer">
+    <h2>Rejoins le club 🚀</h2>
+  </div>
 <% end %>
 

@@ -2,6 +2,7 @@ class MagnetProfilesController < ApplicationController
 
   def show
     @magnet_profile = MagnetProfile.find(params[:id])
+    @networks = @magnet_profile.profile.networks
   end
 
   def create
@@ -12,6 +13,7 @@ class MagnetProfilesController < ApplicationController
   end
 
   def update
+    @navbar_none = true
     @magnet_profile = MagnetProfile.find(params[:id])
     if check_profile_attachment?(@magnet_profile)
       @magnet_profile.update(profile: current_user.profile)

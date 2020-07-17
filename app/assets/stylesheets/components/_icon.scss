@@ -1,0 +1,20 @@
+.icon-mobile-navbar {
+  font-size: 3rem;
+  font-weight: bold;
+  color:white;
+}
+
+.main-icon {
+  width:30%;
+  height:80px;
+  border-radius:50%;
+  background-color: $blue-second-color;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  .icon-mobile-navbar {
+    color: $orange-dark-color;
+    font-size: 5rem;
+    transform: translate(0,-3px)
+  }
+}
