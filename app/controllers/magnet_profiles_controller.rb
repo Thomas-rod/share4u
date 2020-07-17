@@ -1,8 +1,11 @@
 class MagnetProfilesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
 
   def show
     @magnet_profile = MagnetProfile.find(params[:id])
-    unless @magnet_profile.profile.nil?
+    if @magnet_profile.profile.nil?
+      redirect_to new_user_session_path
+    else
       @networks = @magnet_profile.profile.networks
     end
   end

@@ -88,8 +88,8 @@ third_magnet = Magnet.create!(url: "localhost:3000/9")
 puts "Well done human, #{Magnet.count} magnets have been created."
 
 puts "Magnet profiles on creation."
-one_magnet_profile = MagnetProfile.create!(magnet: one_magnet)
-two_magnet_profile = MagnetProfile.create!(magnet: two_magnet)
+one_magnet_profile = MagnetProfile.create!(magnet: one_magnet, profile: one_profile)
+two_magnet_profile = MagnetProfile.create!(magnet: two_magnet, profile: two_profile)
 third_magnet_profile = MagnetProfile.create!(magnet: third_magnet)
 puts "Well done human, #{MagnetProfile.count} magnet profiles have been created."
 
