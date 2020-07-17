@@ -3,8 +3,10 @@ class MagnetProfilesController < ApplicationController
 
   def show
     @magnet_profile = MagnetProfile.find(params[:id])
-    if @magnet_profile.profile.nil?
-      redirect_to new_user_session_path
+    if @magnet_profile.profile.nil? && current_user
+
+    elsif @magnet_profile.profile.nil?
+      redirect_to new_user_session_path(magnet_profile_id: @magnet_profile.id)
     else
       @networks = @magnet_profile.profile.networks
     end

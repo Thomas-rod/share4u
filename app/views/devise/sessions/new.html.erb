@@ -11,7 +11,7 @@
   <div class="session-div--login">
     <h2>Je veux me connecter</h2>
     <div class="session-div--login--form">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name, magnet_profile_id: params[:magnet_profile_id])) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
                       required: false,
