@@ -3,7 +3,8 @@
 //--------------------------//
 
 #profile-magnet,
-#magnet-networks--card-container {
+#magnet-networks--card-container,
+#magnet-activation-section {
   padding: 0 ($padding-side - 3) 4rem ($padding-side - 3);
 }
 
@@ -65,10 +66,32 @@
   margin: 4rem auto;
 }
 
+//------------------------//
+//   MAGNET ACTIVATION    //
+//------------------------//
+
+#magnet-activation-section {
+  padding-top: 3rem;
+  color:$gray;
+  h2 {font-size: 3.5rem;}
+  h3 {font-size: 2.8rem;}
+  p {font-size:2rem;}
+}
+#magnet-activation-section h2 ,h3 ,p {
+  padding: 1rem 0;
+}
+
+#magnet-activation-section input {
+  display:block;
+  margin: 0 auto;
+  width:50%;
+  font-size: 3rem;
+}
+
 
 
 //------------------------//
-//     PROFILE-MAGNET     //
+//     MAGNET-FOOTER      //
 //------------------------//
 
 #magnet-footer {

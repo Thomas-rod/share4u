@@ -1,7 +1,6 @@
 <%= render 'shared/navbar' %>
 <div class="banner-bg" id="banner-bg--right"></div>
 <div class="banner-bg" id="banner-bg--left">
-  <%= image_tag 'magnet_black.png', class:"image-magnet-home" %>
 </div>
 <div class="banner typed">
   <div class="banner--left">
@@ -9,6 +8,7 @@
     <div id="banner-typed-text"></div>
   </div>
   <div class="banner--right">
+    <%= image_tag 'magnet_black.png', class:"image-magnet-home" %>
   </div>
   <%= link_to "Acheter maintenant", purchase_path, class:"button main-button" %>
 </div>

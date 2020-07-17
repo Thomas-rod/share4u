@@ -1,8 +1,24 @@
 <% if @magnet_profile.profile.nil? %>
-  <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
-    <%= f.input :profile, as: :hidden %>
-    <%= f.button :submit, "Activer", class:"main-button button" %>
-  <% end %>
+  <%= render 'shared/navbar_mobile' %>
+  <div id="profile-magnet">
+    <div id="profile-magnet--bg"></div>
+    <div class="image-container--magnet-profile">
+      <% if current_user.profile.profile_picture.attached? %>
+        <%= cl_image_tag current_user.photo.key, class:"avatar-large" %>
+      <% else %>
+        <%= image_tag 'logo.svg', class:"image-resize" %>
+      <% end %>
+    </div>
+  </div>
+  <div id="magnet-activation-section">
+    <h2>Hello, <%= current_user.profile.first_name.capitalize %> !</h2>
+    <h3>Félicitation, tu es sur le point d'activer ton magnet et de pouvoir partager tes réseaux avec style</h3>
+    <p>Clique sur le bouton pour activer ton magnet</p>
+    <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
+      <%= f.input :profile, as: :hidden %>
+      <%= f.button :submit, "Activer 🚀", class:"main-button button" %>
+    <% end %>
+  </div>
 <% else %>
   <div id="profile-magnet">
     <div id="profile-magnet--bg"></div>
@@ -24,7 +40,9 @@
     <% end %>
   </div>
   <div id="magnet-footer">
-    <h2>Rejoins le club 🚀</h2>
+    <%= link_to purchase_path do %>
+      <h2>Rejoins le club 🚀</h2>
+    <% end %>
   </div>
 <% end %>
 

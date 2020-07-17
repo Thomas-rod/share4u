@@ -2,7 +2,9 @@ class MagnetProfilesController < ApplicationController
 
   def show
     @magnet_profile = MagnetProfile.find(params[:id])
-    @networks = @magnet_profile.profile.networks
+    unless @magnet_profile.profile.nil?
+      @networks = @magnet_profile.profile.networks
+    end
   end
 
   def create

@@ -14,36 +14,7 @@
   background-repeat: no-repeat;
 
 }
-#navbar-container {
-  height:15vh;
-  top: 0;
-  right:0;
-  left:0;
-  width:100%;
 
-}
-#navbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  img {
-    width:100px;
-  }
-}
-
-
-    #navbar-logo {
-      padding: 1rem 0 0 $padding-side;
-      a:first-child {
-        height:100%;
-        width:100%;
-      }
-    }
-
-    #navbar-links{
-      padding-right: $padding-side;
-      a {display:inline-block;}
-    }
 
 //--------------------------//
 //        BG BANNER         //
@@ -69,13 +40,6 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      img.image-magnet-home {
-        display:block;
-        box-shadow: 0px 30px 30px 5px rgba(0,0,0,0.3);
-        border-radius: 60%;
-        width:40%;
-        margin: auto;
-      }
     }
 
 
@@ -120,6 +84,13 @@
     .banner--left a {
       font-size:2rem;
       text-align:center;
+    }
+    .banner--right img.image-magnet-home {
+      display:block;
+      box-shadow: 0px 30px 30px 5px rgba(0,0,0,0.3);
+      border-radius: 60%;
+      width:40%;
+      margin: auto;
     }
 //--------------------------//
 //      FIRST-SECTION       //

@@ -62,7 +62,9 @@
     font-size: 55%;
   }
     #show-profil {
-      padding: 0 2rem;
+      padding:0 2rem;
+      margin-bottom: 80px;
+      margin-top: unset;
     }
       #show-profil--informations {
         display:block !important;
@@ -70,12 +72,16 @@
 
       #show-profil--informations--image,
       #show-profil--informations--networks {
+        padding: 1rem 0;
         min-width:100%;
         max-width:100%;
       }
 
       .networks-container {
         justify-content:space-between;
+        p {
+          font-size: 1.5rem;
+        }
       }
 
       #navbar-mobile {
@@ -90,6 +96,33 @@
   html {
     font-size: 55%;
   }
+
+  #show-profil {
+    padding:0 2rem;
+    margin-bottom: 80px;
+    margin-top: unset;
+  }
+    #show-profil--informations {
+      display:block !important;
+    }
+
+    #show-profil--informations--image,
+    #show-profil--informations--networks {
+      padding: 1rem 0;
+      min-width:100%;
+      max-width:100%;
+    }
+
+    .networks-container {
+      justify-content:space-between;
+      p {
+          font-size: 1.5rem;
+        }
+    }
+
+    #navbar-mobile {
+      display:flex;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

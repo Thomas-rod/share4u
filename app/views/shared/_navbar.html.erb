@@ -12,10 +12,10 @@
     <div id="navbar-links">
       <% if @magnet_info %>
         <% if current_user.profile.magnet_bought %>
-          <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link" %>
+          <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link signout" %>
           <span class="main-button button">Magnet activé  🚀</span>
         <% else %>
-          <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link" %>
+          <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link signout" %>
           <%= link_to "Acheter maintenant", purchase_path, class:"button main-button" %>
         <% end %>
       <% elsif current_user && !current_user.profile.nil? %>
