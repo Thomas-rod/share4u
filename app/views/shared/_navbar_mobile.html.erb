@@ -2,9 +2,10 @@
   <%= link_to profile_path(current_user.profile) do %>
     <i class="icon-mobile-navbar fas fa-user-alt"></i>
   <% end %>
-  <span class="main-icon">
-    <input type="file" accept="image">
-    <i class="icon-mobile-navbar  fas fa-camera"></i>
+  <span class="main-icon cameraButton">
+    <i class="icon-mobile-navbar  fas fa-camera">
+      <input type="file" id="mypic" accept="image/*">
+    </i>
   </span>
   <%= link_to destroy_user_session_path do %>
     <i class="icon-mobile-navbar fas fa-sign-out-alt"></i>
