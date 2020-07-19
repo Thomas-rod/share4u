@@ -87,6 +87,26 @@ two_magnet = Magnet.create!(url: "localhost:3000/8")
 third_magnet = Magnet.create!(url: "localhost:3000/9")
 puts "Well done human, #{Magnet.count} magnets have been created."
 
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+
+puts "Networks on creation"
+
+instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
+facebook_netwrok_tr = Network.create!(username: "thomas.rodier.9", profile: two_profile, social: facebook)
+email_netwrok_tr = Network.create!(username: "hi@thomasrodier.co", profile: two_profile, social: email)
+twitter_netwrok_tr = Network.create!(username: "rodiert17", profile: two_profile, social: twitter)
+linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
+tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
+website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
+
+puts "Well done human, #{Networks.count} networks have been created."
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+
+
 puts "Magnet profiles on creation."
 one_magnet_profile = MagnetProfile.create!(magnet: one_magnet, profile: one_profile)
 two_magnet_profile = MagnetProfile.create!(magnet: two_magnet, profile: two_profile)

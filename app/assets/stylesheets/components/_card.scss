@@ -10,3 +10,28 @@
     padding: .5rem 0;
     color:$blue-main-color;
   }
+
+
+.card-home {
+  min-width:90%;
+  width:90%;
+  margin: 3rem auto;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+  .card-home--left {
+    width:55%;
+  }
+
+  .card-home--right {
+    width:45%;
+    a {
+      margin: 2rem auto;
+      display:block;
+      width:50%;
+      text-align:center;
+      font-weight:bold;
+    }
+  }
+

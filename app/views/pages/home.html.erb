@@ -18,5 +18,54 @@
     <h3 class="subtitle">Ne la gâche pas.</h3>
   </div>
   <div id="first-section--body">
+    <div id="first-section--body-bg"></div>
+    <h2 class="">COMMENT CA MARCHE ?</h2>
+    <div id="card-value-prop-container">
+      <div class="card-home">
+        <div class="card-home--left">
+          <%= image_tag 'logo.svg', class:"image-magnet-home" %>
+        </div>
+        <div class="card-home--right">
+          <h3>1. Choisi un Joomb</h3>
+          <p> -> Choisi la couleur de ton Joomb parmis notre sélection</p>
+          <p> -> Livraison sous 5 jours ouvrés</p>
+        </div>
+      </div>
+      <div class="card-home">
+        <div class="card-home--left">
+          <%= image_tag 'logo.svg', class:"image-magnet-home" %>
+        </div>
+        <div class="card-home--right">
+          <h3>2. Paramètre ton profile</h3>
+          <p> -> Ajouter tous Instagram, TikTok, Snap et bien d'autres encore</p>
+          <p> -> Tu veux modifier ton profile ? Facile. Sur ton mobile ou avec ton ordinateur</p>
+        </div>
+      </div>
+      <div class="card-home">
+        <div class="card-home--left">
+          <%= image_tag 'logo.svg', class:"image-magnet-home" %>
+        </div>
+        <div class="card-home--right">
+          <h3>3. Partage en un instant !</h3>
+          <p> Partage tes réseaux avec un simple tap sur ton Joomb.</p>
+          <%= link_to "Acheter maintenant", purchase_path ,class:"button main-button" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div id="second-section">
+  <div id="second-section--header">
+    <h2 class="title">Aucune app, ou de Joomb requis pour la personne qui tap !</h2>
+    <h3 class="subtitle">Partager avec le monde entier sans aucune limite !</h3>
+  </div>
+  <div id="second-section--body">
+    <span><%= image_tag 'bubbles.svg' %></span>
+    <span>
+      <p>Voilà ce que tu peux partager !</p>
+      <%= image_tag 'what_you_can_share.png' %>
+    </span>
+
   </div>
 </div>
