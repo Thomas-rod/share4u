@@ -13,15 +13,23 @@
 
 
 .card-home {
+  text-transform: uppercase;
   min-width:90%;
   width:90%;
   margin: 3rem auto;
   display:flex;
   justify-content:center;
   align-items:flex-start;
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
 }
   .card-home--left {
     width:55%;
+    img {
+      display:block;
+      margin: 0 auto;
+    }
   }
 
   .card-home--right {
@@ -29,7 +37,7 @@
     a {
       margin: 2rem auto;
       display:block;
-      width:50%;
+      width:70%;
       text-align:center;
       font-weight:bold;
     }
