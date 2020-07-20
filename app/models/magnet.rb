@@ -2,7 +2,7 @@ class Magnet < ApplicationRecord
   has_one :magnet_profile, dependent: :destroy
   has_one :token, dependent: :destroy
 
-  validates :url, presence: true
+  validates :url, :sku, presence: true
   validates :url, uniqueness: true
 
   after_create :magnet_profile_creation
