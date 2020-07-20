@@ -96,10 +96,19 @@
   <div id="footer--body">
     <span>
       <ul>
-        <li><i class="fab fa-instagram"></i></li>
-        <li><i class="fab fa-facebook-f"></i></li>
+        <li>
+          <%= link_to "https://www.facebook.com/Joombo-100733598392754" do %>
+            <i class="fab fa-instagram icon-share"></i></li>
+          <% end %>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fab fa-facebook-f icon-share"></i></li>
+          <% end %>
         <!-- <li><i class="fab fa-tiktok"></i></li> -->
-        <li><i class="fab fa-youtube"></i></li>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fab fa-youtube icon-share"></i></li>
+          <% end %>
       </ul>
       <p>Copyrights © 2020, tous droits réservés à Joombo.co</p>
     </span>

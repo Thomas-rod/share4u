@@ -221,10 +221,10 @@ margin: 5rem auto;
   justify-content:space-between;
   align-items:center;
   li {
-    color:$light-gray;
-    font-size:2rem;
     display:inline-block;
-    i {
+    .icon-share {
+      color:$light-gray;
+      font-size:2rem;
       padding: 1rem;
     }
   }
