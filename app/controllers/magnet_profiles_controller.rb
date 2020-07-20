@@ -14,7 +14,7 @@ class MagnetProfilesController < ApplicationController
 
   def create
     @magnet_profile = MagnetProfile.new(params_magnet_profiles)
-    if @magnet_profile.save!
+    if @magnet_profile.save
       redirect_to magnet_profile_path(@magnet_profile)
     end
   end

@@ -3,7 +3,7 @@ class Token < ApplicationRecord
   require 'securerandom'
 
   belongs_to :magnet
-  after_create :token_generation
+  # after_create :token_generation
 
   ##------------------##
   ##     CALLBACKS    ##
