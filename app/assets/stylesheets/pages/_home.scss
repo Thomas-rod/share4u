@@ -52,12 +52,13 @@
 
 .banner {
   margin-top: 10vh;
+  margin-bottom: 27vh;
   padding: 0 5rem;
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
   flex-wrap:wrap;
-  height: 70vh;
+
 }
 
 .banner {
@@ -171,7 +172,8 @@ margin: 5rem auto;
       align-items:flex-start;
       span {
         text-align:center;
-        width:40%;
+        width:45%;
+        min-width:45%;
         h4 {
           margin: 4rem 0;
           font-size: 2.5rem;
@@ -241,6 +243,71 @@ margin: 5rem auto;
   html {
     font-size: 55%;
   }
+  .banner,
+  #second-section,
+  #third-section,
+  #footer {
+    padding: 0 2rem;
+  }
+
+  .banner {
+    display:block;
+    margin-bottom:20vh;
+    a {
+      display:block;
+      width:70%;
+      font-size:2rem;
+      margin:3rem auto;
+      text-align:center;
+    }
+  }
+
+      #banner-bg--right {
+        width:85%;
+      }
+
+      .banner--right,
+      .banner--left {
+        margin: 2rem 0;
+        max-width: unset;
+        min-width: unset;
+      }
+
+
+      #card-value-prop-container {
+        width:95%;
+        img {
+          width:80%;
+        }
+      }
+
+      .card-home--right a {
+        width:100%;
+      }
+
+      #third-section--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: 2rem auto;
+          width:90%;
+        }
+        span img {
+          width:85%;
+        }
+      }
+
+      #footer--header,
+      #footer--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: .5rem auto;
+          width:90%;
+          max-width:unset;
+          text-align:center;
+        }
+      }
 
 }
 
@@ -250,6 +317,72 @@ margin: 5rem auto;
   html {
     font-size: 55%;
   }
+
+  .banner,
+  #second-section,
+  #third-section,
+  #footer {
+    padding: 0 2rem;
+  }
+
+  .banner {
+    display:block;
+    margin-bottom:20vh;
+    a {
+      display:block;
+      width:70%;
+      font-size:2rem;
+      margin:3rem auto;
+      text-align:center;
+    }
+  }
+
+      #banner-bg--right {
+        width:85%;
+      }
+
+      .banner--right,
+      .banner--left {
+        margin: 2rem 0;
+        max-width: unset;
+        min-width: unset;
+      }
+
+
+      #card-value-prop-container {
+        width:95%;
+        img {
+          width:80%;
+        }
+      }
+
+      .card-home--right a {
+        width:100%;
+      }
+
+      #third-section--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: 2rem auto;
+          width:90%;
+        }
+        span img {
+          width:85%;
+        }
+      }
+
+      #footer--header,
+      #footer--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: .5rem auto;
+          width:90%;
+          max-width:unset;
+          text-align:center;
+        }
+      }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
