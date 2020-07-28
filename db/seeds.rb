@@ -69,7 +69,7 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 # website = Social.create!(name: "website", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "url")
 # text = Social.create!(name: "text", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "numéro")
 # email = Social.create!(name: "email", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "email")
-# youtube = Social.create!(name: "youtube", url_desktop_begin:"https://www.youtube.com/user/", url_mobile_begin: "placeholder_two", kind: "username")
+# youtube = Social.create!(name: "youtube", url_desktop_begin:"https://www.youtube.com/c/", url_mobile_begin: "placeholder_two", kind: "username")
 # soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"https://soundcloud.com/", url_mobile_begin: "placeholder_two", kind: "username")
 # spotify = Social.create!(name: "spotify", url_desktop_begin:"https://open.spotify.com/user/", url_mobile_begin: "placeholder_two", kind: "username")
 # twitch = Social.create!(name: "twitch", url_desktop_begin:"https://www.twitch.tv/", url_mobile_begin: "placeholder_two", kind: "username")
@@ -102,6 +102,8 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 # linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
 # tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
 # website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
+# tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
+# text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
 
 # puts "Well done human, #{Network.count} networks have been created."
 ##-----------------------------------------------------------------------------------------------##

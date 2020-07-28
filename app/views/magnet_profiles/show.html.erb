@@ -34,11 +34,33 @@
   <div id="magnet-networks--card-container">
     <% @networks.each do |n| %>
     <div class="card-network">
-      <%= link_to "#{n.social.url_desktop_begin}#{n.username}", target:"_blank" do %>
-        <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
-        <p><%= n.social.name.capitalize %></p>
+      <% if n.social.name == "email" %>
+        <%= mail_to "#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% elsif n.social.name == "website" %>
+        <%= link_to "#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% elsif n.social.name == "text" %>
+        <%= sms_to "#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% else %>
+        <%= link_to "#{n.social.url_desktop_begin}#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
       <% end %>
     </div>
+    <% end %>
+  </div>
+  <div id="magnet-footer--joombo">
+    <%= link_to purchase_path do %>
+      <p>Propulsé par Joombo.co</p>
     <% end %>
   </div>
   <div id="magnet-footer">
