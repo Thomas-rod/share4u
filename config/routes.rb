@@ -15,4 +15,9 @@ Rails.application.routes.draw do
   resources :profile, only: [:index]
   resources :tokens, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
+  comfy_route :cms_admin, path: "/cms-admin"
+  comfy_route :cms, path: "/"
+  # Ensure that this route is defined last
 end
