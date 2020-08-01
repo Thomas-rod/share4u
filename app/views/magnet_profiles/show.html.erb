@@ -1,0 +1,72 @@
+<% if @magnet_profile.profile.nil? %>
+  <%= render 'shared/navbar_mobile' %>
+  <div id="profile-magnet">
+    <div id="profile-magnet--bg"></div>
+    <div class="image-container--magnet-profile">
+      <% if current_user&.profile&.profile_picture&.attached? %>
+        <%= cl_image_tag current_user.photo.key, class:"avatar-large" %>
+      <% else %>
+        <%= image_tag 'logo.svg', class:"image-resize" %>
+      <% end %>
+    </div>
+  </div>
+  <div id="magnet-activation-section">
+    <h2>Hello, <%= current_user.profile.first_name.capitalize %> !</h2>
+    <h3>Félicitation, tu es sur le point d'activer ton magnet et de pouvoir partager tes réseaux avec style</h3>
+    <p>Clique sur le bouton pour activer ton magnet</p>
+    <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
+      <%= f.input :profile, as: :hidden %>
+      <%= f.button :submit, "Activer 🚀", class:"main-button button" %>
+    <% end %>
+  </div>
+<% else %>
+  <div id="profile-magnet">
+    <div id="profile-magnet--bg"></div>
+    <div class="image-container--magnet-profile">
+      <% if current_user&.profile&.profile_picture&.attached? %>
+        <%= cl_image_tag current_user.photo.key, class:"avatar-large" %>
+      <% else %>
+        <%= image_tag 'logo.svg', class:"image-resize" %>
+      <% end %>
+    </div>
+    <h1><%= @magnet_profile.profile.name_capitalize %></h1>
+  </div>
+  <div id="magnet-networks--card-container">
+    <% @networks.each do |n| %>
+    <div class="card-network">
+      <% if n.social.name == "email" %>
+        <%= mail_to "#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% elsif n.social.name == "website" %>
+        <%= link_to "#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% elsif n.social.name == "text" %>
+        <%= sms_to "#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% else %>
+        <%= link_to "#{n.social.url_desktop_begin}#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <div id="magnet-footer--joombo">
+    <%= link_to purchase_path do %>
+      <p>Propulsé par Joombo.co</p>
+    <% end %>
+  </div>
+  <div id="magnet-footer">
+    <%= link_to purchase_path do %>
+      <h2>Rejoins le club 🚀</h2>
+    <% end %>
+  </div>
+<% end %>
+

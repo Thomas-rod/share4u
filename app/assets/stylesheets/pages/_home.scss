@@ -1,75 +1,234 @@
-// Specific CSS for your home-page
 //--------------------------//
 //       POSITIONNING       //
 //--------------------------//
 
-.banner {
+.banner,
+#second-section,
+#third-section,
+#footer {
   padding: 0 $padding-side;
 }
-#navbar-container {
-  position:absolute;
-  height:15vh;
-  top: 0;
-  right:0;
-  left:0;
+
+#home-main {
   width:100%;
+  background-image: image-url('bg_home.svg');
+  background-size:contain;
+  background-repeat: no-repeat;
 
 }
-#navbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  img {
-    width:100px;
-  }
-}
 
 
-    #navbar-logo {
-      padding: 1rem 0 0 $padding-side;
-      a:first-child {
-        height:100%;
-        width:100%;
-      }
+//--------------------------//
+//        BG BANNER         //
+//--------------------------//
+    .banner-bg {
+      position:absolute;
+      top:0;
+      bottom:0;
+      height:90vh;
+      z-index:-100;
     }
 
-    #navbar-links{
-      padding-right: $padding-side;
-      a {display:inline-block;}
+    #banner-bg--right {
+      left:0;
+      width:60%;
+      border-radius: 0 0 30% 0;
+      background-color:$blue-second-color;
+    }
+
+    #banner-bg--left {
+      right:0;
+      width:40%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
 
+
+//--------------------------//
+//       BANNER INSIDE      //
+//--------------------------//
 
 .banner {
-  margin-top: $height-navbar ;
-  padding: 5rem;
+  margin-top: 10vh;
+  margin-bottom: 27vh;
+  padding: 0 5rem;
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
   flex-wrap:wrap;
-  height: 70vh;
-  position:relative;
+
 }
 
-.banner h1 {
-  font-size:4rem;
-  color:black;
+.banner {
+  h1 {
+    font-size:4rem;
+    font-weight:bold;
+    color:$blue-main-color;
+  }
+  h2 {
+   font-weight:bold;
+  }
 }
+
+    #banner-typed-text {
+      // THIS HEIGHT IS RELATED TO THE FONT-SIZE OF typed.js (label components)
+      height: 4.5rem;
+    }
+
 
     .banner--right,
     .banner--left {
       max-width: 50%;
-      height:100%;
+      min-width:50%;
     }
 
-    .banner a {
+    .banner--left a {
       font-size:2rem;
       text-align:center;
-      position:absolute;
-      bottom:1rem;
-      left:36%;
+    }
+    .banner--right img.image-magnet-home {
+      display:block;
+      box-shadow: 0px 30px 30px 5px rgba(0,0,0,0.3);
+      border-radius: 60%;
+      width:40%;
+      margin: auto;
+    }
+//--------------------------//
+//      FIRST-SECTION       //
+//--------------------------//
+
+
+#first-section {
+
+}
+
+    #first-section--header {
+
     }
 
+    #first-section--body {
+      width:100%;
+      margin:3rem auto;
+      position:relative;
+      color: $blue-main-color;
+      h2 {
+        font-weight:bold;
+        padding-top:2rem;
+        font-size: 3rem;
+        text-align:center;
+      }
+      h3 {
+        font-weight: bold;
+        color: $orange-dark-color;
+        font-size:2rem;
+        padding-bottom:1rem;
+      }
+      p {
+        padding: .5rem 0;
+        font-size: 1.1rem;
+      }
+    }
+
+       #first-section--body-bg {
+         position:absolute;
+         top: 0;
+         right:0;
+         left:0;
+         bottom:0;
+         width:100%;
+         height:100%;
+         background-color: $blue-second-color;
+         z-index: -100;
+       }
+
+       #card-value-prop-container {
+        width:80%;
+        margin: 0 auto;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap: wrap;
+      }
+
+
+
+#second-section,
+#third-section  {
+margin: 5rem auto;
+}
+
+    #second-section--header,
+    #third-section--header {
+
+    }
+
+    #second-section--body,
+    #third-section--body {
+      margin: 3rem auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      span {
+        text-align:center;
+        width:45%;
+        min-width:45%;
+        h4 {
+          margin: 4rem 0;
+          font-size: 2.5rem;
+        }
+        h5 {
+          margin:1rem 0;
+          font-weight:light;
+        }
+        a {
+          display:block;
+          width:70%;
+          margin: 2rem auto;
+        }
+      }
+      img { width:100%;}
+    }
+
+
+#footer {
+  background-color: $blue-main-color;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  color:white;
+}
+
+#footer--header {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding-bottom: 2rem;
+  border-bottom:1px solid rgba(black, 0.2);
+  span {
+    max-width:30%;
+   p:first-child {
+      font-size:1.3rem;
+      font-weight:bold;
+      padding: 1rem 0;
+    }
+  }
+}
+
+#footer--body {
+  padding: 2rem 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  li {
+    display:inline-block;
+    .icon-share {
+      color:$light-gray;
+      font-size:2rem;
+      padding: 1rem;
+    }
+  }
+}
 
 
 //--------------------------//
@@ -84,6 +243,71 @@
   html {
     font-size: 55%;
   }
+  .banner,
+  #second-section,
+  #third-section,
+  #footer {
+    padding: 0 2rem;
+  }
+
+  .banner {
+    display:block;
+    margin-bottom:20vh;
+    a {
+      display:block;
+      width:70%;
+      font-size:2rem;
+      margin:3rem auto;
+      text-align:center;
+    }
+  }
+
+      #banner-bg--right {
+        width:85%;
+      }
+
+      .banner--right,
+      .banner--left {
+        margin: 2rem 0;
+        max-width: unset;
+        min-width: unset;
+      }
+
+
+      #card-value-prop-container {
+        width:95%;
+        img {
+          width:80%;
+        }
+      }
+
+      .card-home--right a {
+        width:100%;
+      }
+
+      #third-section--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: 2rem auto;
+          width:90%;
+        }
+        span img {
+          width:85%;
+        }
+      }
+
+      #footer--header,
+      #footer--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: .5rem auto;
+          width:90%;
+          max-width:unset;
+          text-align:center;
+        }
+      }
 
 }
 
@@ -93,6 +317,72 @@
   html {
     font-size: 55%;
   }
+
+  .banner,
+  #second-section,
+  #third-section,
+  #footer {
+    padding: 0 2rem;
+  }
+
+  .banner {
+    display:block;
+    margin-bottom:20vh;
+    a {
+      display:block;
+      width:70%;
+      font-size:2rem;
+      margin:3rem auto;
+      text-align:center;
+    }
+  }
+
+      #banner-bg--right {
+        width:85%;
+      }
+
+      .banner--right,
+      .banner--left {
+        margin: 2rem 0;
+        max-width: unset;
+        min-width: unset;
+      }
+
+
+      #card-value-prop-container {
+        width:95%;
+        img {
+          width:80%;
+        }
+      }
+
+      .card-home--right a {
+        width:100%;
+      }
+
+      #third-section--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: 2rem auto;
+          width:90%;
+        }
+        span img {
+          width:85%;
+        }
+      }
+
+      #footer--header,
+      #footer--body {
+        flex-direction: column-reverse;
+        span {
+          display:block;
+          margin: .5rem auto;
+          width:90%;
+          max-width:unset;
+          text-align:center;
+        }
+      }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

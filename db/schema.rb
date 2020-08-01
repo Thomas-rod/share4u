@@ -157,20 +157,19 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
   end
 
   create_table "magnet_profiles", force: :cascade do |t|
-    t.bigint "profile_id", null: false
     t.bigint "magnet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "profile_id"
     t.index ["magnet_id"], name: "index_magnet_profiles_on_magnet_id"
     t.index ["profile_id"], name: "index_magnet_profiles_on_profile_id"
   end
 
   create_table "magnets", force: :cascade do |t|
     t.string "url"
-    t.bigint "token_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["token_id"], name: "index_magnets_on_token_id"
+    t.string "sku", default: ""
   end
 
   create_table "networks", force: :cascade do |t|
@@ -179,7 +178,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
     t.bigint "profile_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "ative", default: true
+    t.boolean "active", default: true
     t.boolean "priority", default: false
     t.index ["profile_id"], name: "index_networks_on_profile_id"
     t.index ["social_id"], name: "index_networks_on_social_id"
@@ -191,6 +190,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "magnet_bought", default: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -207,6 +207,8 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
     t.string "token_generated"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "magnet_id"
+    t.index ["magnet_id"], name: "index_tokens_on_magnet_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -224,8 +226,8 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "magnet_profiles", "magnets"
   add_foreign_key "magnet_profiles", "profiles"
-  add_foreign_key "magnets", "tokens"
   add_foreign_key "networks", "profiles"
   add_foreign_key "networks", "socials"
   add_foreign_key "profiles", "users"
+  add_foreign_key "tokens", "magnets"
 end

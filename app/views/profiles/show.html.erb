@@ -1,3 +1,5 @@
+<%= render 'shared/navbar' %>
+<%= render 'shared/navbar_mobile' %>
 <div id="show-profil">
   <div id="show-profil--informations">
     <div id="show-profil--informations--image">
@@ -47,7 +49,7 @@
               <%= image_tag "logo_#{s.name}.svg", class:"avatar-social"%>
               <p><%= s.name.capitalize %></p>
             <% else %>
-              <%= image_tag "logo_#{s.name}", class:"avatar-social inactive"%>
+              <%= image_tag "logo_#{s.name}.svg", class:"avatar-social inactive"%>
               <p class="inactive"><%= s.name.capitalize %></p>
             <% end %>
           <% end %>

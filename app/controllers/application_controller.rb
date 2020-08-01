@@ -26,8 +26,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource_or_scope)
     if current_user.profile.nil?
       new_profile_path
+    elsif params[:magnet_profile_id]
+      magnet_profile_path(MagnetProfile.find(params[:magnet_profile_id]))
     else
-      profile_path(current_user.profile)
+      stored_location_for(resource_or_scope) || profile_path(current_user.profile)
     end
   end
 
@@ -35,7 +37,7 @@ class ApplicationController < ActionController::Base
     if current_user.profile.nil?
       new_profile_path
     else
-      profile_path(current_user.profile)
+      stored_location_for(resource_or_scope) || profile_path(current_user.profile)
     end
   end
 

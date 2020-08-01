@@ -1,5 +1,8 @@
-<div id="navbar-container">
-  <%#= render partial: "shared/banner_coupon" %>
+<% if @navbar_none %>
+  <div id="navbar-container" style="display:none;">
+<% else %>
+  <div id="navbar-container">
+<% end %>
   <div id="navbar">
     <div id="navbar-logo">
       <%= link_to root_path do %>
@@ -7,14 +10,23 @@
       <% end %>
     </div>
     <div id="navbar-links">
-      <% if current_user && !current_user.profile.nil? %>
+      <% if @magnet_info %>
+        <% if current_user.profile.magnet_bought %>
+          <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link signout" %>
+          <span class="main-button button">Magnet activé  🚀</span>
+        <% else %>
+          <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link signout" %>
+          <%= link_to "Acheter maintenant", purchase_path, class:"button main-button" %>
+        <% end %>
+      <% elsif current_user && !current_user.profile.nil? %>
         <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link" %>
-        <%= link_to "Mon profil", profile_path(current_user.profile), class:"button second-button" %>
+        <%= link_to "Mon profil", profile_path(current_user.profile), class:"button main-button" %>
       <% elsif current_user %>
-        <%= link_to "Me déconnecter", destroy_user_session_path, class:"button third-button" %>
+        <%= link_to "Me déconnecter", destroy_user_session_path, class:"button nav-link" %>
+        <%= link_to "Mon profil", new_profile_path, class:"button main-button" %>
       <% else %>
         <%= link_to "Se connecter", new_user_session_path, class:"button nav-link"%>
-        <%= link_to "Créer un compte", new_user_registration_path, class:"button second-button" %>
+        <%= link_to "Créer un compte", new_user_registration_path, class:"button main-button" %>
       <% end %>
     </div>
   </div>

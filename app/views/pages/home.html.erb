@@ -1,11 +1,117 @@
-<!-- <div class="skewed"></div> -->
+<%= render 'shared/navbar' %>
+<div class="banner-bg" id="banner-bg--right"></div>
+<div class="banner-bg" id="banner-bg--left">
+</div>
 <div class="banner typed">
   <div class="banner--left">
     <h1>Partage tes réseaux avec style</h1>
     <div id="banner-typed-text"></div>
   </div>
   <div class="banner--right">
+    <%= image_tag 'magnet_black.png', class:"image-magnet-home" %>
   </div>
   <%= link_to "Acheter maintenant", purchase_path, class:"button main-button" %>
 </div>
-<%#= render partial: 'shared/landbot' %>
+<div id="first-section">
+  <div id="first-section--header">
+    <h2 class="title">On a qu'une seule première impression</h2>
+    <h3 class="subtitle">Ne la gâche pas.</h3>
+  </div>
+  <div id="first-section--body">
+    <div id="first-section--body-bg"></div>
+    <h2 class="">COMMENT CA MARCHE ?</h2>
+    <div id="card-value-prop-container">
+      <div class="card-home">
+        <div class="card-home--left">
+          <%= image_tag 'logo.svg', class:"image-magnet-home" %>
+        </div>
+        <div class="card-home--right">
+          <h3>1. Choisi un Joomb</h3>
+          <p><i class="fas fa-circle"></i> Choisi la couleur de ton Joomb parmis notre sélection</p>
+          <p><i class="fas fa-circle"></i> Livraison sous 5 jours ouvrés</p>
+        </div>
+      </div>
+      <div class="card-home">
+        <div class="card-home--left">
+          <%= image_tag 'logo.svg', class:"image-magnet-home" %>
+        </div>
+        <div class="card-home--right">
+          <h3>2. Paramètre ton profile</h3>
+          <p><i class="fas fa-circle"></i> Instagram, TikTok, Snap, Twitter et bien d'autres encore</p>
+          <p><i class="fas fa-circle"></i> Tu veux modifier ton profile ? Facile. Sur ton mobile ou avec ton ordinateur</p>
+        </div>
+      </div>
+      <div class="card-home">
+        <div class="card-home--left">
+          <%= image_tag 'logo.svg', class:"image-magnet-home" %>
+        </div>
+        <div class="card-home--right">
+          <h3>3. Partage en un instant !</h3>
+          <p><i class="fas fa-circle"></i> Partage tes réseaux avec un simple tap sur ton Joomb.</p>
+          <%= link_to "Acheter maintenant", purchase_path ,class:"button main-button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="second-section">
+  <div id="second-section--header">
+    <h2 class="title">Aucune app, ou de Joomb requis pour la personne qui tap !</h2>
+    <h3 class="subtitle">Partage avec le monde entier sans aucune limite !</h3>
+  </div>
+  <div id="second-section--body">
+    <span><%= image_tag 'bubbles.svg' %></span>
+    <span>
+      <p>Voilà ce que tu peux partager !</p>
+      <%= image_tag 'what_you_can_share.png' %>
+    </span>
+  </div>
+</div>
+<div id="third-section">
+  <div id="third-section--body">
+    <span><%= image_tag 'bubbles.svg' %></span>
+    <span>
+      <h4>Joombo Ambassadeur 🚀</h4>
+      <h5>Tu as envie de nous aider à faire grandir la Joombo Family ?</h5>
+      <p>Deviens Ambassadeur Joombo et gagne une comission pour chaque achat réalisé avec ton code promo !</p>
+      <%= link_to "Devenir Ambassadeur", "#", class:"button main-button" %>
+    </span>
+  </div>
+</div>
+<div id="footer">
+  <div id="footer--header">
+    <span>
+      <p>Des questions sur le programme Ambassadeur ?</p>
+      <p>Envoie nous un mail à notre adresse : <%= mail_to "hello@mumuse.co ","hello@joombo.co", subject: "J'ai une question sur le programme ambassadeur" %></p>
+    </span>
+    <span>
+      <p>Envie de créer un Joomb à l'image de ton entreprise ?</p>
+      <p>Appelle nous directement : <br><i class="fas fa-phone-alt"></i>  06.68.48.91.69</p>
+    </span>
+    <span>
+      <p>Des suggestions pour améliorer l'expérience Joombo ?</p>
+      <p>On est impatient de découvrir tes idées : <%= mail_to "hello@mumuse.co ","hello@joombo.co", subject: "J'ai une question sur le programme ambassadeur" %></p>
+    </span>
+  </div>
+  <div id="footer--body">
+    <span>
+      <ul>
+        <li>
+          <%= link_to "https://www.facebook.com/Joombo-100733598392754" do %>
+            <i class="fab fa-instagram icon-share"></i></li>
+          <% end %>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fab fa-facebook-f icon-share"></i></li>
+          <% end %>
+        <!-- <li><i class="fab fa-tiktok"></i></li> -->
+        <li>
+          <%= link_to "#" do %>
+            <i class="fab fa-youtube icon-share"></i></li>
+          <% end %>
+      </ul>
+      <p>Copyrights © 2020, tous droits réservés à Joombo.co</p>
+    </span>
+    <span><p>Fait par MumuseCorporation <i class="fas fa-heart font-red"></i> avec et beaucoup de ☕  à Paris</p></span>
+  </div>
+</div>

@@ -1,18 +1,20 @@
 #show-profil {
-  margin-top: $height-navbar;
+  margin-top: 5vh;
   padding: 0 $padding-side;
 }
 
     #show-profil--informations {
       display:flex;
       justify-content:space-between;
-      align-items:center;
+      align-items:flex-start;
       flex-wrap: wrap;
     }
 
-        #show-profil--informations--image {
+        #show-profil--informations--image,
+        #show-profil--informations--networks {
           min-width:45%;
           max-width:45%;
+        }
           .image-container {
             margin: 1rem auto;
             height: 300px;
@@ -32,12 +34,6 @@
             height: auto;
             width: auto;
           }
-        }
-
-        #show-profil--informations--networks {
-          min-width:45%;
-          max-width:45%;
-        }
 
 
           .networks-container {
@@ -49,5 +45,101 @@
               color:black;
               text-align:center;
             }
-            a {margin: 1rem 1.5rem;}
+            a {margin: .5rem 1.5rem;}
           }
+
+
+//--------------------------//
+//--------------------------//
+//      RESPONSIVENESS      //
+//--------------------------//
+//--------------------------//
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
+
+  html {
+    font-size: 55%;
+  }
+    #show-profil {
+      padding:0 2rem;
+      margin-bottom: 80px;
+      margin-top: unset;
+    }
+      #show-profil--informations {
+        display:block !important;
+      }
+
+      #show-profil--informations--image,
+      #show-profil--informations--networks {
+        padding: 1rem 0;
+        min-width:100%;
+        max-width:100%;
+      }
+
+      .networks-container {
+        justify-content:space-between;
+        p {
+          font-size: 1.5rem;
+        }
+      }
+
+      #navbar-mobile {
+        display:flex;
+      }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) and (min-width: 400px){
+
+  html {
+    font-size: 55%;
+  }
+
+  #show-profil {
+    padding:0 2rem;
+    margin-bottom: 80px;
+    margin-top: unset;
+  }
+    #show-profil--informations {
+      display:block !important;
+    }
+
+    #show-profil--informations--image,
+    #show-profil--informations--networks {
+      padding: 1rem 0;
+      min-width:100%;
+      max-width:100%;
+    }
+
+    .networks-container {
+      justify-content:space-between;
+      p {
+          font-size: 1.5rem;
+        }
+    }
+
+    #navbar-mobile {
+      display:flex;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and  (max-width: 1100px) and (min-width: 992px){
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1100px) {
+
+}
+
+
+
+

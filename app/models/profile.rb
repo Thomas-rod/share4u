@@ -1,13 +1,13 @@
 class Profile < ApplicationRecord
   belongs_to :user
-  has_many :magnet_profile, dependent: :destroy
+  has_one :magnet_profile
   has_many :networks, dependent: :destroy
   has_one_attached :profile_picture
 
   validates :first_name, :last_name, presence: true
 
 
-  after_save :zapier_profile
+  after_create :zapier_profile
 
   ##------------------##
   ##     CALLBACKS    ##
