@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  require "vpim/vcard"
   before_action :set_profil, only: [:show, :update]
 
   def index
@@ -33,6 +34,24 @@ class ProfilesController < ApplicationController
   def update
   end
 
+  #controller method
+  def vcard
+    # person = Person.visible.find(params[:id])
+    fullname = current_user.profile.first_name + '_' + current_user.profile.last_name
+
+    card = Vpim::Vcard::Maker.make2 do |maker|
+
+      #setting up name
+      maker.add_name do |name|
+        name.prefix = ''
+        name.given = current_user.profile.first_name
+        name.family = current_user.profile.last_name
+      end
+
+    end
+    send_data card.to_s, :type => "text/x-vcard", :filename => URI::encode(fullname) + ".vcf"
+  end
+
   private
 
   def profil_params
@@ -52,4 +71,5 @@ class ProfilesController < ApplicationController
     split = all_social - social_activated
     return (all_social - social_activated)
   end
+
 end

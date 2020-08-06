@@ -41,4 +41,5 @@ class MagnetProfilesController < ApplicationController
   def check_profile_attachment?(magnet_profile)
     magnet_profile.profile.nil? && current_user.profile.magnet_profile.nil? ? true : false
   end
+
 end
