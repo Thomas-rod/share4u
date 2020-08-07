@@ -97,9 +97,17 @@
     font-size: 55%;
   }
 
-  #onboarding-container--body input.btn {
-    width:50%;
-  }
+  #onboarding-container {
+      padding: 1rem 3rem;
+    }
+
+    #onboarding-container--body input.btn {
+      width:50%;
+    }
+
+    .card-onboarding {
+      width:100%;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
