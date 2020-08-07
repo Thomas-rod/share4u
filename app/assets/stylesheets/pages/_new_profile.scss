@@ -4,15 +4,18 @@
 
 #onboarding-container {
   color: white;
-  padding: 0 $padding-side;
-  margin-top: 10vh;
+  padding: 1rem $padding-side;
+  margin-top: 5vh;
   h1 {
-    padding: 1rem 0;
+    font-size: 1.7rem;
+    padding-bottom: .5rem;
+  }
+  p {
+    font-size:1rem;
   }
 }
 
 #onboarding-container--bg {
-  background-color: $blue-main-color;
   z-index:-100;
   width:100%;
   height:100%;
@@ -23,44 +26,45 @@
   bottom:0;
 }
 
-  #onboarding-container--header,
-  #onboarding-container--header > ul {
-    margin: 2rem 0;
-  }
-
   #onboarding-container--body {
-    h2 {
-      padding:1rem 0;
-    }
     input.btn {
       display:block;
-      margin: 2rem auto;
-      width:20%;
+      margin: 0rem auto;
+      font-size:1.1rem;
       text-align:center;
     }
   }
 
-.list-socials li {
-  display:inline;
-  margin:0 2rem;
-  img {
-    width:7%;
-    margin: .5rem 0;
-  }
-}
-
-
 .input-flex {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  .form-group {
-    width:30%;
+  padding:1rem 0;
+  label{
+    font-size:0.9rem;
   }
 }
 
+    // .input-flex--name {
+    //   display:flex;
+    //   justify-content:space-between;
+    //   align-items:center;
+    //   flex-wrap:wrap;
+    //   .form-group {
+    //     width:45%;
+    //   }
+    // }
 
+    .input-flex--pp {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      width:100%;
+      height:100px;
+    }
+
+    .input-flex--pp > span {
+      display:inline-block;
+      text-align:center;
+      flex-grow:2;
+    }
 //--------------------------//
 //--------------------------//
 //      RESPONSIVENESS      //
@@ -73,18 +77,16 @@
   html {
     font-size: 55%;
   }
+  #onboarding-container {
+    padding: 1rem 3rem;
+  }
 
   #onboarding-container--body input.btn {
     width:50%;
   }
 
-  .list-socials li img {
-    width:15%;
-  }
-
-  .input-flex .form-group {
-    width:45%;
-    margin: 1rem 0;
+  .card-onboarding {
+    width:100%;
   }
 }
 
@@ -97,15 +99,6 @@
 
   #onboarding-container--body input.btn {
     width:50%;
-  }
-
-  .list-socials li img {
-    width:15%;
-  }
-
-  .input-flex .form-group {
-    width:45%;
-    margin: 1rem 0;
   }
 }
 

@@ -33,6 +33,8 @@ import { checkUrlValid } from '../components/checkurl';
 import { loadDynamicBannerText } from '../components/typedjs';
 import { landbotLoad } from '../components/landbot';
 import { closeCouponIcon } from '../components/closecoupon';
+import { previewImageOnFileSelect } from '../components/preview_image_onboarding';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -43,4 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   landbotLoad();
   closeCouponIcon();
+  previewImageOnFileSelect();
 });

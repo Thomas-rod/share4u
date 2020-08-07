@@ -1,27 +1,26 @@
+<%= render 'shared/navbar' %>
 <div id="onboarding-container">
   <div id="onboarding-container--bg"></div>
-  <div id="onboarding-container--header">
-    <h1>Bienvenu !</h1>
-    <h2>On est ravi que tu rejoignes la Joombo Family !</h2>
-    <h3>Avant de commençer, si tu veux être tenu au courant des news, go nous follow :</h3>
-    <ul class="list-socials">
-      <li class="social"> <%= image_tag 'logo_facebook.svg', class:"icon-social" %></li>
-      <li class="social"> <%= image_tag 'logo_tiktok.svg', class:"icon-social" %></li>
-      <li class="social"> <%= image_tag 'logo_instagram.svg', class:"icon-social" %></li>
-      <li class="social"> <%= image_tag 'logo_twitter.svg', class:"icon-social" %></li>
-      <li class="social"> <%= image_tag 'logo_snapchat.svg', class:"icon-social" %></li>
-    </ul>
-  </div>
-  <div id="onboarding-container--body">
-    <h2>Maintenant que c'est fait, tu vas pouvoir commencer à partager tes réseaux !</h2>
-    <%= simple_form_for @profile, url: profiles_path, method: :post do |f|%>
-    <div class="input-flex">
-      <%= f.input :first_name, label: "Ton prénom" %>
-      <%= f.input :last_name, label: "Ton nom" %>
-      <%= f.file_field :profile_picture, direct_upload: true   %>
+  <div class="card-onboarding fade-in">
+    <!-- <div class="card-onboarding--bg"></div> -->
+    <div id="onboarding-container--header">
+      <h1>Bienvenu dans la Joombo Family !</h1>
+      <p class=" light-black">Mais, qui es-tu ? On aimeraît apprendre à te connaître</p>
     </div>
-      <%= f.button :submit, "C'est parti !", class:"button main-button" %>
-    <% end %>
+    <div id="onboarding-container--body">
+      <%= simple_form_for @profile, url: profiles_path, method: :post do |f|%>
+      <div class="input-flex">
+        <div class="input-flex--name">
+          <%= f.input :first_name, label: "Ton prénom" %>
+          <%= f.input :last_name, label: "Ton nom" %>
+        </div>
+        <div class="input-flex--pp">
+          <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo'   %>
+          <span><%= image_tag "", width: 100, height:100, class: 'hidden', id: "photo-preview" %></span>
+        </div>
+      </div>
+        <%= f.button :submit, "Rejoindre ", class:"button main-button" %>
+      <% end %>
+    </div>
   </div>
-  <h2></h2>
 </div>

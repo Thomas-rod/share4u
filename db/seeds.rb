@@ -14,101 +14,93 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
 
-# puts "Well let's begin with our first operation, CLEANING THE DB."
-# User.destroy_all
-# puts "All users have been destroyed"
-# Profile.destroy_all
-# puts "All profiles have been destroyed"
-# Magnet.destroy_all
-# puts "All magnets have been destroyed"
-# MagnetProfile.destroy_all
-# puts "All magnets have been destroyed"
-# Network.destroy_all
-# puts "All networks have been destroyed"
-# Social.destroy_all
-# puts "All socials have been destroyed"
-# puts "Human, it's done. I destroy everything."
+puts "Well let's begin with our first operation, CLEANING THE DB."
+User.destroy_all
+puts "All users have been destroyed"
+Profile.destroy_all
+puts "All profiles have been destroyed"
+Magnet.destroy_all
+puts "All magnets have been destroyed"
+MagnetProfile.destroy_all
+puts "All magnets have been destroyed"
+Network.destroy_all
+puts "All networks have been destroyed"
+Social.destroy_all
+puts "All socials have been destroyed"
+puts "Human, it's done. I destroy everything."
 
 
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-
-# puts "Ok, now second operation, CREATING OUR DB."
-
-# puts "User on creation"
-
-# te = User.create!(email: "admin1@gmail.com", password: "admin1@gmail.com")
-# tr = User.create!(email: "admin2@gmail.com", password: "admin2@gmail.com")
-# puts "Well done human, #{User.count} users have been created."
-
-
-# puts "Profils on creation."
-# one_profile = Profile.create!(first_name: "Thomas", last_name: "Eude", user: te, magnet_bought: true)
-# two_profile = Profile.create!(first_name: "Thomas", last_name: "Rodier", user: tr, magnet_bought: true)
-# puts "Well done human, #{Profile.count} profile have been created."
-
-
-# puts "Magnets on creation."
-
-# puts "Well done human, #{Magnet.count} magnet have been created."
-
-
-# puts "Netowrk on creation."
-
-# puts "Well done human, #{Network.count} networks have been created."
-
-
-# puts "Socials on creation."
-# instagram = Social.create!(name: "instagram", url_desktop_begin:"https://www.instagram.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# facebook = Social.create!(name: "facebook", url_desktop_begin:"https://www.facebook.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# snapchat = Social.create!(name: "snapchat", url_desktop_begin:"https://www.snapchat.com/add/", url_mobile_begin: "https://www.snapchat.com/add/", kind: "username")
-# tiktok = Social.create!(name: "tiktok", url_desktop_begin:"https://www.tiktok.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# twitter = Social.create!(name: "twitter", url_desktop_begin:"https://twitter.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# linkedin = Social.create!(name: "linkedin", url_desktop_begin:"https://www.linkedin.com/in/", url_mobile_begin: "placeholder_two", kind: "username")
-# website = Social.create!(name: "website", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "url")
-# text = Social.create!(name: "text", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "numéro")
-# email = Social.create!(name: "email", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "email")
-# youtube = Social.create!(name: "youtube", url_desktop_begin:"https://www.youtube.com/c/", url_mobile_begin: "placeholder_two", kind: "username")
-# soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"https://soundcloud.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# spotify = Social.create!(name: "spotify", url_desktop_begin:"https://open.spotify.com/user/", url_mobile_begin: "placeholder_two", kind: "username")
-# twitch = Social.create!(name: "twitch", url_desktop_begin:"https://www.twitch.tv/", url_mobile_begin: "placeholder_two", kind: "username")
-# whatsapp = Social.create!(name: "whatsapp", url_desktop_begin:"https://api.whatsapp.com/send?phone=33", url_mobile_begin: "placeholder_two", kind: "numéro")
-# lien = Social.create!(name: "lien", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "lien")
-
-# puts "Well done human, #{Social.count} socials have been created."
-
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-
-
-# puts "Magnets on creation."
-# one_magnet = Magnet.create!(url: "localhost:3000/7" ,sku: "test-1")
-# two_magnet = Magnet.create!(url: "localhost:3000/8" ,sku: "test-2")
-# third_magnet = Magnet.create!(url: "localhost:3000/9" ,sku: "test-3")
-# puts "Well done human, #{Magnet.count} magnets have been created."
-
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-
-# puts "Networks on creation"
-
-# instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
-# facebook_netwrok_tr = Network.create!(username: "thomas.rodier.9", profile: two_profile, social: facebook)
-# email_netwrok_tr = Network.create!(username: "hi@thomasrodier.co", profile: two_profile, social: email)
-# twitter_netwrok_tr = Network.create!(username: "rodiert17", profile: two_profile, social: twitter)
-# linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
-# tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
-# website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
-# tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
-# text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
-
-# puts "Well done human, #{Network.count} networks have been created."
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
+
+puts "Ok, now second operation, CREATING OUR DB."
+
+puts "User on creation"
+
+te = User.create!(email: "admin1@gmail.com", password: "admin1@gmail.com")
+tr = User.create!(email: "admin2@gmail.com", password: "admin2@gmail.com")
+puts "Well done human, #{User.count} users have been created."
+
+
+puts "Profils on creation."
+one_profile = Profile.create!(first_name: "Thomas", last_name: "Eude", user: te, magnet_bought: false)
+two_profile = Profile.create!(first_name: "Thomas", last_name: "Rodier", user: tr, magnet_bought: false)
+puts "Well done human, #{Profile.count} profile have been created."
+
+
+puts "Socials on creation."
+instagram = Social.create!(name: "instagram", url_desktop_begin:"https://www.instagram.com/", url_mobile_begin: "placeholder_two", kind: "username")
+facebook = Social.create!(name: "facebook", url_desktop_begin:"https://www.facebook.com/", url_mobile_begin: "placeholder_two", kind: "username")
+snapchat = Social.create!(name: "snapchat", url_desktop_begin:"https://www.snapchat.com/add/", url_mobile_begin: "https://www.snapchat.com/add/", kind: "username")
+tiktok = Social.create!(name: "tiktok", url_desktop_begin:"https://www.tiktok.com/", url_mobile_begin: "placeholder_two", kind: "username")
+twitter = Social.create!(name: "twitter", url_desktop_begin:"https://twitter.com/", url_mobile_begin: "placeholder_two", kind: "username")
+linkedin = Social.create!(name: "linkedin", url_desktop_begin:"https://www.linkedin.com/in/", url_mobile_begin: "placeholder_two", kind: "username")
+website = Social.create!(name: "website", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "url")
+text = Social.create!(name: "text", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "numéro")
+email = Social.create!(name: "email", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "email")
+youtube = Social.create!(name: "youtube", url_desktop_begin:"https://www.youtube.com/c/", url_mobile_begin: "placeholder_two", kind: "username")
+soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"https://soundcloud.com/", url_mobile_begin: "placeholder_two", kind: "username")
+spotify = Social.create!(name: "spotify", url_desktop_begin:"https://open.spotify.com/user/", url_mobile_begin: "placeholder_two", kind: "username")
+twitch = Social.create!(name: "twitch", url_desktop_begin:"https://www.twitch.tv/", url_mobile_begin: "placeholder_two", kind: "username")
+whatsapp = Social.create!(name: "whatsapp", url_desktop_begin:"https://api.whatsapp.com/send?phone=33", url_mobile_begin: "placeholder_two", kind: "numéro")
+lien = Social.create!(name: "lien", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "lien")
+
+puts "Well done human, #{Social.count} socials have been created."
+
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+
+
+puts "Magnets on creation."
+one_magnet = Magnet.create!(url: "localhost:3000/7" ,sku: "test-1")
+two_magnet = Magnet.create!(url: "localhost:3000/8" ,sku: "test-2")
+third_magnet = Magnet.create!(url: "localhost:3000/9" ,sku: "test-3")
+puts "Well done human, #{Magnet.count} magnets have been created."
+
+puts "Magnet_profiles on creation."
+
+puts "Well done human, #{MagnetProfile.count} magnet_profiles have been created."
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+
+puts "Networks on creation"
+
+instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
+facebook_netwrok_tr = Network.create!(username: "thomas.rodier.9", profile: two_profile, social: facebook)
+email_netwrok_tr = Network.create!(username: "hi@thomasrodier.co", profile: two_profile, social: email)
+twitter_netwrok_tr = Network.create!(username: "rodiert17", profile: two_profile, social: twitter)
+linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
+tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
+website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
+text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
+
+puts "Well done human, #{Network.count} networks have been created."
+#-----------------------------------------------------------------------------------------------##
+#-----------------------------------------------------------------------------------------------##
+#-----------------------------------------------------------------------------------------------##
 
 
 # ##--------------------------------------------------------------------------##
