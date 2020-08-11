@@ -95,7 +95,7 @@ twitter_netwrok_tr = Network.create!(username: "rodiert17", profile: two_profile
 linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
 tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
 website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
-text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
+# text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
 
 puts "Well done human, #{Network.count} networks have been created."
 #-----------------------------------------------------------------------------------------------##

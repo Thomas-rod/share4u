@@ -45,7 +45,7 @@
           <p><%= n.social.name.capitalize %></p>
         <% end %>
       <% elsif n.social.name == "text" %>
-        <%= sms_to "#{n.username}", target:"_blank" do %>
+        <%= sms_to "#{n.username}", "Text me", body: "I have a question.." do %>
           <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
           <p><%= n.social.name.capitalize %></p>
         <% end %>

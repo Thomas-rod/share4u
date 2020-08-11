@@ -7,8 +7,10 @@ class MagnetProfile < ApplicationRecord
   after_update :magnet_bought_true
 
   def magnet_bought_true
-    profile = self.profile
-    profile.magnet_bought = true
-    profile.save!
+    unless self.profile.nil?
+      profile = self.profile
+      profile.magnet_bought = true
+      profile.save!
+    end
   end
 end
