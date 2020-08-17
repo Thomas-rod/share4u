@@ -24,7 +24,7 @@
     <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
       <% if @magnet_profile&.profile&.profile_picture&.attached? %>
-        <%= cl_image_tag @magnet_profile.photo.key, class:"avatar-large" %>
+        <%= cl_image_tag @magnet_profile.profile.profile_picture.key, class:"avatar-large" %>
       <% else %>
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
