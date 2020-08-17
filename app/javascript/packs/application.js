@@ -34,6 +34,7 @@ import { loadDynamicBannerText } from '../components/typedjs';
 import { landbotLoad } from '../components/landbot';
 import { closeCouponIcon } from '../components/closecoupon';
 import { previewImageOnFileSelect } from '../components/preview_image_onboarding';
+import { modalOpenNetwork } from '../components/button_open_url_network';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -46,4 +47,5 @@ document.addEventListener('turbolinks:load', () => {
   landbotLoad();
   closeCouponIcon();
   previewImageOnFileSelect();
+  modalOpenNetwork();
 });

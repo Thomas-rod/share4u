@@ -23,8 +23,8 @@
   <div id="profile-magnet">
     <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
-      <% if current_user&.profile&.profile_picture&.attached? %>
-        <%= cl_image_tag current_user.photo.key, class:"avatar-large" %>
+      <% if @magnet_profile&.profile&.profile_picture&.attached? %>
+        <%= cl_image_tag @magnet_profile.photo.key, class:"avatar-large" %>
       <% else %>
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
@@ -45,7 +45,7 @@
           <p><%= n.social.name.capitalize %></p>
         <% end %>
       <% elsif n.social.name == "text" %>
-        <%= sms_to "#{n.username}", "Text me", body: "I have a question.." do %>
+        <%= link_to "#{n.username}" do %>
           <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
           <p><%= n.social.name.capitalize %></p>
         <% end %>

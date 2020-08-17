@@ -58,7 +58,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="<%= s.name %>ModalLongTitle">Ajoute ton <%= s.name.capitalize %></h5>
+                  <h5 class="modal-title" id="<%= s.name %>ModalLongTitle">Entre le lien de ton profil <%= s.name.capitalize %></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -68,6 +68,7 @@
                     <%= f.input :username, label:"Ton #{s.kind} #{s.name.capitalize}" %>
                   </div>
                   <div class="modal-footer">
+                    <a href="" class="button-to-open button main-button">Ouvrir</a>
                     <%= f.button :submit, "Ajouter", class:"button main-button" %>
                   </div>
                 <% end %>
