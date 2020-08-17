@@ -11,7 +11,7 @@
     </div>
   </div>
   <div id="magnet-activation-section">
-    <h2>Hello, <%= current_user.profile.first_name.capitalize %> !</h2>
+    <h2>Hello, <%= @magnet_profile.profile.first_name.capitalize %> !</h2>
     <h3>Félicitation, tu es sur le point d'activer ton magnet et de pouvoir partager tes réseaux avec style</h3>
     <p>Clique sur le bouton pour activer ton magnet</p>
     <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>

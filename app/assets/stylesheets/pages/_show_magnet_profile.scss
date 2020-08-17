@@ -27,11 +27,8 @@
       align-items:center;
       z-index: 1;
         .image-resize {
+          object-fit:container;
           display:block;
-          max-width: 90%;
-          max-height: 90%;
-          height: auto;
-          width: auto;
         }
     }
 
