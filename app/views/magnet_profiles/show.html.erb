@@ -3,15 +3,15 @@
   <div id="profile-magnet">
     <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
-      <% if @magnet_profile&.profile&.profile_picture&.attached? %>
-        <%= cl_image_tag @magnet_profile.photo.key, class:"avatar-large" %>
+      <% if current_user.profile&.profile_picture&.attached? %>
+        <%= cl_image_tag current_user.photo.key, class:"avatar-large" %>
       <% else %>
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
     </div>
   </div>
   <div id="magnet-activation-section">
-    <h2>Hello, <%= @magnet_profile.profile.first_name.capitalize %> !</h2>
+    <h2>Hello, <%= current_user.profile.first_name.capitalize %> !</h2>
     <h3>Félicitation, tu es sur le point d'activer ton magnet et de pouvoir partager tes réseaux avec style</h3>
     <p>Clique sur le bouton pour activer ton magnet</p>
     <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
