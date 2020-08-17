@@ -28,7 +28,76 @@ class MagnetProfilesController < ApplicationController
     else
       redirect_to profile_path(current_user.profile), notice: "Tu as déjà un magnet d'activé ! Tu ne peux pas en avoir plusieurs."
     end
+  end
 
+  #controller method
+  def vcard
+
+    fullname = MagnetProfile.find(params[:id]).profile.first_name+"_"+MagnetProfile.find(params[:id]).profile.last_name
+
+    card = Vpim::Vcard::Maker.make2 do |maker|
+
+      #setting up name
+      maker.add_name do |name|
+      name.given = MagnetProfile.find(params[:id]).profile.first_name
+      name.family = MagnetProfile.find(params[:id]).profile.last_name
+      end
+
+      #setting up addr
+      # maker.add_addr do |addr|
+      # addr.location = ‘home’
+      # addr.street = contact.street
+      # addr.locality = contact.area
+      # addr.region = contact.state
+      # addr.postalcode = contact.pin
+      # addr.country = contact.country
+      # end
+
+      # maker.add_addr do |addr|
+      # addr.location = ‘work’
+      # addr.street = company.street
+      # addr.locality = company.area
+      # addr.region = company.state
+      # addr.postalcode = company.pin
+      # addr.country = company.country
+      # end
+
+      # setting up phone
+      if MagnetProfile.find(params[:id]).profile.networks.where(social_id: 14).exists? #social id => Whatsapp
+        maker.add_tel(MagnetProfile.find(params[:id]).profile.networks.where(social_id: 14).first.username) do |tel|
+        # tel.location = ‘home’
+        tel.preferred = true
+        end
+      end
+
+      # if !contact.ph_office.empty?
+      # phone = contact.ph_office
+      # maker.add_tel(phone) do |tel|
+      # tel.location = ‘work’
+      # tel.preferred = true
+      # end
+      # end
+
+      # if !contact.fax.empty?
+      # maker.add_tel(contact.fax) do |tel|
+      # tel.location = ‘work’
+      # tel.capability = ‘fax’
+      # end
+      # end
+
+      # if !contact.mobile.empty?
+      # maker.add_tel(contact.mobile) do |tel|
+      # tel.location = ‘home’
+      # tel.capability = ‘mobile’
+      # end
+      # end
+
+      #setting up email
+      maker.add_email(MagnetProfile.find(params[:id]).profile.user.email) do |e|
+      # e.location = ‘work’
+      end
+    end
+    send_data card.to_s, :type => "text/x-vcard", :filename => URI::encode(fullname) + ".vcf"
   end
 
   private
