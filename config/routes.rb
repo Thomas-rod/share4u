@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/purchase', to: 'pages#purchase'
   get '/instructions', to: 'pages#instructions'
 
-  get 'profiles/:id/export' => 'profiles#vcard', :as => 'export_contacts'
+  get 'magnet_profiles/:id/export' => 'magnet_profiles#vcard', :as => 'export_contacts'
 
   resources :profiles, only: [:show, :new, :create, :update]
   resources :networks, only: [:index, :create, :update, :destroy]

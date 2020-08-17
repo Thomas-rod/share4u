@@ -74,9 +74,9 @@ puts "Well done human, #{Social.count} socials have been created."
 
 
 puts "Magnets on creation."
-one_magnet = Magnet.create!(url: "localhost:3000/7" ,sku: "test-1")
-two_magnet = Magnet.create!(url: "localhost:3000/8" ,sku: "test-2")
-third_magnet = Magnet.create!(url: "localhost:3000/9" ,sku: "test-3")
+one_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/1?5918615y5qs328o7" ,sku: "test-1")
+two_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/8?c81txgsfxhyh435m" ,sku: "test-2")
+third_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/9?xgssq8354o2qv5ab" ,sku: "test-3")
 puts "Well done human, #{Magnet.count} magnets have been created."
 
 puts "Magnet_profiles on creation."

@@ -15,7 +15,6 @@
     <div id="show-profil--informations--networks">
       <div class="networks-container">
         <% unless @networks.empty? %>
-          <%= link_to t('export_vcard'), export_contacts_path(current_user), :class => 'btn btn-primary btn-export-vcard' %>
           <% @networks.each do |n| %>
           <%= link_to '#', id:"modal-#{n.social.name}", data: {toggle: 'modal', target:"##{n.social.name}ModalCenter" } do %>
             <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social"%>
