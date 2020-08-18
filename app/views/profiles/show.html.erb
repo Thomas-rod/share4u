@@ -71,7 +71,7 @@
                   </div>
                   <p class="explanation"><%= s.explanation %></p>
                   <div class="modal-footer">
-                    <a href="" class="button-to-open button reverse-button">Ouvrir</a>
+                    <a href="" class="button-to-open button reverse-button" data-url="<%= s.kind == "username" ? "#{s.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
                     <%= f.button :submit, "Ajouter", class:"button main-button" %>
                   </div>
                 <% end %>
