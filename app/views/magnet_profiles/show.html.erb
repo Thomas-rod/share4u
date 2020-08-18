@@ -46,7 +46,7 @@
           <p><%= n.social.name.capitalize %></p>
         <% end %>
       <% elsif n.social.name == "text" %>
-        <%= link_to "#{n.username}",target:"_blank" do %>
+        <%= link_to "tel:?#{n.username}",target:"_blank" do %>
           <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
           <p><%= n.social.name.capitalize %></p>
         <% end %>
