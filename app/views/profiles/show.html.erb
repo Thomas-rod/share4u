@@ -24,17 +24,19 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="<%= n.social.name %>ModalLongTitle">Modifie ton <%= n.social.name.capitalize %></h5>
+                  <h5 class="modal-title" id="<%= n.social.name %>ModalLongTitle"><%= n.social.header %></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <%= simple_form_for n, url: network_path(n), method: :patch do |f| %>
+                <%= simple_form_for n, url: network_path(n),html: { id:"new_network_#{n.id}" }, method: :patch do |f| %>
                   <div class="modal-body">
-                    <%= f.input :username, label:"Ton username sur #{n.social.name.capitalize}" %>
+                    <%= image_tag "logo_#{n.social.name}.svg", class:"icon-social" %>
+                    <%= f.input :username, input_html: { id:"network_username_#{n.id}"}, label:false %>
                   </div>
+                  <p class="explanation"><%= n.social.explanation %></p>
                   <div class="modal-footer">
-                    <%= link_to "Supprimer", network_path(n), method: :delete, class:"button second-button" %>
+                    <%= link_to "Supprimer", network_path(n), method: :delete, class:"button reverse-button" %>
                     <%= f.button :submit, "Modifier", class:"button main-button" %>
                   </div>
                 <% end %>
@@ -57,17 +59,19 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="<%= s.name %>ModalLongTitle">Entre le lien de ton profil <%= s.name.capitalize %></h5>
+                  <h5 class="modal-title" id="<%= s.name %>ModalLongTitle"><%= s.header %></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <%= simple_form_for @network, url: networks_path(profile: @profile, social: s), method: :post do |f| %>
+                <%= simple_form_for @network, url: networks_path(profile: @profile, social: s), html: { id:"new_network_#{s.id}"}, method: :post do |f| %>
                   <div class="modal-body">
-                    <%= f.input :username, label:"Ton #{s.kind} #{s.name.capitalize}" %>
+                    <%= image_tag "logo_#{s.name}.svg", class:"icon-social" %>
+                    <%= f.input :username, input_html: { id:"network_username_#{s.id}", class:"js-listen-input"}, label: false%>
                   </div>
+                  <p class="explanation"><%= s.explanation %></p>
                   <div class="modal-footer">
-                    <a href="" class="button-to-open button main-button">Ouvrir</a>
+                    <a href="" class="button-to-open button reverse-button">Ouvrir</a>
                     <%= f.button :submit, "Ajouter", class:"button main-button" %>
                   </div>
                 <% end %>

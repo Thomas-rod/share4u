@@ -1,5 +1,5 @@
 class MagnetProfilesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :vcard]
 
   def show
     @magnet_profile = MagnetProfile.find(params[:id])
