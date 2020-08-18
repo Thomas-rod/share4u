@@ -4,7 +4,7 @@
     <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
       <% if current_user.profile&.profile_picture&.attached? %>
-        <%= cl_image_tag current_user.profile.profile_picture.key, class:"avatar-large" %>
+        <%= cl_image_tag current_user.profile.profile_picture.key, class:"image-resize" %>
       <% else %>
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
@@ -24,7 +24,7 @@
     <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
       <% if @magnet_profile&.profile&.profile_picture&.attached? %>
-        <%= cl_image_tag @magnet_profile.profile.profile_picture.key, class:"avatar-large" %>
+        <%= cl_image_tag @magnet_profile.profile.profile_picture.key, class:"image-resize" %>
       <% else %>
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
