@@ -53,14 +53,14 @@ class MagnetProfilesController < ApplicationController
       # addr.country = contact.country
       # end
 
-      # maker.add_addr do |addr|
+      maker.add_addr do |addr|
       # addr.location = ‘work’
-      # addr.street = company.street
+      addr.street = magnet_profile.profile.vcard.address
       # addr.locality = company.area
       # addr.region = company.state
       # addr.postalcode = company.pin
       # addr.country = company.country
-      # end
+      end
 
       # setting up phone
       maker.add_tel(magnet_profile.profile.vcard.phone_number) do |tel|
