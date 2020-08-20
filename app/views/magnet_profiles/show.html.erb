@@ -30,7 +30,6 @@
       <% end %>
     </div>
     <h1><%= @magnet_profile.profile.name_capitalize %></h1>
-    <%= link_to t('export_vcard'), export_contacts_path(@magnet_profile), :class => 'btn btn-primary btn-export-vcard' %>
   </div>
   <div id="magnet-networks--card-container">
     <% @networks.each do |n| %>
