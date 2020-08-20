@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
     @networks = Network.select{ |n| n.profile.user == current_user}
     @network = Network.new()
     @magnet_info = true
+    @new_vcard = Vcard.new()
+    @vcard = Vcard.find_by(profile: current_user.profile)
   end
 
   def new
@@ -45,7 +47,7 @@ class ProfilesController < ApplicationController
   end
 
   def socials_not_activated
-    network_created = Network.all.select{ |n| n.profile == current_user.profile}
+    network_created = Network.select{ |n| n.profile == current_user.profile}
     social_activated = network_created.map do |n|
       n.social
     end

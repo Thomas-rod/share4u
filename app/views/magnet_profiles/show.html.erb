@@ -55,6 +55,11 @@
           <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
           <p><%= n.social.name.capitalize %></p>
         <% end %>
+      <% elsif n.social.name == "contact" %>
+        <%= link_to export_contacts_path(@magnet_profile), target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
       <% else %>
         <%= link_to "#{n.social.url_desktop_begin}#{n.username}", target:"_blank" do %>
           <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>

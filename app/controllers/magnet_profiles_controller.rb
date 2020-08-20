@@ -32,15 +32,15 @@ class MagnetProfilesController < ApplicationController
 
   #controller method
   def vcard
-
-    fullname = MagnetProfile.find(params[:id]).profile.first_name+"_"+MagnetProfile.find(params[:id]).profile.last_name
+    magnet_profile = MagnetProfile.find(params[:id])
+    fullname = "#{magnet_profile.profile.first_name}_#{magnet_profile.profile.last_name}"
 
     card = Vpim::Vcard::Maker.make2 do |maker|
 
       #setting up name
       maker.add_name do |name|
-      name.given = MagnetProfile.find(params[:id]).profile.first_name
-      name.family = MagnetProfile.find(params[:id]).profile.last_name
+      name.given = magnet_profile.profile.first_name
+      name.family = magnet_profile.profile.last_name
       end
 
       #setting up addr
@@ -63,11 +63,9 @@ class MagnetProfilesController < ApplicationController
       # end
 
       # setting up phone
-      if MagnetProfile.find(params[:id]).profile.networks.where(social_id: 14).exists? #social id => Whatsapp
-        maker.add_tel(MagnetProfile.find(params[:id]).profile.networks.where(social_id: 14).first.username) do |tel|
-        # tel.location = ‘home’
-        tel.preferred = true
-        end
+      maker.add_tel(magnet_profile.profile.vcard.phone_number) do |tel|
+      tel.location = 'work'
+      tel.preferred = true
       end
 
       # if !contact.ph_office.empty?
@@ -93,8 +91,8 @@ class MagnetProfilesController < ApplicationController
       # end
 
       #setting up email
-      maker.add_email(MagnetProfile.find(params[:id]).profile.user.email) do |e|
-      # e.location = ‘work’
+      maker.add_email(magnet_profile.vcard.email) do |e|
+      e.location = 'work'
       end
     end
     send_data card.to_s, :type => "text/x-vcard", :filename => URI::encode(fullname) + ".vcf"
