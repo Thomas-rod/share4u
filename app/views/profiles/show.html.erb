@@ -10,7 +10,25 @@
           <%= image_tag 'logo.svg', class:"image-resize" %>
         <% end %>
       </div>
-      <p class="label-name-capitalize"><%= @profile.name_capitalize %></p>
+      <div style="display: flex; align-items: center">
+        <p class="label-name-capitalize" style="margin-right: 5px;"><%= @profile.name_capitalize %></p>
+        <%= link_to '#', id:"qrcode", data: {toggle: 'modal', target:"#qrcodeModalCenter" } do %>
+          <%= image_tag "logo_qrcode.png", style:"max-width: 45px;"%>
+        <% end %>
+      </div>
+      <div class="modal fade" id="qrcodeModalCenter" tabindex="-1" role="dialog" aria-labelledby="qrcodeModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="qrcodeModalLongTitle"></h5>
+              <%= image_tag "http://www.esponce.com/api/v3/generate?content=#{request.base_url}/magnet_profiles/#{MagnetProfile.where(profile_id: current_user.profile).first.id}&format=png&auth=d650f60dad0c189b44a4091bf1865db7" %>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="show-profil--informations--networks">
       <div class="networks-container">
