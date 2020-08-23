@@ -16,7 +16,6 @@ const modalOpenNetwork = () => {
     }
 
     inputToListen.forEach((input) => {
-      console.log(input);
       var timer = null;
       input.addEventListener('keyup', (e) => {
         keyUpOrCopyPast(input, timer)
