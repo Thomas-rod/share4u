@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_132757) do
+ActiveRecord::Schema.define(version: 2020_08_20_090154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -201,6 +201,8 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "kind", default: "username"
+    t.string "header", default: ""
+    t.string "explanation", default: ""
   end
 
   create_table "tokens", force: :cascade do |t|
@@ -223,6 +225,16 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vcards", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "phone_number"
+    t.string "email"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_vcards_on_profile_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "magnet_profiles", "magnets"
   add_foreign_key "magnet_profiles", "profiles"
@@ -230,4 +242,5 @@ ActiveRecord::Schema.define(version: 2020_07_31_132757) do
   add_foreign_key "networks", "socials"
   add_foreign_key "profiles", "users"
   add_foreign_key "tokens", "magnets"
+  add_foreign_key "vcards", "profiles"
 end

@@ -18,6 +18,15 @@
   }
 }
 
+.reverse-button {
+ color:$blue-green-color;
+ background-color: $main-color;
+ border-color: $blue-green-color;
+ &:hover {
+  color: $blue-green-color;
+ }
+}
+
 .second-button {
   color:$main-color;
   background-color: $blue-main-color;

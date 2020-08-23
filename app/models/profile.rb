@@ -1,6 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
   has_one :magnet_profile
+  has_one :vcard
   has_many :networks, dependent: :destroy
   has_one_attached :profile_picture
 

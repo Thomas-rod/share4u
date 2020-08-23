@@ -38,7 +38,7 @@ class NetworksController < ApplicationController
   private
 
   def params_network
-    params.require(:network).permit(:username, :social, :profile)
+    params.require(:network).permit(:username, :social, :profile, :active, :priority)
   end
 
   def set_network

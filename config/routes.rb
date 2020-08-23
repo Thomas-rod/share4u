@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   resources :networks, only: [:index, :create, :update, :destroy]
   resources :magnets, only: [:show, :create, :update]
   resources :magnet_profiles, only: [:show, :create, :update]
+  resources :vcards, only: [:create, :update, :destroy]
   ## ONLY USE AS ADMIN
   resources :social, only: [:index]
   resources :magnets, only: [:index]
   resources :profile, only: [:index]
   resources :tokens, only: [:index]
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 

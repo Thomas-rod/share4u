@@ -4,7 +4,7 @@
     <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
       <% if current_user.profile&.profile_picture&.attached? %>
-        <%= cl_image_tag current_user.profile.profile_picture.key, class:"avatar-large" %>
+        <%= cl_image_tag current_user.profile.profile_picture.key, class:"image-resize" %>
       <% else %>
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
@@ -24,13 +24,12 @@
     <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
       <% if @magnet_profile&.profile&.profile_picture&.attached? %>
-        <%= cl_image_tag @magnet_profile.profile.profile_picture.key, class:"avatar-large" %>
+        <%= cl_image_tag @magnet_profile.profile.profile_picture.key, class:"image-resize" %>
       <% else %>
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
     </div>
     <h1><%= @magnet_profile.profile.name_capitalize %></h1>
-    <%= link_to t('export_vcard'), export_contacts_path(@magnet_profile), :class => 'btn btn-primary btn-export-vcard' %>
   </div>
   <div id="magnet-networks--card-container">
     <% @networks.each do |n| %>
@@ -46,7 +45,17 @@
           <p><%= n.social.name.capitalize %></p>
         <% end %>
       <% elsif n.social.name == "text" %>
-        <%= link_to "#{n.username}" do %>
+        <%= link_to "tel:#{n.username}",target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% elsif n.social.kind == "link" %>
+        <%= link_to n.username.include?("http") ? "#{n.username}" : "http://#{n.username}", target:"_blank" do %>
+          <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
+          <p><%= n.social.name.capitalize %></p>
+        <% end %>
+      <% elsif n.social.name == "contact" %>
+        <%= link_to export_contacts_path(@magnet_profile), target:"_blank" do %>
           <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
           <p><%= n.social.name.capitalize %></p>
         <% end %>
