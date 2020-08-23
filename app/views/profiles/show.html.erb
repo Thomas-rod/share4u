@@ -12,7 +12,6 @@
       </div>
       <div style="display: flex; align-items: center">
         <p class="label-name-capitalize"><%= @profile.name_capitalize %></p>
-        <% raise %>
         <% if @profile.magnet_bought == true && !@profile.magnet_profile.nil? %>
           <%= link_to '#', id:"qrcode", data: {toggle: 'modal', target:"#qrcodeModalCenter" } do %>
             <%= image_tag "logo_qrcode.png", style:"max-width: 45px;"%>
