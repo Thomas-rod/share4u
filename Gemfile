@@ -31,8 +31,9 @@ gem 'cloudinary'
 #Creating vcards with ruby on rails
 gem 'vpim'
 
-#conformatable Mexcican Sofa
-gem "comfortable_mexican_sofa", "~> 2.0.0"
+# CMS Confortable Mexican Sofa (to handle content)
+gem 'comfortable_mexican_sofa', '~> 2.0.0'
+gem 'comfy_blog', '~> 2.0.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
