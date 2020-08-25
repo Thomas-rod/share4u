@@ -1,1 +1,11 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-agent: *
+Disallow: /profiles/
+Disallow: /users/
+Disallow: /magnet_profiles/
+
+
+# Disallow legal part
+Disallow: /conditions-generales-de-vente
+Disallow: /politique-de-confidentialite
+Disallow: /gestion-des-cookies

@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  comfy_route :cms_admin, path: "/cms-admin"
-  comfy_route :cms, path: "/"
+  comfy_route :cms_admin, path: '/cms-admin'
   # Ensure that this route is defined last
+  comfy_route :blog_admin, path: '/cms-admin'
+  comfy_route :blog, path: '/blog'
+  comfy_route :cms, path: '/'
 end
