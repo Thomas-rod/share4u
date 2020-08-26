@@ -1,5 +1,7 @@
 <div id="navbar-mobile">
-  <% if @profile.magnet_bought == true && !@profile.magnet_profile.nil? %>
+  <% if current_user.profile.nil? %>
+    <%= image_tag "logo_qrcode.png", style:"max-width: 40px; opacity:0.4;"%>
+  <% elsif @profile.magnet_bought == true && !@profile.magnet_profile.nil? %>
     <%= link_to '#', id:"qrcode", data: {toggle: 'modal', target:"#qrcodeModalCenter" } do %>
       <%= image_tag "logo_qrcode.png", style:"max-width: 40px;"%>
     <% end %>

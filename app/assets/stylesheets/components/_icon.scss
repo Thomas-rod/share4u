@@ -8,22 +8,26 @@
   width:90px;
   height:90px;
   border-radius:50%;
-  background-color: $blue-second-color;
+  background-color: $purple-color;
   display:flex;
   justify-content:center;
   align-items:center;
   transform: translate(0,-3px);
   .icon-mobile-navbar {
-    color: $orange-dark-color;
+    color: $white;
     font-size: 5rem;
   }
 }
 
 .input-file {
-    display: none;
+  display: none;
 }
 
 .icon-social {
   width:40px;
   height:40px;
+}
+
+.icon-white {
+  color:white;
 }

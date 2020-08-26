@@ -1,5 +1,5 @@
 .button {
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 5px;
   border:1px solid;
   box-shadow: 0px 20px 50px 0px rgba(0,0,0,0.2);
@@ -10,11 +10,11 @@
 }
 
 .main-button {
-  color:$main-color;
-  background-color: $blue-green-color;
-  border-color: $blue-green-color;
+  color:$white;
+  background-color: $blue-app;
+  border-color: $blue-app;
   &:hover {
-    color:$main-color;
+    color:white;
   }
 }
 
@@ -52,19 +52,20 @@
   }
 }
 
-
 .upload-photo {
-  border: 1px solid $blue-main-color;
-  color: $blue-main-color;
-  padding: 16px 24px;
+  display:inline-block;
+  width:100%;
+  border: 1px solid $blue-app;
+  color: $blue-app;
+  text-align:center;
+  padding: 1rem 2rem;
   cursor: pointer;
   font-weight: 500;
   background: white;
-  border-radius: 2px;
+  border-radius: 10px;
   &:hover {
-    background-color: $blue-main-color;
+    background-color: $blue-app;
     color:white;
-    box-shadow: 0px 10px 50px 2px rgba(0,0,0,0.1)
   }
 }
 

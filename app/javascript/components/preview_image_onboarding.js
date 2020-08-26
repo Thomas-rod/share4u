@@ -18,6 +18,8 @@ const displayPreview = (input) => {
     }
     reader.readAsDataURL(input.files[0])
     document.getElementById('photo-preview').classList.remove('hidden');
+    document.getElementById('spanPlaceholderPP').style.display="none";
+
   }
 }
 

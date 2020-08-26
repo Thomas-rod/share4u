@@ -1,26 +1,24 @@
-<%= render 'shared/navbar' %>
+<%= render 'shared/navbar_app' %>
+<%= render 'shared/navbar_mobile'%>
 <div id="onboarding-container">
-  <div id="onboarding-container--bg"></div>
-  <div class="card-onboarding fade-in">
-    <!-- <div class="card-onboarding--bg"></div> -->
-    <div id="onboarding-container--header">
-      <h1>Bienvenu dans la Joombo Family !</h1>
-      <p class=" light-black">Mais, qui es-tu ? On aimeraît apprendre à te connaître</p>
+  <p class="title font-blue">Bienvenu dans la Joombo Family !</p>
+  <p class="t-align font-blue">Mais, qui est-tu ? On aimeraît apprendre à te connaître</p>
+  <div id="onboarding-container--form">
+    <%= simple_form_for @profile, url: profiles_path, method: :post do |f|%>
+    <div id="onboarding-container--form--name">
+      <span>
+        <p class="font-label font-blue">Ton prénom</p>
+        <%= f.input :first_name, label:false, placeholder: "John"%>
+      </span>
+      <span>
+        <p class="font-label font-blue">Ton nom de famille</p>
+        <%= f.input :last_name, label: false, placeholder: "Doe" %>
+      </span>
     </div>
-    <div id="onboarding-container--body">
-      <%= simple_form_for @profile, url: profiles_path, method: :post do |f|%>
-      <div class="input-flex">
-        <div class="input-flex--name">
-          <%= f.input :first_name, label: "Ton prénom" %>
-          <%= f.input :last_name, label: "Ton nom" %>
-        </div>
-        <div class="input-flex--pp">
-          <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo'   %>
-          <span><%= image_tag "", width: 100, height:100, class: 'hidden', id: "photo-preview" %></span>
-        </div>
-      </div>
-        <%= f.button :submit, "Rejoindre ", class:"button main-button" %>
-      <% end %>
-    </div>
+      <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Photo de profile'   %>
+      <span class="avatar-bordered" id="spanPlaceholderPP" style="width:110px; height:110px; background-color: rgba(0,0,0,0.3); display:block; margin: 0 auto;"></span>
+      <span id="span-pp"><%= image_tag "", width: 110, height:110, class: 'hidden avatar-bordered', id: "photo-preview"%></span>
+      <%= f.button :submit, "Valider ", class:"button main-button" %>
+    <% end %>
   </div>
 </div>

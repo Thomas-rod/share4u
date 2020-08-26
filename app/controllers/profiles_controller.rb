@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @blue_page = true
     authorize @profile
     @socials = socials_not_activated
     @networks = Network.select{ |n| n.profile.user == current_user}
@@ -16,6 +17,7 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    @blue_page = true
     if current_user.profile.nil?
       @profile = Profile.new()
     else

@@ -1,9 +1,19 @@
 .title {
+  font-size: 1.5rem;
+  font-weight:bold;
+}
+
+
+
+.title-big {
   font-weight:lighter;
   font-size: 2rem;
   color: $black;
   text-align:center;
+}
 
+.t-align {
+  text-align:center;
 }
 
 .subtitle {
@@ -22,6 +32,15 @@
 
 .font-red {
   color: red;
+}
+
+.font-blue {
+  color:$blue-app
+}
+
+.font-label {
+  font-size:1.5rem;
+  font-weight:bold;
 }
 
 .fade-in {

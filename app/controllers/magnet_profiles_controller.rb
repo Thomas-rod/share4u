@@ -2,6 +2,7 @@ class MagnetProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :vcard]
 
   def show
+    @blue_page = true
     @magnet_profile = MagnetProfile.find(params[:id])
     if @magnet_profile.profile.nil? && current_user
 
