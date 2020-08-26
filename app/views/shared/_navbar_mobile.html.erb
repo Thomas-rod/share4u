@@ -1,6 +1,12 @@
 <div id="navbar-mobile">
-  <%= link_to profile_path(current_user.profile) do %>
-    <i class="icon-mobile-navbar fas fa-user-alt"></i>
+  <% if @profile.magnet_bought == true && !@profile.magnet_profile.nil? %>
+    <%= link_to '#', id:"qrcode", data: {toggle: 'modal', target:"#qrcodeModalCenter" } do %>
+      <%= image_tag "logo_qrcode.png", style:"max-width: 40px;"%>
+    <% end %>
+  <% else %>
+    <%= link_to profile_path(current_user.profile) do %>
+      <i class="icon-mobile-navbar fas fa-user-alt"></i>
+    <% end %>
   <% end %>
   <span class="main-icon cameraButton">
     <label for="mypic"><i class="icon-mobile-navbar  fas fa-camera"></i></label>
@@ -10,3 +16,18 @@
     <i class="icon-mobile-navbar fas fa-sign-out-alt"></i>
   <% end %>
 </div>
+<% if @profile.magnet_bought == true && !@profile.magnet_profile.nil? %>
+  <div class="modal fade" id="qrcodeModalCenter" tabindex="-1" role="dialog" aria-labelledby="qrcodeModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="qrcodeModalLongTitle"></h5>
+          <%= image_tag "http://www.esponce.com/api/v3/generate?content=#{request.base_url}/magnet_profiles/#{MagnetProfile.where(profile_id: current_user.profile).first.id}&format=png&auth=647cce489cf340274c59351e5b5953c8" %>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

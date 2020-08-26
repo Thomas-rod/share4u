@@ -39,8 +39,8 @@ class MagnetProfilesController < ApplicationController
 
       #setting up name
       maker.add_name do |name|
-      name.given = magnet_profile.profile.first_name
-      name.family = magnet_profile.profile.last_name
+        name.given = magnet_profile.profile.first_name
+        name.family = magnet_profile.profile.last_name
       end
 
       #setting up addr
@@ -52,20 +52,23 @@ class MagnetProfilesController < ApplicationController
       # addr.postalcode = contact.pin
       # addr.country = contact.country
       # end
-
-      maker.add_addr do |addr|
-      # addr.location = ‘work’
-      addr.street = magnet_profile.profile.vcard.address
-      # addr.locality = company.area
-      # addr.region = company.state
-      # addr.postalcode = company.pin
-      # addr.country = company.country
+      unless magnet_profile&.profile&.vcard&.address == "" || magnet_profile&.profile&.vcard&.address.nil?
+        maker.add_addr do |addr|
+        # addr.location = ‘work’
+          addr.street = magnet_profile.profile.vcard.address
+        # addr.locality = company.area
+        # addr.region = company.state
+        # addr.postalcode = company.pin
+        # addr.country = company.country
+        end
       end
 
       # setting up phone
-      maker.add_tel(magnet_profile.profile.vcard.phone_number) do |tel|
-      tel.location = 'work'
-      tel.preferred = true
+      unless magnet_profile&.profile&.vcard&.phone_number == "" || magnet_profile&.profile&.vcard&.phone_number.nil?
+        maker.add_tel(magnet_profile.profile.vcard.phone_number) do |tel|
+          tel.location = 'work'
+          tel.preferred = true
+        end
       end
 
       # if !contact.ph_office.empty?
@@ -91,8 +94,10 @@ class MagnetProfilesController < ApplicationController
       # end
 
       #setting up email
-      maker.add_email(magnet_profile.vcard.email) do |e|
-      e.location = 'work'
+      unless magnet_profile&.profile&.vcard&.email == "" || magnet_profile&.profile&.vcard&.email.nil?
+        maker.add_email(magnet_profile.vcard.email) do |e|
+          e.location = 'work'
+        end
       end
     end
     send_data card.to_s, :type => "text/x-vcard", :filename => URI::encode(fullname) + ".vcf"

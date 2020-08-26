@@ -34,6 +34,11 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    if @profile.update(profil_params)
+      redirect_to profile_path(@profile), notice: "Parfait, ton profile a été modifié"
+    else
+      redirect_to profile_path(@profile), notice: "Aïe, quelque chose s'est mal passée"
+    end
   end
 
   private

@@ -2,6 +2,14 @@ const modalOpenNetwork = () => {
   if (document.getElementById('show-profil')) {
     const inputToListen = document.querySelectorAll(".js-listen-input");
 
+    function checkHTTP(userInput, social) {
+      if ((social === "linkedin" || social === "facebook" || social === "webiste" || social === "lien") && !(userInput.includes("http://") || userInput.includes("https://"))) {
+        return "http://"
+      } else {
+        return ""
+      }
+    }
+
     function keyUpOrCopyPast(input, timer) {
       if (timer) {
           window.clearTimeout(timer);
@@ -9,9 +17,10 @@ const modalOpenNetwork = () => {
       timer = window.setTimeout( function() {
           timer = null;
           const buttonToChange = input.parentNode.parentNode.parentNode.querySelector(".modal-footer > a.button-to-open");
+          const buttonSocial = buttonToChange.dataset.social
           const urlToRedirect = buttonToChange.dataset.url;
-          buttonToChange.href=`${urlToRedirect + input.value}`
-          console.log(buttonToChange)
+
+          buttonToChange.href=`${checkHTTP(input.value, buttonSocial) + urlToRedirect + input.value}`
       }, 50 );
     }
 

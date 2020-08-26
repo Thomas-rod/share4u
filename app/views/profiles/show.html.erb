@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<%= render 'shared/navbar_mobile' %>
+<%= render 'shared/navbar_mobile', locals: { profile: @profile } %>
 <div id="show-profil">
   <div id="show-profil--informations">
     <div id="show-profil--informations--image">
@@ -10,29 +10,36 @@
           <%= image_tag 'logo.svg', class:"image-resize" %>
         <% end %>
       </div>
-      <div style="display: flex; align-items: center">
+      <%= link_to "#", data: {toggle: "modal", target: "#addProfileChanges"} do %>
         <p class="label-name-capitalize"><%= @profile.name_capitalize %></p>
-        <% if @profile.magnet_bought == true && !@profile.magnet_profile.nil? %>
-          <%= link_to '#', id:"qrcode", data: {toggle: 'modal', target:"#qrcodeModalCenter" } do %>
-            <%= image_tag "logo_qrcode.png", style:"max-width: 45px;"%>
-          <% end %>
-        <% end %>
-      </div>
-      <% if @profile.magnet_bought == true && !@profile.magnet_profile.nil? %>
-        <div class="modal fade" id="qrcodeModalCenter" tabindex="-1" role="dialog" aria-labelledby="qrcodeModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="qrcodeModalLongTitle"></h5>
-                <%= image_tag "http://www.esponce.com/api/v3/generate?content=#{request.base_url}/magnet_profiles/#{MagnetProfile.where(profile_id: current_user.profile).first.id}&format=png&auth=647cce489cf340274c59351e5b5953c8" %>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
+      <% end %>
+      <div class="modal fade" id="addProfileChanges" tabindex="-1" role="dialog" aria-labelledby="addProfileChangesTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle"><%= @profile.first_name.capitalize %>, voici ton profile</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <%= simple_form_for @profile, url: profile_path(@profile), method: :patch do |f| %>
+              <div class="modal-body">
+                <p>Ton prénom</p>
+                <%= f.input :first_name, label:false, value: @profile.first_name %>
+                <p>Ton nom de famille</p>
+                <%= f.input :last_name, label:false, value: @profile.last_name %>
+                <p>Ta photo de profile</p>
+                <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo'   %>
+                <span><%= image_tag "", width: 100, height:100, class: 'hidden', id: "photo-preview" %></span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="button reverse-button" data-dismiss="modal">Fermer</button>
+                <%= f.button :submit, "Modifier", class:"main-button button" %>
+              </div>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
     <div id="show-profil--informations--networks">
       <div class="networks-container">
@@ -52,7 +59,6 @@
                   </button>
                 </div>
                 <% if n.social.name == "contact" && !@vcard.nil? %>
-                <%# raise %>
                   <%= simple_form_for @vcard, url: vcard_path(@vcard),html: { id:"new_network_#{n.id}" }, method: :patch do |f| %>
                     <div class="modal-body">
                       <%= image_tag "logo_#{n.social.name}.svg", class:"icon-social" %>
@@ -106,7 +112,7 @@
                   </button>
                 </div>
                 <% if s.name == "contact" %>
-                  <%= simple_form_for @new_vcard, url: vcards_path(vcard:@new_vcard), html: { id:"new_network_#{s.id}"}, method: :post do |f| %>
+                  <%= simple_form_for @new_vcard, url: vcards_path(vcard:@new_vcard), html: { id:"new_network_vcard"}, method: :post do |f| %>
                     <div class="modal-body">
                       <%= image_tag "logo_#{s.name}.svg", class:"icon-social" %>
                       <div class="modal-body--inputs">
@@ -128,7 +134,7 @@
                     </div>
                     <p class="explanation"><%= s.explanation %></p>
                     <div class="modal-footer">
-                      <a href="" class="button-to-open button reverse-button" data-url="<%= s.kind == "username" ? "#{s.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <a href="" class="button-to-open button reverse-button" data-social="<%= s.name %>" data-url="<%= s.kind == "username" ? "#{s.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
                       <%= f.button :submit, "Ajouter", class:"button main-button" %>
                     </div>
                   <% end %>

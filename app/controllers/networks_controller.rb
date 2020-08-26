@@ -17,7 +17,7 @@ class NetworksController < ApplicationController
     if @network.save
       redirect_to profile_path(@network.profile), notice: "Bravo ! ton compte #{@network.social.name} vient d'être ajouté."
     else
-      redirecto_to profile_path(@network.profile), notice: "Aïe quelque chose s'est mal passé."
+      redirect_to profile_path(@network.profile), notice: "Ton #{@network.social.name} ne peut pas être vide."
     end
   end
 
