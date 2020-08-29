@@ -5,10 +5,11 @@ class PagesController < ApplicationController
   end
 
   def purchase
-
   end
 
   def instructions
+  end
 
+  def faq
   end
 end
