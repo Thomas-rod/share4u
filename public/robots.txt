@@ -8,5 +8,5 @@ Disallow: /magnet_profiles/
 # Disallow legal part
 Disallow: /conditions-generales-de-vente
 Disallow: /politique-de-confidentialite
-Disallow: /reglement-opération-parrainage
+Disallow: /reglement-operation-parrainage
 Disallow: /gestion-des-cookies
