@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/purchase', to: 'pages#purchase'
   get '/instructions', to: 'pages#instructions'
+  get '/faq', to: 'pages#faq'
 
   get 'magnet_profiles/:id/export' => 'magnet_profiles#vcard', :as => 'export_contacts'
 
