@@ -2,17 +2,24 @@
 <%= render 'shared/navbar_mobile', locals: { profile: @profile } %>
 <div id="show-profil">
   <div id="show-profil--informations">
-    <div id="show-profil--informations--image">
+    <div id="show-profil--informations--user">
       <div class="image-container">
         <% if @profile.profile_picture.attached?  %>
-          <%= cl_image_tag @profile.profile_picture.key, class:"image-resize" %>
+          <%= cl_image_tag @profile.profile_picture.key, class:"image-resize #{"magnet-bought" if !@profile.magnet_profile.nil? }"  %>
         <% else %>
-          <%= image_tag 'logo.svg', class:"image-resize" %>
+          <%= image_tag 'logo.svg', class:"image-resize #{"magnet-bought" if !@profile.magnet_profile.nil? }" %>
+        <% end %>
+        <% if @profile.magnet_profile.nil? %>
+          <%= link_to "Acheter mon badge", purchase_path, class:"button purple-button" %>
+        <% else %>
+          <p><span>✅</span>Ton badge est activé</p>
         <% end %>
       </div>
-      <%= link_to "#", data: {toggle: "modal", target: "#addProfileChanges"} do %>
-        <p class="label-name-capitalize"><%= @profile.name_capitalize %></p>
-      <% end %>
+      <div class="infos-container">
+        <p>Bon retour parmi nous,</p>
+        <h1 class=""><%= @profile.name_capitalize %></h1>
+        <%= link_to "Modifier mon profil", "#", class:"button border-white-button", data: {toggle: "modal", target: "#addProfileChanges"} %>
+      </div>
       <div class="modal fade" id="addProfileChanges" tabindex="-1" role="dialog" aria-labelledby="addProfileChangesTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -28,12 +35,11 @@
                 <%= f.input :first_name, label:false, value: @profile.first_name %>
                 <p>Ton nom de famille</p>
                 <%= f.input :last_name, label:false, value: @profile.last_name %>
-                <p>Ta photo de profile</p>
-                <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo'   %>
-                <span><%= image_tag "", width: 100, height:100, class: 'hidden', id: "photo-preview" %></span>
+                <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo de profile'   %>
+                <span style="margin: 0 auto;display: block;width: fit-content;"><%= image_tag "", width: 110, height:110, class: 'hidden avatar-bordered', id: "photo-preview" %></span>
               </div>
               <div class="modal-footer">
-                <button type="button" class="button reverse-button" data-dismiss="modal">Fermer</button>
+                <%= link_to "Fermer", "#", class:"button border-blue-button", data: {dismiss: "modal"} %>
                 <%= f.button :submit, "Modifier", class:"main-button button" %>
               </div>
             <% end %>
@@ -42,6 +48,9 @@
       </div>
     </div>
     <div id="show-profil--informations--networks">
+      <% unless @profile.magnet_profile.nil? %>
+        <%= link_to "Voir mon profil", magnet_profile_path(@profile),class:"button purple-button" %>
+      <% end %>
       <div class="networks-container">
         <% unless @networks.empty? %>
           <% @networks.each do |n| %>
@@ -70,7 +79,8 @@
                     </div>
                     <p class="explanation"><%= n.social.explanation %></p>
                     <div class="modal-footer">
-                      <%= link_to "Supprimer", vcard_path(@vcard), method: :delete, class:"button reverse-button" %>
+                      <a href="" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <%= link_to "Supprimer", vcard_path(@vcard), method: :delete, class:"button border-blue-button" %>
                       <%= f.button :submit, "Modifier", class:"button main-button" %>
                     </div>
                   <% end %>
@@ -82,7 +92,8 @@
                     </div>
                     <p class="explanation"><%= n.social.explanation %></p>
                     <div class="modal-footer">
-                      <%= link_to "Supprimer", network_path(n), method: :delete, class:"button reverse-button" %>
+                      <a href="<%= "#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <%= link_to "Supprimer", network_path(n), method: :delete, class:"button border-blue-button" %>
                       <%= f.button :submit, "Modifier", class:"button main-button" %>
                     </div>
                   <% end %>
@@ -134,7 +145,9 @@
                     </div>
                     <p class="explanation"><%= s.explanation %></p>
                     <div class="modal-footer">
-                      <a href="" class="button-to-open button reverse-button" data-social="<%= s.name %>" data-url="<%= s.kind == "username" ? "#{s.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <% unless s.name == "text" || s.name == "whatsapp" %>
+                        <a href="" class="button-to-open button border-blue-button" data-social="<%= s.name %>" data-url="<%= s.kind == "username" ? "#{s.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <% end %>
                       <%= f.button :submit, "Ajouter", class:"button main-button" %>
                     </div>
                   <% end %>

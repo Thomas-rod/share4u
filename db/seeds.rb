@@ -14,93 +14,93 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
 
-# puts "Well let's begin with our first operation, CLEANING THE DB."
-# User.destroy_all
-# puts "All users have been destroyed"
-# Profile.destroy_all
-# puts "All profiles have been destroyed"
-# Magnet.destroy_all
-# puts "All magnets have been destroyed"
-# MagnetProfile.destroy_all
-# puts "All magnets have been destroyed"
-# Network.destroy_all
-# puts "All networks have been destroyed"
-# Social.destroy_all
-# puts "All socials have been destroyed"
-# puts "Human, it's done. I destroy everything."
+puts "Well let's begin with our first operation, CLEANING THE DB."
+User.destroy_all
+puts "All users have been destroyed"
+Profile.destroy_all
+puts "All profiles have been destroyed"
+Magnet.destroy_all
+puts "All magnets have been destroyed"
+MagnetProfile.destroy_all
+puts "All magnets have been destroyed"
+Network.destroy_all
+puts "All networks have been destroyed"
+Social.destroy_all
+puts "All socials have been destroyed"
+puts "Human, it's done. I destroy everything."
 
 
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
 
-# puts "Ok, now second operation, CREATING OUR DB."
+puts "Ok, now second operation, CREATING OUR DB."
 
-# puts "User on creation"
+puts "User on creation"
 
-# te = User.create!(email: "admin1@gmail.com", password: "admin1@gmail.com")
-# tr = User.create!(email: "admin2@gmail.com", password: "admin2@gmail.com")
-# puts "Well done human, #{User.count} users have been created."
-
-
-# puts "Profils on creation."
-# one_profile = Profile.create!(first_name: "Thomas", last_name: "Eude", user: te, magnet_bought: false)
-# two_profile = Profile.create!(first_name: "Thomas", last_name: "Rodier", user: tr, magnet_bought: false)
-# puts "Well done human, #{Profile.count} profile have been created."
+te = User.create!(email: "admin1@gmail.com", password: "admin1@gmail.com")
+tr = User.create!(email: "admin2@gmail.com", password: "admin2@gmail.com")
+puts "Well done human, #{User.count} users have been created."
 
 
-# puts "Socials on creation."
-# instagram = Social.create!(name: "instagram", url_desktop_begin:"https://www.instagram.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# facebook = Social.create!(name: "facebook", url_desktop_begin:"https://www.facebook.com/", url_mobile_begin: "placeholder_two", kind: "link")
-# snapchat = Social.create!(name: "snapchat", url_desktop_begin:"https://www.snapchat.com/add/", url_mobile_begin: "https://www.snapchat.com/add/", kind: "username")
-# tiktok = Social.create!(name: "tiktok", url_desktop_begin:"https://www.tiktok.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# twitter = Social.create!(name: "twitter", url_desktop_begin:"https://twitter.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# linkedin = Social.create!(name: "linkedin", url_desktop_begin:"https://www.linkedin.com/in/", url_mobile_begin: "placeholder_two", kind: "link")
-# website = Social.create!(name: "website", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
-# text = Social.create!(name: "text", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
-# email = Social.create!(name: "email", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
-# contact = Social.create!(name: "contact", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
-# youtube = Social.create!(name: "youtube", url_desktop_begin:"https://www.youtube.com/c/", url_mobile_begin: "placeholder_two", kind: "link")
-# soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"https://soundcloud.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# spotify = Social.create!(name: "spotify", url_desktop_begin:"https://open.spotify.com/user/", url_mobile_begin: "placeholder_two", kind: "username")
-# twitch = Social.create!(name: "twitch", url_desktop_begin:"https://www.twitch.tv/", url_mobile_begin: "placeholder_two", kind: "username")
-# whatsapp = Social.create!(name: "whatsapp", url_desktop_begin:"https://api.whatsapp.com/send?phone=33", url_mobile_begin: "placeholder_two", kind: "username")
-# lien = Social.create!(name: "lien", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
-
-# puts "Well done human, #{Social.count} socials have been created."
-
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
+puts "Profils on creation."
+one_profile = Profile.create!(first_name: "Thomas", last_name: "Eude", user: te, magnet_bought: false)
+two_profile = Profile.create!(first_name: "Thomas", last_name: "Rodier", user: tr, magnet_bought: false)
+puts "Well done human, #{Profile.count} profile have been created."
 
 
+puts "Socials on creation."
+instagram = Social.create!(name: "instagram", url_desktop_begin:"https://www.instagram.com/", url_mobile_begin: "placeholder_two", kind: "username")
+facebook = Social.create!(name: "facebook", url_desktop_begin:"https://www.facebook.com/", url_mobile_begin: "placeholder_two", kind: "link")
+snapchat = Social.create!(name: "snapchat", url_desktop_begin:"https://www.snapchat.com/add/", url_mobile_begin: "https://www.snapchat.com/add/", kind: "username")
+tiktok = Social.create!(name: "tiktok", url_desktop_begin:"https://www.tiktok.com/", url_mobile_begin: "placeholder_two", kind: "username")
+twitter = Social.create!(name: "twitter", url_desktop_begin:"https://twitter.com/", url_mobile_begin: "placeholder_two", kind: "username")
+linkedin = Social.create!(name: "linkedin", url_desktop_begin:"https://www.linkedin.com/in/", url_mobile_begin: "placeholder_two", kind: "link")
+website = Social.create!(name: "website", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
+text = Social.create!(name: "text", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
+email = Social.create!(name: "email", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
+contact = Social.create!(name: "contact", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
+youtube = Social.create!(name: "youtube", url_desktop_begin:"https://www.youtube.com/c/", url_mobile_begin: "placeholder_two", kind: "link")
+soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"https://soundcloud.com/", url_mobile_begin: "placeholder_two", kind: "username")
+spotify = Social.create!(name: "spotify", url_desktop_begin:"https://open.spotify.com/user/", url_mobile_begin: "placeholder_two", kind: "username")
+twitch = Social.create!(name: "twitch", url_desktop_begin:"https://www.twitch.tv/", url_mobile_begin: "placeholder_two", kind: "username")
+whatsapp = Social.create!(name: "whatsapp", url_desktop_begin:"https://api.whatsapp.com/send?phone=33", url_mobile_begin: "placeholder_two", kind: "username")
+lien = Social.create!(name: "lien", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
 
-# puts "Magnets on creation."
-# one_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/1?5918615y5qs328o7" ,sku: "test-1")
-# two_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/2?c81txgsfxhyh435m" ,sku: "test-2")
-# third_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/3?xgssq8354o2qv5ab" ,sku: "test-3")
-# puts "Well done human, #{Magnet.count} magnets have been created."
+puts "Well done human, #{Social.count} socials have been created."
+
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
 
 
-# puts "Magnet_profiles on creation."
 
-# puts "Well done human, #{MagnetProfile.count} magnet_profiles have been created."
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
+puts "Magnets on creation."
+one_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/1?5918615y5qs328o7" ,sku: "test-1")
+two_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/2?c81txgsfxhyh435m" ,sku: "test-2")
+third_magnet = Magnet.create!(url: "localhost:3000/magnet_profiles/3?xgssq8354o2qv5ab" ,sku: "test-3")
+puts "Well done human, #{Magnet.count} magnets have been created."
 
-# puts "Networks on creation"
 
-# instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
-# facebook_netwrok_tr = Network.create!(username: "thomas.rodier.9", profile: two_profile, social: facebook)
-# email_netwrok_tr = Network.create!(username: "hi@thomasrodier.co", profile: two_profile, social: email)
-# twitter_netwrok_tr = Network.create!(username: "rodiert17", profile: two_profile, social: twitter)
-# linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
-# tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
-# website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
-# # text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
+puts "Magnet_profiles on creation."
 
-# puts "Well done human, #{Network.count} networks have been created."
+puts "Well done human, #{MagnetProfile.count} magnet_profiles have been created."
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+
+puts "Networks on creation"
+
+instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
+facebook_netwrok_tr = Network.create!(username: "thomas.rodier.9", profile: two_profile, social: facebook)
+email_netwrok_tr = Network.create!(username: "hi@thomasrodier.co", profile: two_profile, social: email)
+twitter_netwrok_tr = Network.create!(username: "rodiert17", profile: two_profile, social: twitter)
+linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
+tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
+website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
+# text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
+
+puts "Well done human, #{Network.count} networks have been created."
 #-----------------------------------------------------------------------------------------------##
 #-----------------------------------------------------------------------------------------------##
 #-----------------------------------------------------------------------------------------------##
@@ -328,21 +328,21 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 ##                             ADD HEADER / EXPLANATIONS TO SOCIALS                                ##
 ## ------------------------------------------------------------------------------------------------##
 
-# instagram_social = Social.find_by(name: "instagram").update(header: "Ajoute ton pseudo Instagram", explanation: "Ouvre Instagram et rend toi sur ton profile. Ton username est tout en haut", kind: "username")
-# facebook_social = Social.find_by(name: "facebook").update(header: "Ajoute le lien de ton profil Facebook", explanation: "Ouvre www.facebook.com et rend toi sur ton profile. Copie & colle le lien", kind: "link")
-# snapchat_social = Social.find_by(name: "snapchat").update(header: "Ajoute ton pseudo Snapchat", explanation: "Ouvre Snapchat et rend toi sur ton profile. Ton username se trouve en dessous de ton pseudo (le deuxième nom en dessous du premier)", kind: "username")
-# titok_social = Social.find_by(name: "tiktok").update(header: "Ajoute ton pseudo TikTok", explanation: "Ouvre Tiktok et rend toi sur ton profile. Ton username est sous ta photo de profil", kind: "username")
-# twitter_social = Social.find_by(name: "twitter").update(header: "Ajoute ton pseudo twitter", explanation: "Ouvre Twitter et rend toi sur ton profile. Ton username se trouve en dessous de ton pseudo (le deuxième nom en dessous du premier)", kind: "username")
-# linkedin_social = Social.find_by(name: "linkedin").update(header: "Ajoute le lien de ton profil Linkedin", explanation: "Ouvre www.linkedin.com et rend toi sur ton profile. Clique en haut à droite sur 'Modifier le profil public et l'URL'. Copie & Colle ton URL", kind: "link")
-# website_social = Social.find_by(name: "website").update(header: "Ajoute le lien de ton site internet", explanation: "Ajoute l'URL de ton site internet", kind: "link")
-# text_social = Social.find_by(name: "text").update(header: "Ajoute ton numéro de téléphone", explanation: "Tu te souviens de ton numéro ? Pas besoin des +33...", kind: "numéro")
-# email_social = Social.find_by(name: "email").update(header: "Ajoute ton adresse mail", explanation: "Cela ouvrira un email avec ton mail en adresse de réception", kind: "email")
-# contact_social = Social.find_by(name: "contact").update(header: "Ajoute ta fiche contact", explanation: "Envie de partager ton contact complet plus facilement ? Remplis simplement les champs que tu désires partager", kind: "username")
-# youtube_social = Social.find_by(name: "youtube").update(header: "Ajoute le lien de ta chaîne Youtube", explanation: "Ouvre www.youtube.com et rend toi sur ta chaîne. Copie & colle le lien", kind: "link")
-# soundcloud_social = Social.find_by(name: "soundcloud").update(header: "Ajoute ton pseudo Soundclound", explanation: "Ouvre Soundcloud et rend toi sur ton profil. Ton username se trouve sous ta photo de profil", kind: "username")
-# spotify_social = Social.find_by(name: "spotify").update(header: "Ajoute ton pseudo Spotify", explanation: "Ouvre Spotify et rend toi sur la page Préférences puis Compte. Tu y trouveras ton nom d'utilisateur", kind: "username")
-# twitch_social = Social.find_by(name: "twitch").update(header: "Ajoute ton pseudo Twitch", explanation: "Ouvre Twitch et rend toi ton profil. Tu y trouveras ton nom d'utilisateurà droite de ta photo de profil", kind: "username")
-# whatsapp_social = Social.find_by(name: "whatsapp").update(header: "Ajoute ton numéro de téléphone", explanation: "Nous n'acceptons que les numéros français pour le moment.", kind: "numéro")
-# lien_social = Social.find_by(name: "lien").update(header: "Ajoute un lien personnalisé", explanation: "Tu as envie d'ajouter un lien custom ? Fais-toi plaisir !", kind: "link")
+instagram_social = Social.find_by(name: "instagram").update(header: "Ajoute ton pseudo Instagram", explanation: "Ouvre Instagram et rend toi sur ton profil. Ton username est tout en haut", kind: "username")
+facebook_social = Social.find_by(name: "facebook").update(header: "Ajoute le lien de ton profil Facebook", explanation: "Ouvre www.facebook.com et rend toi sur ton profil. Copie & colle le lien", kind: "link")
+snapchat_social = Social.find_by(name: "snapchat").update(header: "Ajoute ton pseudo Snapchat", explanation: "Ouvre Snapchat et rend toi sur ton profil. Ton username se trouve en dessous de ton pseudo (le deuxième nom en dessous du premier)", kind: "username")
+titok_social = Social.find_by(name: "tiktok").update(header: "Ajoute ton pseudo TikTok", explanation: "Ouvre Tiktok et rend toi sur ton profil. Ton username est sous ta photo de profil", kind: "username")
+twitter_social = Social.find_by(name: "twitter").update(header: "Ajoute ton pseudo twitter", explanation: "Ouvre Twitter et rend toi sur ton profil. Ton username se trouve en dessous de ton pseudo (le deuxième nom en dessous du premier)", kind: "username")
+linkedin_social = Social.find_by(name: "linkedin").update(header: "Ajoute le lien de ton profil Linkedin", explanation: "Ouvre www.linkedin.com et rend toi sur ton profil. Clique en haut à droite sur 'Modifier le profil public et l'URL'. Copie & Colle ton URL", kind: "link")
+website_social = Social.find_by(name: "website").update(header: "Ajoute le lien de ton site internet", explanation: "Ajoute l'URL de ton site internet", kind: "link")
+text_social = Social.find_by(name: "text").update(header: "Ajoute ton numéro de téléphone", explanation: "Tu te souviens de ton numéro ? Pas besoin des +33...", kind: "numéro")
+email_social = Social.find_by(name: "email").update(header: "Ajoute ton adresse mail", explanation: "Cela ouvrira un email avec ton mail en adresse de réception", kind: "email")
+contact_social = Social.find_by(name: "contact").update(header: "Ajoute ta fiche contact", explanation: "Envie de partager ton contact complet plus facilement ? Remplis simplement les champs que tu désires partager", kind: "username")
+youtube_social = Social.find_by(name: "youtube").update(header: "Ajoute le lien de ta chaîne Youtube", explanation: "Ouvre www.youtube.com et rend toi sur ta chaîne. Copie & colle le lien", kind: "link")
+soundcloud_social = Social.find_by(name: "soundcloud").update(header: "Ajoute ton pseudo Soundclound", explanation: "Ouvre Soundcloud et rend toi sur ton profil. Ton username se trouve sous ta photo de profil", kind: "username")
+spotify_social = Social.find_by(name: "spotify").update(header: "Ajoute ton pseudo Spotify", explanation: "Ouvre Spotify et rend toi sur la page Préférences puis Compte. Tu y trouveras ton nom d'utilisateur", kind: "username")
+twitch_social = Social.find_by(name: "twitch").update(header: "Ajoute ton pseudo Twitch", explanation: "Ouvre Twitch et rend toi ton profil. Tu y trouveras ton nom d'utilisateurà droite de ta photo de profil", kind: "username")
+whatsapp_social = Social.find_by(name: "whatsapp").update(header: "Ajoute ton numéro de téléphone", explanation: "Nous n'acceptons que les numéros français pour le moment.", kind: "numéro")
+lien_social = Social.find_by(name: "lien").update(header: "Ajoute un lien personnalisé", explanation: "Tu as envie d'ajouter un lien custom ? Fais-toi plaisir !", kind: "link")
 
 puts "Human, my work here is done. It's have been a pleasure .. son of ... So ciao !"

@@ -15,7 +15,7 @@
       color:white;
       font-weight:bold;
       p {
-        font-size:2rem;
+        font-size:1.8rem;
       }
     }
 
@@ -32,8 +32,8 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 400px) {
 
-  html {
-    font-size: 55%;
+  :root {
+    font-size: 62.5%;
   }
 
   #navbar-app {
@@ -53,8 +53,8 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 768px) and (min-width: 400px){
 
-  html {
-    font-size: 55%;
+  :root {
+    font-size: 62.5%;
   }
 
   #navbar-app {

@@ -63,3 +63,12 @@
   padding:0rem 1rem .5rem 1rem;
   color:rgba($gray,0.5) !important;
 }
+
+.label-badges-bought {
+  display:inline-block;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background-color:rgba($validation-color, 0.7);
+  font-size:1.6rem;
+}

@@ -1,16 +1,21 @@
 .button {
   padding: 1rem 2rem;
-  border-radius: 5px;
+  border-radius: 8px;
   border:1px solid;
-  box-shadow: 0px 20px 50px 0px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
+  // box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.2);
+  display:inline-block;
+  transition:
+      transform .2s ease,
+      box-shadow .2s ease
+  ;
   &:hover {
     transform: translate(0,-1px);
+    // box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
   }
 }
 
 .main-button {
-  color:$white;
+  color:white;
   background-color: $blue-app;
   border-color: $blue-app;
   &:hover {
@@ -18,13 +23,38 @@
   }
 }
 
-.reverse-button {
- color:$blue-green-color;
- background-color: $main-color;
- border-color: $blue-green-color;
+.white-button {
+  color:$blue-app;
+  background-color:white;
+  border-color:white;
+  &:hover {
+    color: $blue-app;
+  }
+}
+
+.purple-button {
+  color:white;
+  background-color:$purple-color;
+  border-color:$purple-color;
+  &:hover {
+    color:white;
+  }
+}
+
+.border-white-button {
+ color:white;
+ border-color: white;
  &:hover {
-  color: $blue-green-color;
+   color:white;
  }
+}
+
+.border-blue-button {
+  color:$blue-app;
+  border-color:$blue-app;
+  &:hover {
+    color:$blue-app
+  }
 }
 
 .second-button {
@@ -64,8 +94,7 @@
   background: white;
   border-radius: 10px;
   &:hover {
-    background-color: $blue-app;
-    color:white;
+    background-color: rgba($blue-app,0.2);
   }
 }
 

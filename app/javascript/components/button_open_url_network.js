@@ -10,6 +10,10 @@ const modalOpenNetwork = () => {
       }
     }
 
+    function stripSpaceSoundcloud(input) {
+      return input.replace(/\s/g, "-")
+    }
+
     function keyUpOrCopyPast(input, timer) {
       if (timer) {
           window.clearTimeout(timer);
@@ -19,8 +23,11 @@ const modalOpenNetwork = () => {
           const buttonToChange = input.parentNode.parentNode.parentNode.querySelector(".modal-footer > a.button-to-open");
           const buttonSocial = buttonToChange.dataset.social
           const urlToRedirect = buttonToChange.dataset.url;
-
-          buttonToChange.href=`${checkHTTP(input.value, buttonSocial) + urlToRedirect + input.value}`
+          if (buttonSocial === "soundcloud") {
+            buttonToChange.href=`${checkHTTP(input.value, buttonSocial) + urlToRedirect + stripSpaceSoundcloud(input.value)}`
+          } else {
+            buttonToChange.href=`${checkHTTP(input.value, buttonSocial) + urlToRedirect + input.value}`
+          }
       }, 50 );
     }
 

@@ -2,10 +2,9 @@
 //       POSITIONNING       //
 //--------------------------//
 
-#profile-magnet,
 #magnet-networks--card-container,
 #magnet-activation-section {
-  padding: 0 ($padding-side - 3) 4rem ($padding-side - 3);
+  padding: 0rem ($padding-side - 5) 0rem ($padding-side - 5);
 }
 
 //------------------------//
@@ -13,11 +12,16 @@
 //------------------------//
 #profile-magnet {
   position:relative;
+  span {
+    text-align:center;
+  }
 }
     .image-container--magnet-profile {
       margin: 0rem auto;
-      height: 150px;
-      width: 150px;
+      min-height: 150px;
+      max-height: 150px;
+      max-width: 150px;
+      min-width: 150px;
       overflow: hidden;
       position: relative;
       border-radius:50%;
@@ -50,7 +54,6 @@
   font-size:3rem;
   text-align:center;
   font-weight:bold;
-  color:$blue-main-color;
 }
 
 //------------------------//
@@ -71,7 +74,6 @@
 
 #magnet-activation-section {
   padding-top: 3rem;
-  color:$gray;
   > h2 {font-size: 3.5rem;}
   > h3 {font-size: 2.8rem;}
   > p {font-size:2rem;}
@@ -100,10 +102,6 @@
   left:1rem;
   width:50%;
   padding: 1rem;
-  p {
-    font-size:1.4rem;
-    color: $purple-color;
-  }
 }
 
 #magnet-footer {
@@ -112,7 +110,6 @@
   right: 1rem;
   width:50%;
   padding: 1rem;
-  color:$white;
   border-radius: 5px;
   display:flex;
   justify-content:center;
@@ -144,16 +141,40 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 400px) {
 
-  html {
-    font-size: 55%;
+  :root {
+    font-size: 62.5%;
   }
+
+  #profile-magnet {
+    padding:2rem 1rem;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    span {
+      margin-top:3rem;
+      flex-grow:2;
+    }
+  }
+
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 768px) and (min-width: 400px){
 
-  html {
-    font-size: 55%;
+  :root {
+    font-size: 62.5%;
+  }
+
+  #profile-magnet {
+    padding:2rem 1rem;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    span {
+      margin-top:3rem;
+      flex-grow:2;
+    }
   }
 }
 

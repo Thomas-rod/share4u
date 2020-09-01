@@ -15,12 +15,11 @@
     <p>Clique sur le bouton pour activer ton magnet</p>
     <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
       <%= f.input :profile, as: :hidden %>
-      <%= f.button :submit, "Activer 🚀", class:"main-button button" %>
+      <%= f.button :submit, "Activer 🚀", class:"button white-button" %>
     <% end %>
   </div>
 <% else %>
   <div id="profile-magnet">
-    <div id="profile-magnet--bg"></div>
     <div class="image-container--magnet-profile">
       <% if @magnet_profile&.profile&.profile_picture&.attached? %>
         <%= cl_image_tag @magnet_profile.profile.profile_picture.key, class:"image-resize" %>
@@ -28,7 +27,10 @@
         <%= image_tag 'logo.svg', class:"image-resize" %>
       <% end %>
     </div>
-    <h1><%= @magnet_profile.profile.name_capitalize %></h1>
+    <span>
+      <p>Bienvenu sur le profil de </p>
+      <h1><%= @magnet_profile.profile.name_capitalize %></h1>
+    </span>
   </div>
   <div id="magnet-networks--card-container">
     <% @networks.each do |n| %>
