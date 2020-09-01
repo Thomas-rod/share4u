@@ -79,7 +79,6 @@
                     </div>
                     <p class="explanation"><%= n.social.explanation %></p>
                     <div class="modal-footer">
-                      <a href="" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
                       <%= link_to "Supprimer", vcard_path(@vcard), method: :delete, class:"button border-blue-button" %>
                       <%= f.button :submit, "Modifier", class:"button main-button" %>
                     </div>
@@ -92,7 +91,9 @@
                     </div>
                     <p class="explanation"><%= n.social.explanation %></p>
                     <div class="modal-footer">
-                      <a href="<%= "#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <% unless n.social.name == "text" || n.social.name == "whatsapp" %>
+                        <a href="<%= "#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <% end %>
                       <%= link_to "Supprimer", network_path(n), method: :delete, class:"button border-blue-button" %>
                       <%= f.button :submit, "Modifier", class:"button main-button" %>
                     </div>
