@@ -91,8 +91,80 @@
                     </div>
                     <p class="explanation"><%= n.social.explanation %></p>
                     <div class="modal-footer">
-                      <% unless n.social.name == "text" || n.social.name == "whatsapp" || n.social.name == "email" %>
-                        <a href="<%= "#{n.username.include?("http") ? "#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" : "http://#{gsubSoundCloud(n.username)}"}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <%if n.social.name == "text" || n.social.name == "whatsapp" || n.social.name == "email" %>
+                      <% elsif n.social.name == "website" || n.social.name == "lien" %>
+                        <a href="<%= n.username.include?("http") ? "http://#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" : "#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <% else %>
+                        <a href="<%= "#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <% end %>
+                      <%= link_to "Supprimer", network_path(n), method: :delete, class:"button border-blue-button" %>
+                      <%= f.button :submit, "Modifier", class:"button main-button" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+        <% @socials.each do |s| %>
+          <%= link_to '#', id:"modal-#{s.name}", data: {toggle: 'modal', target:"##{s.name}ModalCenter" } do %>
+            <% if !@networks&.select{ |n| n.social == s}.nil? && !@networks.select{ |n| n.social == s}.empty? %>
+              <%= image_tag "logo_#{s.name}.svg", class:"avatar-social"%>
+              <p><%= s.name.capitalize %></p>
+            <% else %>
+              <%= image_tag "logo_#{s.name}.svg", class:"avatar-social inactive"%>
+              <p class="inactive"><%= s.name.capitalize %></p>
+            <% end %>
+          <% end %>
+          <div class="modal fade" id="<%= s.name %>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="<%= s.name %>ModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="<%= s.name %>ModalLongTitle"><%= s.header %></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <% if s.name == "contact" %>
+                  <%= simple_form_for @new_vcard, url: vcards_path(vcard:@new_vcard), html: { id:"new_network_vcard"}, method: :post do |f| %>
+                    <div class="modal-body">
+                      <%= image_tag "logo_#{s.name}.svg", class:"icon-social" %>
+                      <div class="modal-body--inputs">
+                        <%= f.input :phone_number, label: false, placeholder: "Téléphone professionnel" %>
+                        <%= f.input :email, label: false, placeholder: "Email professionnel" %>
+                        <%= f.input :address, label: false, placeholder: "Adresse professionnelle" %>
+                      </div>
+                    </div>
+                    <p class="explanation"><%= s.explanation %></p>
+                    <div class="modal-footer">
+                      <%= f.button :submit, "Ajouter", class:"button main-button" %>
+                    </div>
+                  <% end %>
+                <% else %>
+                  <%= simple_form_for @network, url: networks_path(profile: @profile, social: s), html: { id:"new_network_#{s.id}"}, method: :post do |f| %>
+                    <div class="modal-body">
+                      <%= image_tag "logo_#{s.name}.svg", class:"icon-social" %>
+                      <%= f.input :username, input_html: { id:"network_username_#{s.id}", class:"js-listen-input"}, placeholder: s.kind == "username" ? "Ton username" : "Le lien de ton profil" , label: false%>
+                    </div>
+                    <p class="explanation"><%= s.explanation %></p>
+                    <div class="modal-footer">
+                      <% unless s.name == "text" || s.name == "whatsapp" %>
+                        <a href="" class="button-to-open button border-blue-button" data-social="<%= s.name %>" data-url="<%= s.kind == "username" ? "#{s.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                      <% end %>
+                      <%= f.button :submit, "Ajouter", class:"button main-button" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
                       <% end %>
                       <%= link_to "Supprimer", network_path(n), method: :delete, class:"button border-blue-button" %>
                       <%= f.button :submit, "Modifier", class:"button main-button" %>
