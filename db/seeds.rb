@@ -51,16 +51,16 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 
 # puts "Socials on creation."
 # instagram = Social.create!(name: "instagram", url_desktop_begin:"https://www.instagram.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# facebook = Social.create!(name: "facebook", url_desktop_begin:"https://www.facebook.com/", url_mobile_begin: "placeholder_two", kind: "link")
+# facebook = Social.create!(name: "facebook", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
 # snapchat = Social.create!(name: "snapchat", url_desktop_begin:"https://www.snapchat.com/add/", url_mobile_begin: "https://www.snapchat.com/add/", kind: "username")
 # tiktok = Social.create!(name: "tiktok", url_desktop_begin:"https://www.tiktok.com/", url_mobile_begin: "placeholder_two", kind: "username")
 # twitter = Social.create!(name: "twitter", url_desktop_begin:"https://twitter.com/", url_mobile_begin: "placeholder_two", kind: "username")
-# linkedin = Social.create!(name: "linkedin", url_desktop_begin:"https://www.linkedin.com/in/", url_mobile_begin: "placeholder_two", kind: "link")
+# linkedin = Social.create!(name: "linkedin", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
 # website = Social.create!(name: "website", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
 # text = Social.create!(name: "text", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
 # email = Social.create!(name: "email", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
 # contact = Social.create!(name: "contact", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "username")
-# youtube = Social.create!(name: "youtube", url_desktop_begin:"https://www.youtube.com/c/", url_mobile_begin: "placeholder_two", kind: "link")
+# youtube = Social.create!(name: "youtube", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link")
 # soundcloud = Social.create!(name: "soundcloud", url_desktop_begin:"https://soundcloud.com/", url_mobile_begin: "placeholder_two", kind: "username")
 # spotify = Social.create!(name: "spotify", url_desktop_begin:"https://open.spotify.com/user/", url_mobile_begin: "placeholder_two", kind: "username")
 # twitch = Social.create!(name: "twitch", url_desktop_begin:"https://www.twitch.tv/", url_mobile_begin: "placeholder_two", kind: "username")
@@ -92,15 +92,15 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 # puts "Networks on creation"
 
 # instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
-# facebook_netwrok_tr = Network.create!(username: "thomas.rodier.9", profile: two_profile, social: facebook)
+# facebook_netwrok_tr = Network.create!(username: "https://www.facebook.com/thomas.rodier.9", profile: two_profile, social: facebook)
 # email_netwrok_tr = Network.create!(username: "hi@thomasrodier.co", profile: two_profile, social: email)
 # twitter_netwrok_tr = Network.create!(username: "rodiert17", profile: two_profile, social: twitter)
-# linkedin_netwrok_tr = Network.create!(username: "thomas-rodier", profile: two_profile, social: linkedin)
+# linkedin_netwrok_tr = Network.create!(username: "https://www.linkedin.com/in/thomas-rodier", profile: two_profile, social: linkedin)
 # tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile, social: tiktok)
 # website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
-# # text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
+# text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
 
-# puts "Well done human, #{Network.count} networks have been created."
+puts "Well done human, #{Network.count} networks have been created."
 #-----------------------------------------------------------------------------------------------##
 #-----------------------------------------------------------------------------------------------##
 #-----------------------------------------------------------------------------------------------##
