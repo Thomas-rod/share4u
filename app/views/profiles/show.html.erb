@@ -91,7 +91,7 @@
                     </div>
                     <p class="explanation"><%= n.social.explanation %></p>
                     <div class="modal-footer">
-                      <% unless n.social.name == "text" || n.social.name == "whatsapp" %>
+                      <% unless n.social.name == "text" || n.social.name == "whatsapp" || n.social.name == "email" %>
                         <a href="<%= "#{n.username.include?("http") ? "#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" : "http://#{gsubSoundCloud(n.username)}"}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
                       <% end %>
                       <%= link_to "Supprimer", network_path(n), method: :delete, class:"button border-blue-button" %>
