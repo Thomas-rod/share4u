@@ -97,7 +97,7 @@
                       <% elsif n.social.name == "email" %>
                         <%= mail_to "#{n.username}", "Ouvrir", class:"button border-blue-button button-to-open", data: {social: "#{n.social.name}", url: "#{n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""}"}, target:"_blank"%>
                       <% else %>
-                        <a href="<%="#{n.social.url_desktop_begin}#{n.username}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
+                        <a href="<%="#{n.social.url_desktop_begin}#{gsubSoundCloud(n.username)}" %>" class="button-to-open button border-blue-button" data-social="<%= n.social.name %>" data-url="<%= n.social.kind == "username" ? "#{n.social.url_desktop_begin}" : ""%>" target="_blank">Ouvrir</a>
                       <% end %>
                       <%= link_to "Supprimer", network_path(n), method: :delete, class:"button border-blue-button" %>
                       <%= f.button :submit, "Modifier", class:"button main-button" %>
