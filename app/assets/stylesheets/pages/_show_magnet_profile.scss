@@ -114,25 +114,25 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  box-shadow: 0px 15px 20px 5px rgba($purple-color, 0.3);
-  background-color: $purple-color;
+  box-shadow: 0px 15px 20px 5px rgba($second-color, 0.3);
+  background-color: $second-color;
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
   0% {
     transform: scale(0.99);
-    box-shadow: 0 0 0 0 rgba($purple-color, 0.7);
+    box-shadow: 0 0 0 0 rgba($second-color, 0.7);
   }
 
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba($purple-color, 0);
+    box-shadow: 0 0 0 10px rgba($second-color, 0);
   }
 
   100% {
     transform: scale(0.99);
-    box-shadow: 0 0 0 0 rgba($purple-color, 0);
+    box-shadow: 0 0 0 0 rgba($second-color, 0);
   }
 }
 

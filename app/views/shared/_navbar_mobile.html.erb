@@ -11,7 +11,10 @@
     <% end %>
   <% end %>
   <span class="main-icon cameraButton">
-    <label for="mypic"><i class="icon-mobile-navbar  fas fa-camera"></i></label>
+    <label for="mypic">
+      <%#= image_tag "logo_white.svg", class:"icon-mobile-navbar" %>
+      <i class="icon-mobile-navbar  fas fa-camera"></i>
+    </label>
     <input type="file" class="input-file" id="mypic" accept="image/*">
   </span>
   <%= link_to destroy_user_session_path do %>

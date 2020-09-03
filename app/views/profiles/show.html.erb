@@ -10,7 +10,7 @@
           <%= image_tag 'logo.svg', class:"image-resize #{"magnet-bought" if !@profile.magnet_profile.nil? }" %>
         <% end %>
         <% if @profile.magnet_profile.nil? %>
-          <%= link_to "Acheter mon badge", purchase_path, class:"button purple-button" %>
+          <%= link_to "Acheter mon badge", purchase_path, class:"button orange-button" %>
         <% else %>
           <p><span>✅</span>Ton badge est activé</p>
         <% end %>
@@ -49,7 +49,7 @@
     </div>
     <div id="show-profil--informations--networks">
       <% unless @profile.magnet_profile.nil? %>
-        <%= link_to "Voir mon profil", magnet_profile_path(@profile.magnet_profile),class:"button purple-button" %>
+        <%= link_to "Voir mon profil", magnet_profile_path(@profile.magnet_profile),class:"button orange-button" %>
       <% end %>
       <div class="networks-container">
         <% unless @networks.empty? %>
