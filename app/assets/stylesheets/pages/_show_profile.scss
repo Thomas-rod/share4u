@@ -40,11 +40,11 @@
             height:auto;
             max-height:300px;
             box-shadow: 0 15px 20px 3px rgba(0,0,0,0.2);
-            border:5px solid rgba(white, 0.3);
+            border:2px solid rgba(white, 0.3);
             object-fit:cover;
             width:100%;
             &.magnet-bought {
-              border-color: $validation-color !important;
+              border-color: white !important;
             }
           }
           a {
