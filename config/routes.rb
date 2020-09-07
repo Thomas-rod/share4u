@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+  end
   get '/purchase', to: 'pages#purchase'
   get '/instructions', to: 'pages#instructions'
   get '/faq', to: 'pages#faq'
