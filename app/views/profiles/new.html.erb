@@ -15,7 +15,7 @@
         <%= f.input :last_name, label: false, placeholder: "Doe" %>
       </span>
     </div>
-      <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Photo de profile'   %>
+      <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Photo de profil'   %>
       <span class="avatar-bordered" id="spanPlaceholderPP" style="width:110px; height:110px; background-color: rgba(0,0,0,0.3); display:block; margin: 0 auto;"></span>
       <span id="span-pp"><%= image_tag "", width: 110, height:110, class: 'hidden avatar-bordered', id: "photo-preview"%></span>
       <%= f.button :submit, "Valider ", class:"button main-button" %>

@@ -24,7 +24,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle"><%= @profile.first_name.capitalize %>, voici ton profile</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle"><%= @profile.first_name.capitalize %>, voici ton profil</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -35,7 +35,7 @@
                 <%= f.input :first_name, label:false, value: @profile.first_name %>
                 <p>Ton nom de famille</p>
                 <%= f.input :last_name, label:false, value: @profile.last_name %>
-                <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo de profile'   %>
+                <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo de profil'   %>
                 <span style="margin: 0 auto;display: block;width: fit-content;"><%= image_tag "", width: 110, height:110, class: 'hidden avatar-bordered', id: "photo-preview" %></span>
               </div>
               <div class="modal-footer">
