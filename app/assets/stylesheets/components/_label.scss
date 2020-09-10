@@ -51,10 +51,10 @@
 }
 
 .devise-shared-links {
-  color: $black;
+  color: $white;
   transition: transform .2s ease;
   &:hover {
-    color: $black;
+    color: $white;
     transform: translate(0px, -1px);
   }
 }
