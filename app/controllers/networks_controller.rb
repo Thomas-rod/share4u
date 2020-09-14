@@ -15,7 +15,7 @@ class NetworksController < ApplicationController
     @network.social = Social.find(params[:social])
 
     if @network.save
-      redirect_to profile_path(@network.profile), notice: "Well done ! your account #{@network.social.name} has just been added"
+      redirect_to profile_path(@network.profile), notice: "Well done ! Your account #{@network.social.name} has just been added"
     else
       redirect_to profile_path(@network.profile), notice: "Your #{@network.social.name} can't be empty"
     end
@@ -38,7 +38,7 @@ class NetworksController < ApplicationController
   private
 
   def params_network
-    params.require(:network).permit(:username, :social, :profile, :active, :priority)
+    params.require(:network).permit(:username, :social, :profile, :active, :priority, :phone_extension)
   end
 
   def set_network
