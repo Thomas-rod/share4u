@@ -15,24 +15,24 @@ class NetworksController < ApplicationController
     @network.social = Social.find(params[:social])
 
     if @network.save
-      redirect_to profile_path(@network.profile), notice: "Bravo ! ton compte #{@network.social.name} vient d'être ajouté."
+      redirect_to profile_path(@network.profile), notice: "Well done ! your account #{@network.social.name} has just been added"
     else
-      redirect_to profile_path(@network.profile), notice: "Ton #{@network.social.name} ne peut pas être vide."
+      redirect_to profile_path(@network.profile), notice: "Your #{@network.social.name} can't be empty"
     end
   end
 
   def update
     @network.username = params[:network][:username]
     if @network.save
-      redirect_to profile_path(@network.profile), notice: "Ton profil a bien été mis à jours"
+      redirect_to profile_path(@network.profile), notice: "Your #{@network.social.name.capitalize} has been updated"
     else
-      redirect_to profile_path(@network.profile), notice: "Aïe quelque chose s'est mal passé."
+      redirect_to profile_path(@network.profile), notice: "Oupsy, something went wrong"
     end
   end
 
   def destroy
     @network.destroy
-    redirect_to profile_path(@network.profile), notice: "Ton #{@network.social.name.capitalize} a bien été supprimé"
+    redirect_to profile_path(@network.profile), notice: "Your #{@network.social.name.capitalize} has been deleted"
   end
 
   private

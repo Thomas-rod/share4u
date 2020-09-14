@@ -11,11 +11,11 @@
   </div>
   <div id="magnet-activation-section">
     <h2>Hello, <%= current_user.profile.first_name.capitalize %> !</h2>
-    <h3>Félicitation, tu es sur le point d'activer ton magnet et de pouvoir partager tes réseaux avec style</h3>
-    <p>Clique sur le bouton pour activer ton magnet</p>
+    <h3>Congratulations, you are about to activate your badge and share all your socials ! </h3>
+    <p>Click on the button below to activate !</p>
     <%= simple_form_for @magnet_profile, url: magnet_profile_path(@magnet_profile) , method: :patch do |f| %>
       <%= f.input :profile, as: :hidden %>
-      <%= f.button :submit, "Activer 🚀", class:"button white-button" %>
+      <%= f.button :submit, "Activate 🚀", class:"button white-button" %>
     <% end %>
   </div>
 <% else %>
@@ -28,7 +28,7 @@
       <% end %>
     </div>
     <span>
-      <p>Bienvenu sur le profil de </p>
+      <p>Welcome to the profile of </p>
       <h1><%= @magnet_profile.profile.name_capitalize %></h1>
     </span>
   </div>
@@ -71,12 +71,12 @@
   </div>
   <div id="magnet-footer--joombo">
     <%= link_to "https://www.joombo.io", target:"_blank" do %>
-      <p>Propulsé par Joombo.co</p>
+      <p>Powered by Joombo.co</p>
     <% end %>
   </div>
   <div id="magnet-footer">
     <%= link_to "https://www.joombo.io", target:"_blank" do %>
-      <h2>Rejoins le club 🚀</h2>
+      <h2>Join the club 🚀</h2>
     <% end %>
   </div>
 <% end %>

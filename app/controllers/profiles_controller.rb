@@ -29,17 +29,17 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profil_params)
     @profile.user = current_user
     if @profile.save
-      redirect_to profile_path(@profile), notice: "Super ! Maintenant on va créer ton espace "
+      redirect_to profile_path(@profile), notice: "Well done ! Now let's go and create your socials"
     else
-      render :new, notice: "Eh fait gaffe, tu as oublié de renseigner un champ"
+      render :new, notice: "Whatch out ! You forgot to fulfill infomrations"
     end
   end
 
   def update
     if @profile.update(profil_params)
-      redirect_to profile_path(@profile), notice: "Parfait, ton profile a été modifié"
+      redirect_to profile_path(@profile), notice: "Perfect ! Your profile has been updated"
     else
-      redirect_to profile_path(@profile), notice: "Aïe, quelque chose s'est mal passée"
+      redirect_to profile_path(@profile), notice: "Oupsy, something went wrong"
     end
   end
 

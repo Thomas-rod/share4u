@@ -1,24 +1,24 @@
 <%= render 'shared/navbar_app' %>
 <%= render 'shared/navbar_mobile'%>
 <div id="onboarding-container">
-  <p class="title font-blue">Bienvenu dans la Joombo Family !</p>
-  <p class="t-align font-blue">Mais, qui est-tu ? On aimeraît apprendre à te connaître</p>
+  <p class="title font-blue">Welcome in Joombo Family !</p>
+  <p class="t-align font-blue">Who are you ? We would like to get to know you</p>
   <div id="onboarding-container--form">
     <%= simple_form_for @profile, url: profiles_path, method: :post do |f|%>
     <div id="onboarding-container--form--name">
       <span>
-        <p class="font-label font-blue">Ton prénom</p>
+        <p class="font-label font-blue">Your firstname</p>
         <%= f.input :first_name, label:false, placeholder: "John"%>
       </span>
       <span>
-        <p class="font-label font-blue">Ton nom de famille</p>
+        <p class="font-label font-blue">Your lastname</p>
         <%= f.input :last_name, label: false, placeholder: "Doe" %>
       </span>
     </div>
-      <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Photo de profil'   %>
+      <%= f.input :profile_picture, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Your profile picture'   %>
       <span class="avatar-bordered" id="spanPlaceholderPP" style="width:110px; height:110px; background-color: rgba(0,0,0,0.3); display:block; margin: 0 auto;"></span>
       <span id="span-pp"><%= image_tag "", width: 110, height:110, class: 'hidden avatar-bordered', id: "photo-preview"%></span>
-      <%= f.button :submit, "Valider ", class:"button main-button" %>
+      <%= f.button :submit, "Let's go !", class:"button main-button" %>
     <% end %>
   </div>
 </div>

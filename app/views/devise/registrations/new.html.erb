@@ -1,7 +1,7 @@
 <div class="session-div">
   <div class="session-div--login">
     <%= image_tag 'logo_white.svg' %>
-    <h2>Je veux créer un compte</h2>
+    <h2>Create an account</h2>
     <div class="session-div--login--form">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -9,21 +9,26 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
+                      label: false,
+                      placeholder: "Your email",
                       input_html: { autocomplete: "email" }%>
           <%= f.input :password,
                       required: true,
-                      label: "Mot de passe",
-                      hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                      label: false,
+                      placeholder: "Your password (6 minimum characters",
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
-                      label: "Confirmation mot de passe",
+                      label: false,
+                      placeholder:"Confirm your password",
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Me créer un compte", class:"button orange-button" %>
+          <%= f.button :submit, "Create my account", class:"button orange-button" %>
         </div>
       <% end %>
+      <br>
+      <p>or</p>
       <br>
       <%= render "devise/shared/links" %>
     </div>
