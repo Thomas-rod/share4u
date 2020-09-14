@@ -14,20 +14,20 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
 
-puts "Well let's begin with our first operation, CLEANING THE DB."
-User.destroy_all
-puts "All users have been destroyed"
-Profile.destroy_all
-puts "All profiles have been destroyed"
-Magnet.destroy_all
-puts "All magnets have been destroyed"
-MagnetProfile.destroy_all
-puts "All magnets have been destroyed"
-Network.destroy_all
-puts "All networks have been destroyed"
-Social.destroy_all
-puts "All socials have been destroyed"
-puts "Human, it's done. I destroy everything."
+# puts "Well let's begin with our first operation, CLEANING THE DB."
+# User.destroy_all
+# puts "All users have been destroyed"
+# Profile.destroy_all
+# puts "All profiles have been destroyed"
+# Magnet.destroy_all
+# puts "All magnets have been destroyed"
+# MagnetProfile.destroy_all
+# puts "All magnets have been destroyed"
+# Network.destroy_all
+# puts "All networks have been destroyed"
+# Social.destroy_all
+# puts "All socials have been destroyed"
+# puts "Human, it's done. I destroy everything."
 
 
 ##-----------------------------------------------------------------------------------------------##
@@ -335,14 +335,14 @@ titok_social = Social.find_by(name: "tiktok").update(header: "Add your TikTok's 
 twitter_social = Social.find_by(name: "twitter").update(header: "Add your Twitter's username", explanation: "Open Twitter and go to your profile. Your username is below your pseudo (second name below the first one)", kind: "username")
 linkedin_social = Social.find_by(name: "linkedin").update(header: "Add your contact plug", explanation: "Open www.linkedin.com and go to your profile. click on the top right on 'Modify my public profile & URL'. Copy & Past your url", kind: "link")
 website_social = Social.find_by(name: "website").update(header: "Add your own website's link", explanation: "Add the URL of you website", kind: "link")
-text_social = Social.find_by(name: "text").update(header: "Add your phone number", explanation: "Tu te souviens de ton numéro ? Pas besoin des +33...", kind: "numéro")
+text_social = Social.find_by(name: "text").update(header: "Add your phone number", explanation: "Do you remember your phone number ? ... ", kind: "numéro")
 email_social = Social.find_by(name: "email").update(header: "Add your email address", explanation: "Do you remember you email address ? ... ", kind: "email")
 contact_social = Social.find_by(name: "contact").update(header: "Add your contact plug", explanation: "Want to share your professional contact ? Fulfill only what you want to share.", kind: "username")
 youtube_social = Social.find_by(name: "youtube").update(header: "Add your Youtube's link", explanation: "Open www.youtube.com and go to you channel. Copy & past the link", kind: "link")
 soundcloud_social = Social.find_by(name: "soundcloud").update(header: "Add your Soundcloud's username", explanation: "Open Soundcloud and go to your profile. Your username is below your profile picture", kind: "username")
 spotify_social = Social.find_by(name: "spotify").update(header: "Add your Spotify's username", explanation: "Open Spotify and go to the page Preferences and Account. You 'll find your username (it's a number)", kind: "username")
 twitch_social = Social.find_by(name: "twitch").update(header: "Add your Twitch's username", explanation: "Open Twitch and go to your profile. You 'll find your username at the right of your profile picture", kind: "username")
-whatsapp_social = Social.find_by(name: "whatsapp").update(header: "Add your phone number", explanation: "Nous n'acceptons que les numéros français pour le moment.", kind: "numéro")
+whatsapp_social = Social.find_by(name: "whatsapp").update(header: "Add your phone number", explanation: "For now, only french number are allowed.", kind: "numéro")
 lien_social = Social.find_by(name: "lien").update(header: "Add you custom link", explanation: "Do you want to add your own custom link ? DO IT !!", kind: "link")
 
 # puts "Human, my work here is done. It's have been a pleasure .. son of ... So ciao !"
