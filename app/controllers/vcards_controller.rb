@@ -4,23 +4,23 @@ before_action :set_vcard, only: [:update, :destroy]
     vcard = Vcard.new(params_vcard)
     vcard.profile = current_user.profile
     network_contact = Network.new(profile: vcard.profile, social: Social.find_by(name: "contact"), username: vcard.profile.first_name)
-    if vcard.save! && network_contact.save!
-      redirect_to profile_path(vcard.profile), notice: "Super, ta carte de contact a bien été ajouté !"
+    if vcard.save && network_contact.save
+      redirect_to profile_path(vcard.profile), notice: "Youpi ! You contact plug has been added"
     else
-      redirect_to profile_path(vcard.profile), notice: "Aïe quelque chose s'est mal passée."
+      redirect_to profile_path(vcard.profile), notice: "Oupsy, something went wrong"
     end
   end
 
   def update
     @vcard.update!(params_vcard)
-    redirect_to profile_path(@vcard.profile), notice: "Super, ta carte de contact a bien été modifiée !"
+    redirect_to profile_path(@vcard.profile), notice: "Well done, your contact plug has been updated "
   end
 
   def destroy
     @network_contact = @vcard.profile.networks.select{|n| n.social.name == "contact"}
     @network_contact.first.destroy
     @vcard.destroy
-    redirect_to profile_path(@vcard.profile), notice: "Ta carte de contact a bien été supprimée"
+    redirect_to profile_path(@vcard.profile), notice: "Your contact plug has been deleted "
   end
 
   private

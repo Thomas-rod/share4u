@@ -10,7 +10,7 @@ class MagnetProfile < ApplicationRecord
     unless self.profile.nil?
       profile = self.profile
       profile.magnet_bought = true
-      profile.save!
+      profile.save
     end
   end
 end

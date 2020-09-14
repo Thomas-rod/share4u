@@ -1,14 +1,16 @@
   <div id="navbar-app">
     <div id="navbar-app-logo">
-      <%= link_to root_path do %>
+      <%= link_to profile_path do %>
         <%= image_tag 'logo_white.svg' %>
       <% end %>
     </div>
     <div id="navbar-app-title">
-      <p class="title">Mon profil</p>
+      <p class="title">My profile</p>
     </div>
     <div id="navbar-app-documentation">
-      <i class="fas fa-book icon-white"></i>
+      <%= link_to "https://www.joombo.io/pages/faq", target:"_blank" do  %>
+        <i class="fas fa-book icon-white"></i>
+      <% end %>
     </div>
   </div>
 </div>

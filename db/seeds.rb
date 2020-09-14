@@ -14,25 +14,25 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
 
-# puts "Well let's begin with our first operation, CLEANING THE DB."
-# User.destroy_all
-# puts "All users have been destroyed"
-# Profile.destroy_all
-# puts "All profiles have been destroyed"
-# Magnet.destroy_all
-# puts "All magnets have been destroyed"
-# MagnetProfile.destroy_all
-# puts "All magnets have been destroyed"
-# Network.destroy_all
-# puts "All networks have been destroyed"
-# Social.destroy_all
-# puts "All socials have been destroyed"
-# puts "Human, it's done. I destroy everything."
+puts "Well let's begin with our first operation, CLEANING THE DB."
+User.destroy_all
+puts "All users have been destroyed"
+Profile.destroy_all
+puts "All profiles have been destroyed"
+Magnet.destroy_all
+puts "All magnets have been destroyed"
+MagnetProfile.destroy_all
+puts "All magnets have been destroyed"
+Network.destroy_all
+puts "All networks have been destroyed"
+Social.destroy_all
+puts "All socials have been destroyed"
+puts "Human, it's done. I destroy everything."
 
 
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
-# ##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
+##-----------------------------------------------------------------------------------------------##
 
 # puts "Ok, now second operation, CREATING OUR DB."
 
@@ -100,7 +100,7 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 # website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
 # text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
 
-puts "Well done human, #{Network.count} networks have been created."
+# puts "Well done human, #{Network.count} networks have been created."
 #-----------------------------------------------------------------------------------------------##
 #-----------------------------------------------------------------------------------------------##
 #-----------------------------------------------------------------------------------------------##
@@ -328,21 +328,21 @@ puts "Well done human, #{Network.count} networks have been created."
 ##                             ADD HEADER / EXPLANATIONS TO SOCIALS                                ##
 ## ------------------------------------------------------------------------------------------------##
 
-# instagram_social = Social.find_by(name: "instagram").update(header: "Ajoute ton pseudo Instagram", explanation: "Ouvre Instagram et rend toi sur ton profil. Ton username est tout en haut", kind: "username")
-# facebook_social = Social.find_by(name: "facebook").update(header: "Ajoute le lien de ton profil Facebook", explanation: "Ouvre www.facebook.com et rend toi sur ton profil. Copie & colle le lien", kind: "link")
-# snapchat_social = Social.find_by(name: "snapchat").update(header: "Ajoute ton pseudo Snapchat", explanation: "Ouvre Snapchat et rend toi sur ton profil. Ton username se trouve en dessous de ton pseudo (le deuxième nom en dessous du premier)", kind: "username")
-# titok_social = Social.find_by(name: "tiktok").update(header: "Ajoute ton pseudo TikTok", explanation: "Ouvre Tiktok et rend toi sur ton profil. Ton username est sous ta photo de profil", kind: "username")
-# twitter_social = Social.find_by(name: "twitter").update(header: "Ajoute ton pseudo twitter", explanation: "Ouvre Twitter et rend toi sur ton profil. Ton username se trouve en dessous de ton pseudo (le deuxième nom en dessous du premier)", kind: "username")
-# linkedin_social = Social.find_by(name: "linkedin").update(header: "Ajoute le lien de ton profil Linkedin", explanation: "Ouvre www.linkedin.com et rend toi sur ton profil. Clique en haut à droite sur 'Modifier le profil public et l'URL'. Copie & Colle ton URL", kind: "link")
-# website_social = Social.find_by(name: "website").update(header: "Ajoute le lien de ton site internet", explanation: "Ajoute l'URL de ton site internet", kind: "link")
-# text_social = Social.find_by(name: "text").update(header: "Ajoute ton numéro de téléphone", explanation: "Tu te souviens de ton numéro ? Pas besoin des +33...", kind: "numéro")
-# email_social = Social.find_by(name: "email").update(header: "Ajoute ton adresse mail", explanation: "Cela ouvrira un email avec ton mail en adresse de réception", kind: "email")
-# contact_social = Social.find_by(name: "contact").update(header: "Ajoute ta fiche contact", explanation: "Envie de partager ton contact complet plus facilement ? Remplis simplement les champs que tu désires partager", kind: "username")
-# youtube_social = Social.find_by(name: "youtube").update(header: "Ajoute le lien de ta chaîne Youtube", explanation: "Ouvre www.youtube.com et rend toi sur ta chaîne. Copie & colle le lien", kind: "link")
-# soundcloud_social = Social.find_by(name: "soundcloud").update(header: "Ajoute ton pseudo Soundclound", explanation: "Ouvre Soundcloud et rend toi sur ton profil. Ton username se trouve sous ta photo de profil", kind: "username")
-# spotify_social = Social.find_by(name: "spotify").update(header: "Ajoute ton pseudo Spotify", explanation: "Ouvre Spotify et rend toi sur la page Préférences puis Compte. Tu y trouveras ton nom d'utilisateur", kind: "username")
-# twitch_social = Social.find_by(name: "twitch").update(header: "Ajoute ton pseudo Twitch", explanation: "Ouvre Twitch et rend toi ton profil. Tu y trouveras ton nom d'utilisateurà droite de ta photo de profil", kind: "username")
-# whatsapp_social = Social.find_by(name: "whatsapp").update(header: "Ajoute ton numéro de téléphone", explanation: "Nous n'acceptons que les numéros français pour le moment.", kind: "numéro")
-# lien_social = Social.find_by(name: "lien").update(header: "Ajoute un lien personnalisé", explanation: "Tu as envie d'ajouter un lien custom ? Fais-toi plaisir !", kind: "link")
+instagram_social = Social.find_by(name: "instagram").update(header: "Add your Instagram's username", explanation: "Open Instagram and go to your profile. Your username is at the top of your screen", kind: "username")
+facebook_social = Social.find_by(name: "facebook").update(header: "Add your Facebook's link", explanation: "Open www.facebook.com and go to your profile. Copy & past the link in your browser", kind: "link")
+snapchat_social = Social.find_by(name: "snapchat").update(header: "Add your Snapchat's username", explanation: "Open Snapchat and go to your profile. Your username is below your pseudo (second name below the first one)", kind: "username")
+titok_social = Social.find_by(name: "tiktok").update(header: "Add your TikTok's username", explanation: "Open Tiktok and go to your profile. Your username is below your profile picture", kind: "username")
+twitter_social = Social.find_by(name: "twitter").update(header: "Add your Twitter's username", explanation: "Open Twitter and go to your profile. Your username is below your pseudo (second name below the first one)", kind: "username")
+linkedin_social = Social.find_by(name: "linkedin").update(header: "Add your contact plug", explanation: "Open www.linkedin.com and go to your profile. click on the top right on 'Modify my public profile & URL'. Copy & Past your url", kind: "link")
+website_social = Social.find_by(name: "website").update(header: "Add your own website's link", explanation: "Add the URL of you website", kind: "link")
+text_social = Social.find_by(name: "text").update(header: "Add your phone number", explanation: "Tu te souviens de ton numéro ? Pas besoin des +33...", kind: "numéro")
+email_social = Social.find_by(name: "email").update(header: "Add your email address", explanation: "Do you remember you email address ? ... ", kind: "email")
+contact_social = Social.find_by(name: "contact").update(header: "Add your contact plug", explanation: "Want to share your professional contact ? Fulfill only what you want to share.", kind: "username")
+youtube_social = Social.find_by(name: "youtube").update(header: "Add your Youtube's link", explanation: "Open www.youtube.com and go to you channel. Copy & past the link", kind: "link")
+soundcloud_social = Social.find_by(name: "soundcloud").update(header: "Add your Soundcloud's username", explanation: "Open Soundcloud and go to your profile. Your username is below your profile picture", kind: "username")
+spotify_social = Social.find_by(name: "spotify").update(header: "Add your Spotify's username", explanation: "Open Spotify and go to the page Preferences and Account. You 'll find your username (it's a number)", kind: "username")
+twitch_social = Social.find_by(name: "twitch").update(header: "Add your Twitch's username", explanation: "Open Twitch and go to your profile. You 'll find your username at the right of your profile picture", kind: "username")
+whatsapp_social = Social.find_by(name: "whatsapp").update(header: "Add your phone number", explanation: "Nous n'acceptons que les numéros français pour le moment.", kind: "numéro")
+lien_social = Social.find_by(name: "lien").update(header: "Add you custom link", explanation: "Do you want to add your own custom link ? DO IT !!", kind: "link")
 
 # puts "Human, my work here is done. It's have been a pleasure .. son of ... So ciao !"
