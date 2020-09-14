@@ -88,9 +88,6 @@
                     <div class="modal-body">
                       <%= image_tag "logo_#{n.social.name}.svg", class:"icon-social" %>
                       <%= f.input :username, input_html: { id:"network_username_#{n.id}"}, label:false %>
-                      <% if n.social.name == "whatsapp" %>
-                        <%= f.input :phone_extension, label:false, as: :collection, prompt: "Select your country" %>
-                      <% end %>
                     </div>
                     <p class="explanation"><%= n.social.explanation %></p>
                     <div class="modal-footer">
