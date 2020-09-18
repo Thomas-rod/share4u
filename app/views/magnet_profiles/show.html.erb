@@ -32,10 +32,16 @@
       <h1><%= @magnet_profile.profile.name_capitalize %></h1>
     </span>
   </div>
+  <% if @calendly %>
+    <%= link_to @calendly.username.include?("http") ? "#{@calendly.username}" : "http://#{@calendly.username}", target:"_blank", class:"button orange-button button-calendly-positioning" do %>
+      <p>Schedule a meeting with <%= @magnet_profile.profile.first_name.capitalize %> </p>
+    <% end %>
+  <% end %>
   <div id="magnet-networks--card-container">
     <% @networks.each do |n| %>
     <div class="card-network">
-      <% if n.social.name == "email" %>
+      <% if n.social.name == "calendly" %>
+      <% elsif n.social.name == "email" %>
         <%= mail_to "#{n.username}", target:"_blank" do %>
           <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social--magnet"%>
           <p><%= n.social.name.capitalize %></p>

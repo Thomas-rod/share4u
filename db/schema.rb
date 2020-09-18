@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_114247) do
+ActiveRecord::Schema.define(version: 2020_09_18_175723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -197,7 +197,6 @@ ActiveRecord::Schema.define(version: 2020_09_14_114247) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "active", default: true
     t.boolean "priority", default: false
-    t.string "phone_extension", default: "+33"
     t.index ["profile_id"], name: "index_networks_on_profile_id"
     t.index ["social_id"], name: "index_networks_on_social_id"
   end
@@ -221,6 +220,7 @@ ActiveRecord::Schema.define(version: 2020_09_14_114247) do
     t.string "kind", default: "username"
     t.string "header", default: ""
     t.string "explanation", default: ""
+    t.string "placeholder"
   end
 
   create_table "tokens", force: :cascade do |t|
