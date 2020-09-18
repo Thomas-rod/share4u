@@ -35,6 +35,16 @@ class NetworksController < ApplicationController
     redirect_to profile_path(@network.profile), notice: "Your #{@network.social.name.capitalize} has been deleted"
   end
 
+  def direct
+    @network = Network.find_by(name:params[:network_name])
+    @network.update(direct:true)
+    @network.profile.networks.each do |n|
+      unless @network == n
+        n.update(direct:false)
+      end
+    end
+  end
+
   private
 
   def params_network

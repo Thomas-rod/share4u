@@ -82,6 +82,12 @@
   }
 }
 
+.direct-active {
+  background-color:$green !important;
+  color:white !important;
+  border-color:$green !important;
+}
+
 .upload-photo {
   display:inline-block;
   width:100%;

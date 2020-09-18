@@ -35,6 +35,7 @@ import { landbotLoad } from '../components/landbot';
 import { closeCouponIcon } from '../components/closecoupon';
 import { previewImageOnFileSelect } from '../components/preview_image_onboarding';
 import { modalOpenNetwork } from '../components/button_open_url_network';
+import { directNetwork } from '../components/direct';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -48,4 +49,5 @@ document.addEventListener('turbolinks:load', () => {
   closeCouponIcon();
   previewImageOnFileSelect();
   modalOpenNetwork();
+  directNetwork();
 });

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_175723) do
+ActiveRecord::Schema.define(version: 2020_09_18_192659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -197,6 +197,8 @@ ActiveRecord::Schema.define(version: 2020_09_18_175723) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "active", default: true
     t.boolean "priority", default: false
+    t.integer "order"
+    t.boolean "direct"
     t.index ["profile_id"], name: "index_networks_on_profile_id"
     t.index ["social_id"], name: "index_networks_on_social_id"
   end

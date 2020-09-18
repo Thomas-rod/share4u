@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:show, :new, :create, :update]
   resources :networks, only: [:index, :create, :update, :destroy]
+  post '/netorks', to: "networks#direct"
   resources :magnets, only: [:show, :create, :update]
   resources :magnet_profiles, only: [:show, :create, :update]
   resources :vcards, only: [:create, :update, :destroy]
