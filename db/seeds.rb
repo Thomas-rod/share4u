@@ -378,11 +378,13 @@
 
 User.all.order(created_at: :ASC).each do |user|
   p user
-  networks = user.profile.networks
-  counter = 1
-  networks.each do |n|
-    n.update(order: counter)
-    counter += 1
+  unless user&.profile&.networks.nil? || user&.profile&.networks.empty?
+    networks = user.profile.networks
+    counter = 1
+    networks.each do |n|
+      n.update(order: counter)
+      counter += 1
+    end
   end
 end
 
