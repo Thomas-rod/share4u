@@ -1,9 +1,5 @@
 <%= render 'shared/navbar_app' %>
 <%= render 'shared/navbar_mobile', locals: { profile: @profile } %>
-<div id="changes-footer-buttons">
-  <%= link_to "Delete", direct_delete_path(@network), class:"button main-button" %>
-  <%= link_to "Update", direct_update_path, class:"button orange-button" %>
-</div>
 <div id="show-profil">
   <div id="show-profil--informations">
     <div id="show-profil--informations--user">
@@ -54,14 +50,14 @@
     <div id="show-profil--informations--networks">
       <div id="show-profil--informations--networks--settings">
         <% unless @profile.magnet_profile.nil? %>
-          <%= link_to "See my profile", magnet_profile_path(@profile.magnet_profile),class:"button orange-button" %>
-          <%= link_to "Directly on", "#", data: {toggle:"modal", target:"#DirectlyOnModalCenter"}, class:"button directly-on #{ "direct-active" if network_direct_true?(@networks) }" %>
+          <%= link_to "See my profile", magnet_profile_path(@profile.magnet_profile), class:"button orange-button", id:"button-see-my-profile"%>
+          <%= link_to "Directly on", "#", data: {toggle:"modal", target:"#DirectlyOnModalCenter"}, class:"button directly-on #{ "green-button" if network_direct_true?(@networks) }" %>
         <% end %>
       </div>
       <div class="networks-container">
         <% unless @networks.empty? %>
           <% @networks.each do |n| %>
-          <%= link_to '#', id:"modal-#{n.social.name}", data: {toggle: 'modal', target:"##{n.social.name}ModalCenter" }, class:"container-button-network #{ "direct-network-active" if n.direct == true}" do %>
+          <%= link_to '#', id:"modal-#{n.social.name}", data: {toggle: 'modal', target:"##{n.social.name}ModalCenter", id:"#{n.id}" }, class:"container-button-network #{ "direct-network-active" if n.direct == true}" do %>
             <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social"%>
             <p><%= n.social.name.capitalize %></p>
             <% if n.direct == true %>
@@ -175,4 +171,8 @@
       </div>
     </div>
   </div>
+</div>
+<div id="changes-footer-buttons">
+  <%= link_to "Delete", "#", class:"button border-blue-button", id:"button-delete-direct" %>
+  <%= link_to "Update", "#", class:"button green-button", id:"button-update-direct" %>
 </div>

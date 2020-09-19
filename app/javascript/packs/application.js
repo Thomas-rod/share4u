@@ -37,6 +37,7 @@ import { previewImageOnFileSelect } from '../components/preview_image_onboarding
 import { modalOpenNetwork } from '../components/button_open_url_network';
 import { directNetwork } from '../components/direct';
 import { sendDataToNetworksController } from '../components/direct_button_to_update_or_delete';
+import { redirectToSocialWhenDirectNetwork } from '../components/redirect_when_direct_netwok';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -51,4 +52,5 @@ document.addEventListener('turbolinks:load', () => {
   modalOpenNetwork();
   directNetwork();
   sendDataToNetworksController();
+  redirectToSocialWhenDirectNetwork();
 });

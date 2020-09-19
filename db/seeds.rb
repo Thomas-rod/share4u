@@ -90,7 +90,7 @@ puts "Well done human, #{MagnetProfile.count} magnet_profiles have been created.
 ##-----------------------------------------------------------------------------------------------##
 ##-----------------------------------------------------------------------------------------------##
 
-puts "Networks on creation"
+# puts "Networks on creation"
 
 instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
 facebook_netwrok_tr = Network.create!(username: "https://www.facebook.com/thomas.rodier.9", profile: two_profile, social: facebook)
@@ -101,7 +101,7 @@ tiktok_netwrok_tr = Network.create!(username: "@thomasrdr", profile: two_profile
 website_netwrok_tr = Network.create!(username: "https://www.thomasrodier.co", profile: two_profile, social: website)
 text_netwrok_tr = Network.create!(username: "0668489169", profile: two_profile, social: text)
 
-puts "Well done human, #{Network.count} networks have been created."
+# puts "Well done human, #{Network.count} networks have been created."
 
 
 #-----------------------------------------------------------------------------------------------##
@@ -376,12 +376,13 @@ puts "Well done human, #{Network.count} networks have been created."
 # puts "Human, i've done this task. Now you have placeholder in your socials. That's awesome !"
 
 
+User.all.order(created_at: :ASC).each do |user|
+  networks = user.profile.networks
+  counter = 1
+  networks.each do |n|
+    n.update(order: counter)
+    counter += 1
+  end
+end
 
-
-
-
-
-
-
-
-
+puts "Human, i've done this task. Now you have all your networks ordered. That's awesome !"

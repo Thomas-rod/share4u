@@ -22,7 +22,7 @@
           align-items:center;
           min-width:55%;
           max-width:55%;
-          margin: auto 0;
+          // margin: auto 0;
         }
 
         #show-profil--informations--user .image-container {
@@ -136,7 +136,7 @@
 
           #changes-footer-buttons {
             position:fixed;
-            z-index:100;
+            z-index:4;
             display:none;
             justify-content:space-between;
             align-items:center;
@@ -372,7 +372,7 @@
         }
         .networks-container {
           justify-content:space-between;
-          padding-bottom:3rem;
+          padding-bottom: 6rem;
           p {
             color:$blue-app;
             font-size: 1.5rem;

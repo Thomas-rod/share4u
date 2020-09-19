@@ -10,6 +10,7 @@ class MagnetProfilesController < ApplicationController
       redirect_to new_user_session_path(magnet_profile_id: @magnet_profile.id)
     else
       @networks = @magnet_profile.profile.networks
+      @direct_network = @magnet_profile.profile.networks.where(direct: true).first
       @calendly = @networks.select{ |n| n.social.name == "calendly" }.first
     end
   end

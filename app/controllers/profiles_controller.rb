@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     @blue_page = true
     authorize @profile
     @socials = socials_not_activated
-    @networks = Network.select{ |n| n.profile.user == current_user}
+    @networks = Network.select{ |n| n.profile.user == current_user}.sort_by{ |n| n.order }
     @network = Network.new()
     @magnet_info = true
     @new_vcard = Vcard.new()
