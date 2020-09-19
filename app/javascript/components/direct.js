@@ -15,15 +15,40 @@ const directNetwork = () => {
 
 
     // FIRST STEP IS TO DISPLAY NONE ALL SOCIALS (WHICH ARE NOT CREATED YET)
+    // SECOND STEP IS TO ADD SPAN INACTIVE TO ALL NETWORKS WHICH ARE NOT ACTIVE
+    // THIRD STEP DISPLAY FIX BANNER TO VALIDATE OR REFUSE CHANGES
+
     if (networksContainer.classList.contains("changes-direct")) {
+      // THIS SECTION IS WHEN YOU ARE ACTUALLY CHANGING YOUR DIRECT
+
+      // FIRST STEP IS TO DISPLAY NONE ALL SOCIALS (WHICH ARE NOT CREATED YET)
       networkNotCreated.forEach((elem) => {
         elem.style.display="none"
-        buttonToAcceptChangesDirect.style.display="flex";
-        // allInactiveNetwork.forEach((elem) => {
-        //   elem.insertAdjacentHTML("beforeend", '<span class="label-direct-inactive"></span>');
-        // })
       })
+
+      // SECOND STEP IS TO ADD SPAN INACTIVE TO ALL NETWORKS WHICH ARE NOT ACTIVE
+      allInactiveNetwork.forEach((elem) => {
+        elem.insertAdjacentHTML("beforeend", '<span class="label-direct-inactive"></span>');
+       })
+
+      // THIRD STEP DISPLAY FIX BANNER TO VALIDATE OR REFUSE CHANGES
+      buttonToAcceptChangesDirect.style.display="flex";
+      // FOURTH STEP IS TO DISABLE THE POPUP WHEN CLICK ON NETWORKS AND TO LISTEN CLICK
+      allNetwork.forEach((elem) => {
+        elem.dataset.target = "#";
+        elem.addEventListener('click', (e) => {
+          allNetwork.forEach((element) => {
+            element.children[2].classList.remove("label-direct-active");
+            element.children[2].classList.remove("label-direct-inactive");
+            element.children[2].classList.add("label-direct-inactive");
+          })
+          elem.children[2].classList.remove("label-direct-inactive");
+          elem.children[2].classList.add("label-direct-active");
+        })
+      })
+
     } else {
+      // THIS SECTION IS TO RECONFIGURE ALL CLASS AND REFRESH
       networkNotCreated.forEach((elem) => {
         elem.style.display="block"
       })
@@ -33,13 +58,6 @@ const directNetwork = () => {
         elem.remove();
       })
     };
-
-    // SECOND STEP IS TO ADD CLASS INACTIVE TO ALL NETWORKS WHICH ARE NOT ACTIVE
-    allInactiveNetwork.forEach((elem) => {
-      elem.insertAdjacentHTML("beforeend", '<span class="label-direct-inactive"></span>');
-    })
-
-    // THIRD STEP DISPLAY FIX BANNER TO VALIDATE OR REFUSE CHANGES
   })
 }
 

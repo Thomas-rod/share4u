@@ -64,7 +64,7 @@
           <%= link_to '#', id:"modal-#{n.social.name}", data: {toggle: 'modal', target:"##{n.social.name}ModalCenter" }, class:"container-button-network #{ "direct-network-active" if n.direct == true}" do %>
             <%= image_tag "logo_#{n.social.name}.svg", class:"avatar-social"%>
             <% if n.direct == true %>
-              <span class="label-direct-active"><i class="fas fa-check"></i></span>
+              <span class="label-direct-active"></span>
             <% end %>
             <p><%= n.social.name.capitalize %></p>
           <% end %>
