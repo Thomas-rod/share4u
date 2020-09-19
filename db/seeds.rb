@@ -377,6 +377,7 @@
 
 
 User.all.order(created_at: :ASC).each do |user|
+  p user
   networks = user.profile.networks
   counter = 1
   networks.each do |n|
