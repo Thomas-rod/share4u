@@ -37,6 +37,7 @@ const directNetwork = () => {
       allNetwork.forEach((elem) => {
         elem.dataset.target = "#";
         elem.addEventListener('click', (e) => {
+          console.log(elem);
           allNetwork.forEach((element) => {
             element.children[2].classList.remove("label-direct-active");
             element.children[2].classList.remove("label-direct-inactive");
@@ -46,7 +47,6 @@ const directNetwork = () => {
           elem.children[2].classList.add("label-direct-active");
         })
       })
-
     } else {
       // THIS SECTION IS TO RECONFIGURE ALL CLASS AND REFRESH
       networkNotCreated.forEach((elem) => {

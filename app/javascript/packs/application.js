@@ -36,7 +36,7 @@ import { closeCouponIcon } from '../components/closecoupon';
 import { previewImageOnFileSelect } from '../components/preview_image_onboarding';
 import { modalOpenNetwork } from '../components/button_open_url_network';
 import { directNetwork } from '../components/direct';
-
+import { sendDataToNetworksController } from '../components/direct_button_to_update_or_delete';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -50,4 +50,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   modalOpenNetwork();
   directNetwork();
+  sendDataToNetworksController();
 });
