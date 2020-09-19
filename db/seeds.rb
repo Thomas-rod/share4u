@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-puts "Hello human, i will do something today. Do you want to know what ? "
-puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
+# puts "Hello human, i will do something today. Do you want to know what ? "
+# puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 
-##-----------------------------------------------------------------------------------------------##
-##-----------------------------------------------------------------------------------------------##
-##-----------------------------------------------------------------------------------------------##
+# ##-----------------------------------------------------------------------------------------------##
+# ##-----------------------------------------------------------------------------------------------##
+# ##-----------------------------------------------------------------------------------------------##
 
 # puts "Well let's begin with our first operation, CLEANING THE DB."
 # User.destroy_all
@@ -90,7 +90,7 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 # ##-----------------------------------------------------------------------------------------------##
 # ##-----------------------------------------------------------------------------------------------##
 
-# puts "Networks on creation"
+# # puts "Networks on creation"
 
 # instagram_netwrok_tr = Network.create!(username: "thomrodier", profile: two_profile, social: instagram)
 # facebook_netwrok_tr = Network.create!(username: "https://www.facebook.com/thomas.rodier.9", profile: two_profile, social: facebook)
@@ -354,34 +354,35 @@ puts "Hehehehe I'm gonna $**$$$*$$* seeding boy."
 ##                    ADD PLACHOLDER TO SOCIALS AND CREATION OF CALENDLY                           ##
 ## ------------------------------------------------------------------------------------------------##
 
-calendly = Social.create!(name: "calendly", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link", header:"Do you want to add a calendly ?", explanation:"Open Calendly. Copy & past the link regarding the kind of meeting you want to schedule (15min, 30min or other). It will automatically create a button in your profile to schedule a meeting with you")
+# calendly = Social.create!(name: "calendly", url_desktop_begin:"", url_mobile_begin: "placeholder_two", kind: "link", header:"Do you want to add a calendly ?", explanation:"Open Calendly. Copy & past the link regarding the kind of meeting you want to schedule (15min, 30min or other). It will automatically create a button in your profile to schedule a meeting with you")
 
-instagram_social = Social.find_by(name: "instagram").update(placeholder:"Add your Instagram username")
-facebook_social = Social.find_by(name: "facebook").update(placeholder:"Add url of your Facebook profile")
-snapchat_social = Social.find_by(name: "snapchat").update(placeholder:"Add your Snapchat username")
-titok_social = Social.find_by(name: "tiktok").update(placeholder:"Add your Tiktok username")
-twitter_social = Social.find_by(name: "twitter").update(placeholder:"Add your Twitter username")
-linkedin_social = Social.find_by(name: "linkedin").update(placeholder:"Add url of your Linkedin profile")
-website_social = Social.find_by(name: "website").update(placeholder:"Add url of your website")
-text_social = Social.find_by(name: "text").update(placeholder:"Add your phone number")
-email_social = Social.find_by(name: "email").update(placeholder:"Add your email")
-youtube_social = Social.find_by(name: "youtube").update(placeholder:"Add url of your Youtube channel")
-soundcloud_social = Social.find_by(name: "soundcloud").update(placeholder:"Add your Soundcloud username")
-spotify_social = Social.find_by(name: "spotify").update(placeholder:"Add your Spotify username")
-twitch_social = Social.find_by(name: "twitch").update(placeholder:"Add your Twitch username")
-whatsapp_social = Social.find_by(name: "whatsapp").update(placeholder:"Add your Whatsapp number")
-lien_social = Social.find_by(name: "lien").update(name:"link", placeholder:"Add your custom link")
+# instagram_social = Social.find_by(name: "instagram").update(placeholder:"Add your Instagram username")
+# facebook_social = Social.find_by(name: "facebook").update(placeholder:"Add url of your Facebook profile")
+# snapchat_social = Social.find_by(name: "snapchat").update(placeholder:"Add your Snapchat username")
+# titok_social = Social.find_by(name: "tiktok").update(placeholder:"Add your Tiktok username")
+# twitter_social = Social.find_by(name: "twitter").update(placeholder:"Add your Twitter username")
+# linkedin_social = Social.find_by(name: "linkedin").update(placeholder:"Add url of your Linkedin profile")
+# website_social = Social.find_by(name: "website").update(placeholder:"Add url of your website")
+# text_social = Social.find_by(name: "text").update(placeholder:"Add your phone number")
+# email_social = Social.find_by(name: "email").update(placeholder:"Add your email")
+# youtube_social = Social.find_by(name: "youtube").update(placeholder:"Add url of your Youtube channel")
+# soundcloud_social = Social.find_by(name: "soundcloud").update(placeholder:"Add your Soundcloud username")
+# spotify_social = Social.find_by(name: "spotify").update(placeholder:"Add your Spotify username")
+# twitch_social = Social.find_by(name: "twitch").update(placeholder:"Add your Twitch username")
+# whatsapp_social = Social.find_by(name: "whatsapp").update(placeholder:"Add your Whatsapp number")
+# lien_social = Social.find_by(name: "lien").update(name:"link", placeholder:"Add your custom link")
 
 
 # puts "Human, i've done this task. Now you have placeholder in your socials. That's awesome !"
 
 
+User.all.order(created_at: :ASC).each do |user|
+  networks = user.profile.networks
+  counter = 1
+  networks.each do |n|
+    n.update(order: counter)
+    counter += 1
+  end
+end
 
-
-
-
-
-
-
-
-
+puts "Human, i've done this task. Now you have all your networks ordered. That's awesome !"

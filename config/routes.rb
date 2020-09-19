@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:show, :new, :create, :update]
   resources :networks, only: [:index, :create, :update, :destroy]
+  get '/networks/update', to: "networks#direct_update", as: "direct_update"
+  get '/networks/delete', to: "networks#direct_delete", as: "direct_delete"
   resources :magnets, only: [:show, :create, :update]
   resources :magnet_profiles, only: [:show, :create, :update]
   resources :vcards, only: [:create, :update, :destroy]

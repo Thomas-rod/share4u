@@ -22,7 +22,7 @@
           align-items:center;
           min-width:55%;
           max-width:55%;
-          margin: auto 0;
+          // margin: auto 0;
         }
 
         #show-profil--informations--user .image-container {
@@ -63,6 +63,29 @@
             margin: .5rem 0;
           }
         }
+        #show-profil--informations--networks--settings {
+          display:flex;
+          justify-content:space-around;
+          align-items:center;
+          padding:1rem;
+          a {
+            width:45%;
+            display:block;
+            font-weight:bold;
+          }
+          .directly-on {
+            color:$blue-app;
+            background-color:white;
+            border-color:white;
+            &:hover {
+              color: $blue-app;
+            }
+          }
+          .icon-setup-modal {
+            font-size:2rem;
+            color:$blue-app;
+          }
+        }
 
 
         #show-profil--informations--networks {
@@ -75,7 +98,7 @@
 
           .networks-container {
             display:flex;
-            justify-content:flex-start;
+            justify-content: center;
             align-items:center;
             flex-wrap:wrap;
             p {
@@ -83,6 +106,15 @@
             }
             a[data-toggle="modal"] {
               margin: .5rem 1.5rem;
+            }
+            .container-button-network {
+              position:relative;
+              .label-direct-active,
+              .label-direct-inactive {
+                position:absolute;
+                top:-10px;
+                right:-10px;
+              }
             }
           }
           .networks-container .modal-body {
@@ -99,6 +131,24 @@
             .modal-body--inputs {
               flex-grow:2;
               min-width:85%;
+            }
+          }
+
+          #changes-footer-buttons {
+            position:fixed;
+            z-index:4;
+            display:none;
+            justify-content:space-between;
+            align-items:center;
+            width:100%;
+            padding:0 4rem;
+            bottom:8rem;
+            left:0rem;
+            a {
+              display:block;
+              width:45%;
+              text-align:center;
+              font-weight:bold;
             }
           }
 
@@ -146,6 +196,15 @@
         margin: 2rem 0;
       }
 
+      #show-profil--informations--networks--settings {
+        .directly-on {
+          color:$blue-app;
+          border-color:$blue-app;
+          &:hover {
+            color:$blue-app
+          }
+        }
+      }
 
       #show-profil--informations--networks{
         background-color:white;
@@ -180,7 +239,7 @@
           .modal-body,
           .modal-footer,
           p.explanation {
-            padding: 0rem 3rem 0rem 3rem !important;
+            padding: 0rem 4rem 0rem 4rem !important;
           }
 
 
@@ -292,6 +351,15 @@
           margin: 2rem 0;
         }
 
+        #show-profil--informations--networks--settings {
+          .directly-on {
+            color:$blue-app;
+            border-color:$blue-app;
+            &:hover {
+              color:$blue-app
+            }
+          }
+        }
 
         #show-profil--informations--networks{
           background-color:white;
@@ -304,6 +372,7 @@
         }
         .networks-container {
           justify-content:space-between;
+          padding-bottom: 6rem;
           p {
             color:$blue-app;
             font-size: 1.5rem;
@@ -326,7 +395,7 @@
             .modal-body,
             .modal-footer,
             p.explanation {
-              padding: 0rem 3rem 0rem 3rem !important;
+              padding: 0rem 4rem 0rem 4rem !important;
             }
 
 

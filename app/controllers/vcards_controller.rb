@@ -1,13 +1,14 @@
 class VcardsController < ApplicationController
 before_action :set_vcard, only: [:update, :destroy]
   def create
-    vcard = Vcard.new(params_vcard)
-    vcard.profile = current_user.profile
-    network_contact = Network.new(profile: vcard.profile, social: Social.find_by(name: "contact"), username: vcard.profile.first_name)
-    if vcard.save && network_contact.save
-      redirect_to profile_path(vcard.profile), notice: "Youpi ! You contact plug has been added"
+    @vcard = Vcard.new(params_vcard)
+    @vcard.profile = current_user.profile
+    @vcard.profile.networks.empty? ? order = 1 : order = (@vcard.profile.networks.order(order: :ASC).last.order).to_i + 1
+    network_contact = Network.new(profile: @vcard.profile, social: Social.find_by(name: "contact"), username: @vcard.profile.first_name, order: order)
+    if @vcard.save && network_contact.save
+      redirect_to profile_path(@vcard.profile), notice: "Youpi ! You contact plug has been added"
     else
-      redirect_to profile_path(vcard.profile), notice: "Oupsy, something went wrong"
+      redirect_to profile_path(@vcard.profile), notice: "Oupsy, something went wrong"
     end
   end
 

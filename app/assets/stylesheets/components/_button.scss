@@ -52,6 +52,7 @@
 .border-blue-button {
   color:$blue-app;
   border-color:$blue-app;
+  background-color:white;
   &:hover {
     color:$blue-app
   }
@@ -80,6 +81,12 @@
     color:$black;
     border-color: $black;
   }
+}
+
+.green-button {
+  background-color:$green !important;
+  color:white !important;
+  border-color:$green !important;
 }
 
 .upload-photo {

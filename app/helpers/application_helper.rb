@@ -4,16 +4,10 @@ module ApplicationHelper
     return input.gsub(" ", "-")
   end
 
-  def placeholder_social(elem)
-    placeholder = ""
-    if elem.name == "whatsapp" || elem == "text"
-      return "Your phone number"
-    elsif elem.kind == "username"
-      return "Your username"
-    elsif elem.name == "website" || elem.name == "lien"
-      return "Link of your website"
-    else
-      return "Link of your profile"
+  def network_direct_true?(networks)
+    networks.each do |n|
+      return true if n.direct == true
     end
+    return false
   end
 end

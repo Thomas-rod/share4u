@@ -18,6 +18,14 @@
       <%= f.button :submit, "Activate 🚀", class:"button white-button" %>
     <% end %>
   </div>
+<% elsif @direct_network %>
+<div id="direct-network-magnet-profile">
+  <p class="name-social"><%= @direct_network.social.name %></p>
+  <p class="username-network"><%= @direct_network.username %></p>
+  <p class="url-begin-social"><%= @direct_network.social.url_desktop_begin %></p>
+  <p class="kind-social"><%= @direct_network.social.kind %></p>
+  <p class="vcard-social"><%= @direct_network.profile.id %></p>
+</div>
 <% else %>
   <div id="profile-magnet">
     <div class="image-container--magnet-profile">
