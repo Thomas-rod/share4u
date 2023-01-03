@@ -39,7 +39,7 @@ gem 'comfy_blog', '~> 2.0.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Used for zapier integrations and HTTP Requests
-gem 'httparty', '~> 0.18.0'
+gem 'httparty', '~> 0.21.0'
 
 gem "pundit"
 gem 'devise'
